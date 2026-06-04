@@ -2,7 +2,7 @@
 
 **The default answer is: don't.**
 
-{{COMPANY}} is a text-and-structure brand. The absence of imagery IS the brand. Every other AI consultancy has hero shots, abstract gradients, and stock photos of diverse professionals pointing at screens. We don't.
+{{COMPANY}} is a text-and-structure brand. The absence of imagery IS the brand. Every other vendor has hero shots, abstract gradients, and stock photos of diverse professionals pointing at screens. We don't.
 
 If you're reaching for an image, ask first: does the content need it, or am I filling space?
 
@@ -77,6 +77,6 @@ Social posts are text-first. When an image IS posted (rare):
 - One well-chosen quote rendered as a text card in brand tokens
 
 Never:
-- Generic AI imagery from Unsplash or stock sites
+- Generic AI imagery from stock sites
 - AI-generated illustrations (ironic given the work)
-- Templated social graphics with overlaid text and brand logo (that's every other AI consultancy's playbook)
+- Templated social graphics with overlaid text and brand logo (that's every other vendor's playbook)

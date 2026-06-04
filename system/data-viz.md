@@ -42,9 +42,9 @@ For the ONE decisive data point — the final quarter's number, the threshold li
 
 ## Grid and axes
 
-- Grid lines: `rgba(180,195,220,0.06)` on screen, `#E5E5E5` on print — almost invisible
+- Grid lines: `rgba(127,127,127,0.06)` on screen, `#E5E5E5` on print — almost invisible
 - Axis lines: same as grid — suppress the chart frame
-- Ticks: JetBrains Mono, 0.42em screen / 9px print, `--dim` / `--text-dim`
+- Ticks: JetBrains Mono, 0.42em screen / 9px print, `--text-dim` / `--text-dim`
 - Labels: JetBrains Mono, uppercase, letter-spaced 1–2px
 
 ## Annotations
@@ -74,7 +74,7 @@ Always annotate the emphasis point in the chart title OR directly on the chart.
 
 ## Captions and source
 
-Always attribute the data. Place under the chart in `--dim` at `src` class sizing.
+Always attribute the data. Place under the chart in `--text-dim` at `src` class sizing.
 
 ```
 <div class="src">Source: [dataset], [period], [retrieved date]</div>

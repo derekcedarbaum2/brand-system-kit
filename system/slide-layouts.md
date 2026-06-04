@@ -24,9 +24,9 @@ Opening slide. Centered logo on deep black. Minimal.
 
 **Customization:**
 - Logo only is the default — clean and confident
-- For leave-behinds and forwarded decks, add a context line below the logo: `<p style="font-size:0.5em; color:var(--dim); margin-top:12px;">Client Name — Topic — Month Year</p>`. This ensures someone opening the file without context knows what they're looking at.
+- For leave-behinds and forwarded decks, add a context line below the logo: `<p style="font-size:0.5em; color:var(--text-dim); margin-top:12px;">Client Name — Topic — Month Year</p>`. This ensures someone opening the file without context knows what they're looking at.
 - Optionally add a tagline below the logo as a `.label`
-- The cover uses `--bg` (deepest black), not `--bg2`
+- The cover uses `--bg` (deepest black), not `--bg-card`
 
 ---
 
@@ -229,7 +229,7 @@ Two-column bios for team introductions.
       <h3>Person Name</h3>
       <div class="title">Role &middot; Focus Area</div>
       <p>Background and expertise. First paragraph.</p>
-      <p style="margin-top:5px;">Second paragraph with <strong style="color:var(--white);">key credential bolded</strong>.</p>
+      <p style="margin-top:5px;">Second paragraph with <strong style="color:var(--text-primary);">key credential bolded</strong>.</p>
     </div>
     <div class="bio">
       <h3>Person Name</h3>
@@ -292,12 +292,12 @@ Two-column comparison with distinct visual treatment for each side.
   <span class="label">The Shift</span>
   <h2>Headline framing<br>the transformation.</h2>
   <div class="ba">
-    <div class="ba-col" style="background:var(--card); border:1px solid var(--border); border-radius:10px 0 0 10px;">
-      <div class="ba-label" style="color:var(--dim);">Before</div>
+    <div class="ba-col" style="background:var(--bg-card); border:1px solid var(--border); border-radius:10px 0 0 10px;">
+      <div class="ba-label" style="color:var(--text-dim);">Before</div>
       <p>Description of current state.</p>
-      <p class="ba-result" style="color:var(--dim);">Result or metric</p>
+      <p class="ba-result" style="color:var(--text-dim);">Result or metric</p>
     </div>
-    <div class="ba-col" style="background:rgba(208,216,232,0.04); border:1px solid rgba(208,216,232,0.15); border-radius:0 10px 10px 0;">
+    <div class="ba-col" style="background:rgba(127,127,127,0.04); border:1px solid rgba(127,127,127,0.15); border-radius:0 10px 10px 0;">
       <div class="ba-label" style="color:var(--accent);">After</div>
       <p>Description of future state.</p>
       <p class="ba-result" style="color:var(--accent);">Result or metric</p>
@@ -320,8 +320,8 @@ Centered closing slide with a clear next step.
   <span class="label" style="text-align:center;">Next Step</span>
   <h2>Bold statement about<br>what to do next.</h2>
   <p style="font-size:0.68em;">Supporting paragraph — one to two sentences explaining the offer.</p>
-  <p style="font-family:'JetBrains Mono',monospace; font-size:0.45em; color:var(--dim); margin-top:18px;">Fine print or additional context in monospace.</p>
-  <p style="font-size:0.65em; color:var(--white); font-weight:600; margin-top:20px;">{{CONTACT}}</p>
+  <p style="font-family:'JetBrains Mono',monospace; font-size:0.45em; color:var(--text-dim); margin-top:18px;">Fine print or additional context in monospace.</p>
+  <p style="font-size:0.65em; color:var(--text-primary); font-weight:600; margin-top:20px;">{{CONTACT}}</p>
   <div class="foot"><span>{{COMPANY}}</span><span>{{URL}}</span></div>
 </section>
 ```
@@ -409,12 +409,12 @@ Grid of stat blocks for ROI/impact slides.
     <div class="card card-t">
       <div class="stat-big">60%</div>
       <div class="stat-label">Cost reduction</div>
-      <p style="font-size:0.44em; color:var(--muted); margin-top:6px;">From $X to $Y per quarter</p>
+      <p style="font-size:0.44em; color:var(--text-secondary); margin-top:6px;">From $X to $Y per quarter</p>
     </div>
     <div class="card card-t">
       <div class="stat-big">3 weeks</div>
       <div class="stat-label">Time to deploy</div>
-      <p style="font-size:0.44em; color:var(--muted); margin-top:6px;">From audit to production</p>
+      <p style="font-size:0.44em; color:var(--text-secondary); margin-top:6px;">From audit to production</p>
     </div>
   </div>
   <div class="insight">
@@ -445,7 +445,7 @@ Client quote or third-party validation.
     <p class="pull" style="font-size:0.78em; font-style:italic;">&ldquo;Quote from client or third-party source that validates the point you're making. Should be specific and concrete, not generic praise.&rdquo;</p>
     <div style="margin-top:10px; padding-top:8px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:baseline;">
       <div>
-        <div style="font-size:0.55em; font-weight:600; color:var(--white);">Person Name</div>
+        <div style="font-size:0.55em; font-weight:600; color:var(--text-primary);">Person Name</div>
         <div class="stat-label">Title, Company</div>
       </div>
       <div class="src">Publication or context</div>
@@ -500,19 +500,19 @@ Layouts can be combined on a single slide. Common combinations:
 
 ### What This System Should NEVER Produce
 
-These are the failure modes that make AI consultancy decks look like everyone else's. If you catch yourself generating any of these, rewrite.
+These are the failure modes that make vendor decks look like everyone else's. If you catch yourself generating any of these, rewrite.
 
 - **"Leverage AI to transform your business"** — or any variation. This is the phrase that makes executives stop reading. Say what the system does instead.
 - **Blue gradient hero slides** — We are not a SaaS company. No gradients, no hero images, no "the future of AI" imagery.
 - **Bullet slides with no hierarchy** — A slide with 8 bullets of equal weight is a document, not a presentation. Use cards, stat blocks, or pull quotes instead.
-- **Generic process diagrams** — "Discovery → Design → Build → Deploy" is every consultancy's slide. Our stages have specific timelines, specific outputs, and an outcome line that says what the client gets.
+- **Generic process diagrams** — "Discovery → Design → Build → Deploy" is every vendor's slide. Our stages have specific timelines, specific outputs, and an outcome line that says what the client gets.
 - **Slides that require narration to make sense** — If you remove the presenter, the slide should still communicate its point. The leave-behind test: would this make sense at 11pm when the VP opens it on their laptop?
 - **Jargon headers** — "AI-Powered Workflow Optimization" is a header that says nothing. "Your invoices get processed in 4 hours instead of 3 days" is a header that closes deals.
 - **Slides without a "so what"** — If the slide presents information without an insight box, pull quote, or assertive headline that tells the audience what it means, the slide is incomplete.
 
 ---
 
-## AI Consultancy Slide Playbook
+## Slide Playbook
 
 Recommended slide sequences for common presentation scenarios. These are starting points — adapt based on the audience and what you know going in.
 

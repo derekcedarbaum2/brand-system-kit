@@ -17,20 +17,20 @@ Background `#14201F` / `#1A2625` — effectively near-black.
 
 | Pairing | Ratio | AA body? | AAA body? | AA large? |
 |---|---|---|---|---|
-| `--white` (#FFFFFF) on `--bg` (#14201F) | 19.4:1 | ✅ | ✅ | ✅ |
-| `--body` (#E6E9E7) on `--bg` | 13.1:1 | ✅ | ✅ | ✅ |
+| `--text-primary` (#FFFFFF) on `--bg` (#14201F) | 19.4:1 | ✅ | ✅ | ✅ |
+| `--text-body` (#E6E9E7) on `--bg` | 13.1:1 | ✅ | ✅ | ✅ |
 | `--accent` (#9FC7CD) on `--bg` | 13.8:1 | ✅ | ✅ | ✅ |
-| `--muted` (#8A9290) on `--bg` | 5.6:1 | ✅ | ❌ | ✅ |
-| `--dim` (#3E5C8A) on `--bg` | 3.1:1 | ❌ | ❌ | ✅ (large only) |
-| `--white` on `--card` (#20302E) | 17.8:1 | ✅ | ✅ | ✅ |
-| `--muted` on `--card` | 5.1:1 | ✅ | ❌ | ✅ |
-| `--dim` on `--card` | 2.9:1 | ❌ | ❌ | ⚠️ borderline |
+| `--text-secondary` (#8A9290) on `--bg` | 5.6:1 | ✅ | ❌ | ✅ |
+| `--text-dim` (#3E5C8A) on `--bg` | 3.1:1 | ❌ | ❌ | ✅ (large only) |
+| `--text-primary` on `--card` (#20302E) | 17.8:1 | ✅ | ✅ | ✅ |
+| `--text-secondary` on `--card` | 5.1:1 | ✅ | ❌ | ✅ |
+| `--text-dim` on `--card` | 2.9:1 | ❌ | ❌ | ⚠️ borderline |
 
 ### Implications (screen)
 
-- **`--dim` is NOT safe for body text.** Use only for labels (mono, uppercase, letter-spaced — effectively bolder / larger by optical weight) or source citations where the info is supplementary.
-- **`--muted` passes AA for body** but not AAA. For anything where accessibility is a hard requirement (public client docs, public presentations, regulatory deliverables), upgrade to `--body` (#E6E9E7).
-- **Source citations** (`--dim` at 0.32em) are acceptable as decorative attribution but should not carry required information.
+- **`--text-dim` is NOT safe for body text.** Use only for labels (mono, uppercase, letter-spaced — effectively bolder / larger by optical weight) or source citations where the info is supplementary.
+- **`--text-secondary` passes AA for body** but not AAA. For anything where accessibility is a hard requirement (public client docs, public presentations, regulatory deliverables), upgrade to `--text-body` (#E6E9E7).
+- **Source citations** (`--text-dim` at 0.32em) are acceptable as decorative attribution but should not carry required information.
 
 ---
 
@@ -62,11 +62,11 @@ Background `#1A2625`.
 
 | Pairing | Ratio | AA body? | AAA body? |
 |---|---|---|---|
-| `--text-primary` (#ffffff) on `--bg-page` | 19.0:1 | ✅ | ✅ |
-| `--text-body` (#E6E9E7) on `--bg-page` | 15.8:1 | ✅ | ✅ |
-| `--text-secondary` rgba(180,195,220,0.7) on `--bg-page` | ~8.5:1 | ✅ | ✅ |
-| `--text-dim` rgba(180,195,220,0.5) on `--bg-page` | ~5.8:1 | ✅ | ❌ |
-| `--text-label` (#8A9290) on `--bg-page` | 4.1:1 | ⚠️ borderline | ❌ |
+| `--text-primary` (#ffffff) on `--bg` | 19.0:1 | ✅ | ✅ |
+| `--text-body` (#E6E9E7) on `--bg` | 15.8:1 | ✅ | ✅ |
+| `--text-secondary` rgba(127,127,127,0.7) on `--bg` | ~8.5:1 | ✅ | ✅ |
+| `--text-dim` rgba(127,127,127,0.5) on `--bg` | ~5.8:1 | ✅ | ❌ |
+| `--text-label` (#8A9290) on `--bg` | 4.1:1 | ⚠️ borderline | ❌ |
 
 ### Implications (print-dark)
 
@@ -82,7 +82,7 @@ WCAG 2.1 also requires **3:1 contrast for UI components and graphical objects** 
 | Pairing | Ratio | Pass 3:1? |
 |---|---|---|
 | `--border` (#2A3A38) on `--bg` (#14201F) | 1.2:1 | ❌ |
-| `--border` (#2C3C3A) on `--bg-page` (print dark) | 1.3:1 | ❌ |
+| `--border` (#2C3C3A) on `--bg` (print dark) | 1.3:1 | ❌ |
 | `--border` (#E5E5E5) on `#FFFFFF` (print light) | 1.2:1 | ❌ |
 
 **All card borders technically fail 3:1** — they're intentionally subtle for the visual system. Acceptable because:

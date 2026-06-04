@@ -11,7 +11,7 @@ Base component — most content lives in one.
 **Screen:**
 ```css
 .card {
-  background: var(--card);          /* #20302E */
+  background: var(--bg-card);          /* #20302E */
   border: 1px solid var(--border);  /* #2A3A38 */
   border-radius: 10px;
   padding: 20px 24px;
@@ -32,7 +32,7 @@ Base component — most content lives in one.
 
 - `.card-a` — accent left border (3px solid `--accent`)
 - `.card-t` — accent top border (2px solid `--accent`) — use for metrics-heavy cards
-- `.card-glow` — adds `box-shadow: 0 4px 24px var(--glow)` for emphasis
+- `.card-glow` — adds `box-shadow: 0 4px 24px none` for emphasis
 
 ---
 
@@ -42,15 +42,15 @@ Callout panel for the "so what" synthesis. Always goes below a card grid.
 
 ```css
 .insight {
-  background: var(--card);
+  background: var(--bg-card);
   border: 1px solid var(--border);
   border-left: 3px solid var(--accent);
   border-radius: 10px;
   padding: 14px 22px;
   margin-top: 12px;
 }
-.insight { font-size: 0.58em; color: var(--body); }
-.insight strong { color: var(--white); }
+.insight { font-size: 0.58em; color: var(--text-body); }
+.insight strong { color: var(--text-primary); }
 ```
 
 Rules:
@@ -92,7 +92,7 @@ Large metric display inside cards.
 
 Rules:
 - Stat blocks always live inside cards. Naked `.stat-big` looks broken.
-- Pair with context line below in `--muted`: "From $X to $Y per quarter"
+- Pair with context line below in `--text-secondary`: "From $X to $Y per quarter"
 - Never reduce stat number size to fit — cut other content first.
 
 ---
@@ -105,16 +105,16 @@ Rules:
 .stages { display: flex; gap: 12px; }
 .stage  {
   flex: 1;
-  background: var(--card);
+  background: var(--bg-card);
   border: 1px solid var(--border);
   border-top: 2px solid var(--accent);
   border-radius: 10px;
   padding: 16px 14px;
 }
-.stage-num { font-family: 'JetBrains Mono'; font-size: 0.36em; font-weight: 600; color: var(--dim); letter-spacing: 2px; text-transform: uppercase; }
-.stage h3  { font-size: 0.65em; color: var(--white); }
-.stage p   { font-size: 0.48em; color: var(--muted); line-height: 1.55; }
-.stage .out { font-size: 0.44em; font-weight: 600; color: var(--white); border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px; }
+.stage-num { font-family: 'JetBrains Mono'; font-size: 0.36em; font-weight: 600; color: var(--text-dim); letter-spacing: 2px; text-transform: uppercase; }
+.stage h3  { font-size: 0.65em; color: var(--text-primary); }
+.stage p   { font-size: 0.48em; color: var(--text-secondary); line-height: 1.55; }
+.stage .out { font-size: 0.44em; font-weight: 600; color: var(--text-primary); border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px; }
 ```
 
 Structure per stage: timeline label (`.stage-num`) → title → description → outcome line (`.out`). Outcome has a top-border separator for visual weight.
@@ -125,14 +125,14 @@ Structure per stage: timeline label (`.stage-num`) → title → description →
 
 ```css
 .bio {
-  background: var(--card);
+  background: var(--bg-card);
   border: 1px solid var(--border);
   border-left: 3px solid var(--accent);
   border-radius: 10px;
   padding: 18px 22px;
 }
-.bio h3    { font-size: 0.72em; color: var(--white); }
-.bio .title { font-family: 'JetBrains Mono'; font-size: 0.34em; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--dim); }
+.bio h3    { font-size: 0.72em; color: var(--text-primary); }
+.bio .title { font-family: 'JetBrains Mono'; font-size: 0.34em; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim); }
 .bio p     { font-size: 0.5em; line-height: 1.6; }
 ```
 
@@ -144,15 +144,15 @@ Stacked prompt cards for Q&A or discovery slides.
 
 ```css
 .q-card {
-  background: var(--card);
+  background: var(--bg-card);
   border: 1px solid var(--border);
   border-left: 3px solid var(--accent);
   border-radius: 10px;
   padding: 12px 20px;
   margin-bottom: 8px;
 }
-.q-card p { font-size: 0.65em; color: var(--body); font-weight: 500; line-height: 1.4; }
-.q-sub    { font-size: 0.44em; color: var(--dim); font-weight: 400; }
+.q-card p { font-size: 0.65em; color: var(--text-body); font-weight: 500; line-height: 1.4; }
+.q-sub    { font-size: 0.44em; color: var(--text-dim); font-weight: 400; }
 ```
 
 3–5 question cards max per slide.
@@ -166,15 +166,15 @@ Two-column comparison with distinct visual treatment.
 ```css
 .ba        { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
 .ba-col    { padding: 20px 22px; }
-.ba-col.before { background: var(--card); border: 1px solid var(--border); border-radius: 10px 0 0 10px; }
-.ba-col.after  { background: rgba(208,216,232,0.04); border: 1px solid rgba(208,216,232,0.15); border-radius: 0 10px 10px 0; }
+.ba-col.before { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px 0 0 10px; }
+.ba-col.after  { background: rgba(127,127,127,0.04); border: 1px solid rgba(127,127,127,0.15); border-radius: 0 10px 10px 0; }
 
 .ba-label      { font-family: 'JetBrains Mono'; font-size: 0.38em; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; }
-.before .ba-label { color: var(--dim); }
+.before .ba-label { color: var(--text-dim); }
 .after  .ba-label { color: var(--accent); }
 
 .ba-result     { font-family: 'JetBrains Mono'; font-size: 0.44em; font-weight: 600; border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px; }
-.before .ba-result { color: var(--dim); }
+.before .ba-result { color: var(--text-dim); }
 .after  .ba-result { color: var(--accent); }
 ```
 
@@ -185,7 +185,7 @@ Two-column comparison with distinct visual treatment.
 Data tables for structured info — metrics, comparisons, feature matrices.
 
 ```css
-.table-wrap   { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.table-wrap   { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
 .table-wrap table { width: 100%; border-collapse: collapse; }
 
 .table-wrap th {
@@ -198,9 +198,9 @@ Data tables for structured info — metrics, comparisons, feature matrices.
   padding: 10px 16px;
 }
 
-.table-wrap td              { font-size: 0.5em; color: var(--muted); padding: 10px 16px; border: 1px solid var(--border); }
-.table-wrap td:first-child  { color: var(--white); font-weight: 600; }   /* row label */
-.table-wrap tr:hover td     { background: rgba(208,216,232,0.03); }
+.table-wrap td              { font-size: 0.5em; color: var(--text-secondary); padding: 10px 16px; border: 1px solid var(--border); }
+.table-wrap td:first-child  { color: var(--text-primary); font-weight: 600; }   /* row label */
+.table-wrap tr:hover td     { background: rgba(127,127,127,0.03); }
 ```
 
 - Max 5–6 rows per table slide
@@ -241,11 +241,11 @@ Horizontal milestone progression.
   background: var(--accent);
   border-radius: 50%;
 }
-.tl-item.active::before { background: var(--white); }
+.tl-item.active::before { background: var(--text-primary); }
 
 .tl-date  { font-family: 'JetBrains Mono'; font-size: 0.42em; text-transform: uppercase; color: var(--accent); }
-.tl-label { font-size: 0.65em; font-weight: 600; color: var(--white); }
-.tl-desc  { font-size: 0.48em; color: var(--muted); line-height: 1.5; }
+.tl-label { font-size: 0.65em; font-weight: 600; color: var(--text-primary); }
+.tl-desc  { font-size: 0.48em; color: var(--text-secondary); line-height: 1.5; }
 ```
 
 3–5 items max. Mark `.active` on current / completed milestones.
@@ -279,7 +279,7 @@ Horizontal milestone progression.
 .src {
   font-family: 'JetBrains Mono';
   font-size: 0.32em;
-  color: rgba(80,90,112,0.4);
+  color: rgba(120,120,120,0.4);
 }
 ```
 
@@ -307,7 +307,7 @@ Always attribute claims. Always inline or at the bottom of the card — never a 
 ```
 
 - Left span: "{{COMPANY}}"
-- Right span: context-specific ("AEI — PSO", "{{URL}}", client name + date)
+- Right span: context-specific ("Client — Project", "{{URL}}", client name + date)
 
 ---
 
@@ -315,7 +315,7 @@ Always attribute claims. Always inline or at the bottom of the card — never a 
 
 ```css
 .footer {
-  background: var(--bg-deep);            /* dark mode */
+  background: var(--bg-dark);            /* dark mode */
   padding: 0.16in 0.55in;
   display: flex;
   justify-content: space-between;

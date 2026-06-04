@@ -12,19 +12,18 @@ Paste at the top of any screen-mode stylesheet:
 :root {
   /* Backgrounds */
   --bg:       #14201F;             /* deepest black — slide bg, footer */
-  --bg2:      #1A2625;             /* slide section bg */
-  --card:     #20302E;             /* cards, insights, bios */
+  --bg-card:      #1A2625;             /* slide section bg */
+  --bg-card:     #20302E;             /* cards, insights, bios */
   --border:   #2A3A38;             /* dividers, card borders */
 
   /* Text */
-  --white:    #FFFFFF;             /* headlines, strong */
+  --text-primary:    #FFFFFF;             /* headlines, strong */
   --accent:   #9FC7CD;             /* silvery — borders, bullets, separators */
-  --body:     #E6E9E7;             /* body text, pull quotes */
-  --muted:    #8A9290;             /* paragraphs, list items */
-  --dim:      #3E5C8A;             /* labels, sources, footer */
+  --text-body:     #E6E9E7;             /* body text, pull quotes */
+  --text-secondary:    #8A9290;             /* paragraphs, list items */
+  --text-dim:      #3E5C8A;             /* labels, sources, footer */
 
   /* Effect */
-  --glow:     rgba(208,216,232,0.06);
 }
 ```
 
@@ -34,7 +33,7 @@ Paste at the top of any screen-mode stylesheet:
 html, body {
   -webkit-font-smoothing: antialiased;
   background: var(--bg);
-  color: var(--body);
+  color: var(--text-body);
   font-family: 'Inter', -apple-system, sans-serif;
 }
 ```
@@ -75,7 +74,7 @@ Use a profile's generated `brand.css` (e.g. `profiles/northwind/brand.css`) as t
 
 - Controls layout: `edges`
 - Progress bar: 2px height, `--accent` color
-- Slide number: JetBrains Mono, 9px, `--dim`, transparent bg, right-aligned at 90px
+- Slide number: JetBrains Mono, 9px, `--text-dim`, transparent bg, right-aligned at 90px
 
 ## Build animations
 
@@ -92,7 +91,7 @@ Use reveal.js `class="fragment"` on elements for progressive build-in. Default f
 - Don't add animations beyond subtle fade fragments
 - Don't use gradients or hero images
 - Don't introduce additional colors — the palette is final
-- Don't add box-shadows beyond the `--glow` variant (`.card-glow`)
+- Don't add box-shadows — a `1px solid var(--border)` is the depth cue
 - Don't change slide dimensions — 1280×720 is the contract
 
 See `anti-patterns.md` for the full list.

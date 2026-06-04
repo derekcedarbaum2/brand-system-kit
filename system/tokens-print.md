@@ -33,15 +33,15 @@ html, body {
 
 ```css
 :root {
-  --bg-deep:        #14201F;
-  --bg-page:        #1A2625;
+  --bg-dark:        #14201F;
+  --bg:        #1A2625;
   --bg-card:        #1F2C2A;
   --border:         #2C3C3A;
   --accent:         #9FC7CD;   /* silvery — same family as presentation accent */
   --text-primary:   #ffffff;
   --text-body:      #E6E9E7;
-  --text-secondary: rgba(180,195,220,0.7);
-  --text-dim:       rgba(180,195,220,0.5);
+  --text-secondary: rgba(127,127,127,0.7);
+  --text-dim:       rgba(127,127,127,0.5);
   --text-label:     #8A9290;
 }
 ```
@@ -51,7 +51,7 @@ html, body {
 **Header:**
 ```css
 .header {
-  background: var(--bg-deep);   /* #14201F — deepest black */
+  background: var(--bg-dark);   /* #14201F — deepest black */
   padding: 0.4in 0.55in 0.35in;
 }
 ```
@@ -59,7 +59,7 @@ html, body {
 **Footer:**
 ```css
 .footer {
-  background: var(--bg-deep);
+  background: var(--bg-dark);
   padding: 0.16in 0.55in;
   display: flex;
   justify-content: space-between;
@@ -93,7 +93,7 @@ html, body {
 
 ### Color application (dark)
 
-- 70% near-black (`--bg-page`, `--bg-deep`)
+- 70% near-black (`--bg`, `--bg-dark`)
 - 20% card surfaces and borders
 - 10% accent on stat tops, callout lefts, section labels
 

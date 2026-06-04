@@ -8,7 +8,7 @@ Specific brand mistakes with descriptions and fixes. If you're about to do one o
 
 ### 1. "Leverage AI to transform your business"
 
-**What's wrong:** Every AI consultancy opens with this. The phrase communicates nothing except "we don't have a specific thing to say."
+**What's wrong:** Every vendor opens with this. The phrase communicates nothing except "we don't have a specific thing to say."
 
 **Fix:** Say what the system does. "Reads incoming invoices, extracts line items, and flags mismatches against the PO."
 
@@ -28,7 +28,7 @@ Specific brand mistakes with descriptions and fixes. If you're about to do one o
 
 **What's wrong:** "World-class team," "industry-leading," "best-in-class." If they were true, you wouldn't have to say them.
 
-**Fix:** State what you've done. "We rebuilt our own team's workflows at Red 6 before telling anyone else to do it."
+**Fix:** State what you've done. "We rebuilt our own team's workflows before telling anyone else to do it, and the results were obvious."
 
 ### 5. Banned words
 
@@ -54,13 +54,13 @@ Specific brand mistakes with descriptions and fixes. If you're about to do one o
 
 ### 8. Blue gradients
 
-**What's wrong:** Every SaaS and AI consultancy uses the same blue-to-purple gradient. It screams generic.
+**What's wrong:** Every SaaS and vendor uses the same blue-to-purple gradient. It screams generic.
 
 **Fix:** Flat `--bg` (near-black). Zero gradients. Ever.
 
 ### 9. Hero images with text overlays
 
-**What's wrong:** Stock photo of diverse professionals at a whiteboard, with headline text overlaid. Consultancy-grade generic.
+**What's wrong:** Stock photo of diverse professionals at a whiteboard, with headline text overlaid. Vendor-grade generic.
 
 **Fix:** No hero image. Headline on near-black background, mono label above, supporting pull quote below.
 
@@ -98,7 +98,7 @@ Specific brand mistakes with descriptions and fixes. If you're about to do one o
 
 **What's wrong:** Soft shadows under cards, text, or images. Adds fake depth.
 
-**Fix:** `border: 1px solid var(--border)` is the only depth cue we use. The `--glow` variant (very subtle shadow on screen) is the one exception, used sparingly.
+**Fix:** `border: 1px solid var(--border)` is the only depth cue. Avoid box-shadows (the linter flags them on content components).
 
 ### 16. 3D transforms
 
@@ -114,7 +114,7 @@ Specific brand mistakes with descriptions and fixes. If you're about to do one o
 
 ### 18. Slide numbers > 30
 
-**What's wrong:** A deck with 50 slides isn't a deck, it's a document. Every AI consultancy makes this mistake.
+**What's wrong:** A deck with 50 slides isn't a deck, it's a document. Every vendor makes this mistake.
 
 **Fix:** Cap at 15 slides for a discovery deck, 20 for a leave-behind. If you have more content, it belongs in a one-pager or PDF.
 

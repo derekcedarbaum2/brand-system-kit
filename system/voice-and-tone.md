@@ -56,7 +56,7 @@ We don't need superlatives. Stating what we've done plainly IS the flex.
 
 **Oversold:** "Our world-class team of AI experts delivers transformative results for leading enterprises."
 
-**Understated:** "We rebuilt our own team's workflows at Red 6 before telling anyone else to do it. Work that took days collapsed into hours. It spread because the results were obvious."
+**Understated:** "We rebuilt our own team's workflows before telling anyone else to do it. Work that took days collapsed into hours. It spread because the results were obvious."
 
 ---
 

@@ -26,7 +26,7 @@ jobs:
 
       - name: Token build is reproducible (no drift between tokens.json and generated files)
         run: |
-          for p in profiles/*/; do
+          for p in profiles/*/; do p="${p%/}"
             node tooling/build-tokens.mjs "$p/tokens.json" "$p/brand.css" --md "$p/color-system.md"
           done
           git diff --exit-code -- 'profiles/*/brand.css' 'profiles/*/color-system.md' \

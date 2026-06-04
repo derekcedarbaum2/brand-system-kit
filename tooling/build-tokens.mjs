@@ -84,7 +84,7 @@ if (mdPath) {
   const rows = colors.map(([name, tok]) =>
     `| \`--${name}\` | \`${resolve(tok.$value, tokens)}\` | ${(tok.$description || '').replace(/\|/g, '\\|')} |`);
   const table = `${MD_START}\n` +
-    `<!-- regenerate: node ~/.claude/reference/brand/_tooling/build-tokens.mjs ${tokensPath.split('/').pop()} --md ${mdPath.split('/').pop()} -->\n\n` +
+    `<!-- regenerate: node tooling/build-tokens.mjs ${tokensPath} --md ${mdPath} -->\n\n` +
     `| Token | Hex | Usage |\n|---|---|---|\n${rows.join('\n')}\n\n` +
     `${MD_END}`;
   let md = existsSync(mdPath) ? readFileSync(mdPath, 'utf8') : '';

@@ -69,7 +69,7 @@ Reveal.initialize({
 
 ## Starter template
 
-Use `~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/brand reference/starter-template.html` as the starting deck skeleton. It includes these tokens and base styles, plus all component classes pre-defined.
+Use a profile's generated `brand.css` (e.g. `profiles/northwind/brand.css`) as the stylesheet for a deck skeleton — it defines these tokens plus the component classes. Generate it with `tooling/build-tokens.mjs`.
 
 ## Navigation controls
 

@@ -33,13 +33,14 @@ const palette = Object.entries(tokens.color || {})
   .filter(([k]) => !k.startsWith('$'))
   .map(([, v]) => String(v.$value).toLowerCase());
 
-// Universal banned words (UL-agnostic — positioning words live in profile)
+// Default banned marketing-jargon words. Edit to taste, or extend per profile.
+// (Kept generic on purpose — e.g. "journey" is omitted since "user journey" /
+// journey maps are legitimate; add it back if your brand bans it.)
 const BANNED = [
   'leverage', 'synergy', 'cutting-edge', 'bleeding-edge', 'best-in-class',
   'industry-leading', 'world-class', 'robust', 'seamless', 'holistic',
-  'paradigm', 'disruptive', 'disruption', 'empower', 'unlock', 'revolutionize',
+  'paradigm', 'disruptive', 'disruption', 'empower', 'revolutionize',
   'next-generation', 'ai-powered', 'intelligent automation', 'digital transformation',
-  'journey', 'partner with you'
 ];
 
 const musts = [];
@@ -70,7 +71,7 @@ should(/\bbox-shadow\s*:(?!\s*none)/i.test(src), 'box-shadow present — allowed
 const hexes = [...src.matchAll(/#[0-9a-fA-F]{3,6}\b/g)].map(m => m[0].toLowerCase());
 const forbiddenBg = (lintCfg['forbidden-bg'] || []).map(s => s.toLowerCase());
 const forbiddenText = (lintCfg['forbidden-text'] || []).map(s => s.toLowerCase());
-for (const f of [...forbiddenBg, ...forbiddenText]) {
+for (const f of [...new Set([...forbiddenBg, ...forbiddenText])]) {
   must(hexes.includes(f), `forbidden hex ${f} (off-system — use a token)`);
 }
 // hexes not in palette (SHOULD — may be intentional one-offs like header bg tints)

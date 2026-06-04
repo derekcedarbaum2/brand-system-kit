@@ -6,11 +6,11 @@
   "license": "MIT",
   "engines": { "node": ">=18" },
   "scripts": {
-    "build": "node tooling/build-tokens.mjs profiles/northwind/tokens.json profiles/northwind/brand.css --md profiles/northwind/color-system.md",
-    "contrast": "node tooling/contrast-check.mjs profiles/northwind",
-    "lint": "node tooling/lint.mjs profiles/northwind/sample.html profiles/northwind",
-    "qa": "node tooling/brand-qa.mjs profiles/northwind/sample.html profiles/northwind --render"
+    "build": "for p in profiles/*/; do node tooling/build-tokens.mjs \"${p}tokens.json\" \"${p}brand.css\" --md \"${p}color-system.md\"; done",
+    "contrast": "for p in profiles/*/; do node tooling/contrast-check.mjs \"$p\"; done",
+    "qa": "node tooling/brand-qa.mjs profiles/northwind/sample.html profiles/northwind --render",
+    "qa:graphite": "node tooling/brand-qa.mjs profiles/graphite/sample.html profiles/graphite --render"
   },
   "keywords": ["design-tokens", "dtcg", "brand", "design-system", "wcag", "claude-code", "linter"],
-  "files": ["tooling", "profiles", "skill", "README.md", "LICENSE"]
+  "files": ["system", "tooling", "profiles", "diagrams", "skill", "docs", "AGENTS.md", "CONTRIBUTING.md", "README.md", "LICENSE"]
 }

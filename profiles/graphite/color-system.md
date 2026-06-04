@@ -1,5 +1,5 @@
 <!-- >>> AUTO-GENERATED PALETTE — do not edit by hand <<< -->
-<!-- regenerate: node ~/.claude/reference/brand/_tooling/build-tokens.mjs tokens.json --md color-system.md -->
+<!-- regenerate: node tooling/build-tokens.mjs profiles/graphite/tokens.json --md profiles/graphite/color-system.md -->
 
 | Token | Hex | Usage |
 |---|---|---|

@@ -7,6 +7,8 @@ description: Interview a user in ~6 questions and scaffold a complete brand prof
 
 Builds one profile for the brand-system-kit: an executable, single-source-of-truth brand definition. The output is a folder under `profiles/<name>/` with a `tokens.json`, generated `brand.css` + `color-system.md`, and a rendered `sample.qa.png`.
 
+> **Working directory:** run every `node tooling/...` command from the cloned **brand-system-kit repo root** (that's where `tooling/`, `profiles/`, `diagrams/` are). If the kit isn't cloned yet, clone it first (see `AGENTS.md`).
+
 ## Core idea (state this once, up front)
 
 > Match the visual register to the buyer's trust model.

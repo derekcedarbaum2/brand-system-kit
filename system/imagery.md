@@ -25,9 +25,9 @@ Treatment:
 ### 2. Architecture / flow diagrams
 
 **Allowed** if they clarify something text can't. Use draw.io MCP to generate — keep to the brand palette:
-- Background: transparent or `--bg-page`
-- Lines / borders: `--accent`
-- Text: `--body` / `--muted`
+- Background: transparent or `--bg`
+- Lines / borders: `--accent` / `--border`
+- Text: `--text-body` / `--text-secondary`
 - No other colors
 
 ### 3. Charts and data viz
@@ -36,7 +36,7 @@ See `data-viz.md` — those are technically images, but they're arguments, not d
 
 ### 4. The logo
 
-Only place the logo belongs. See `logo-assets.md`.
+A logo (if the brand has one) belongs in the header/footer at small scale — not as a hero element. Keep clear space around it and never recolor it.
 
 ### 5. Portraits for bios
 

@@ -54,7 +54,6 @@ const PAIRS = [
   ['border',         'bg',       'decor', 'hairline borders'],
   ['text-body',      'bg-card',  'text',  'body on card'],
   ['text-primary',   'bg-card',  'text',  'headline on card'],
-  ['white',          'bg',       'text',  'headline on near-black (UL)'],
   ['text-on-dark',   'bg-dark',  'text',  'body on dark panel'],
   ['accent-on-dark', 'bg-dark',  'large', 'accent on dark panel'],
 ];

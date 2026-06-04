@@ -18,6 +18,7 @@ An executable brand system: a DTCG token source-of-truth, generators, a lint gat
    ```bash
    cp -R skill/brand-init ~/.claude/skills/brand-init
    ```
+   The skill's steps operate on the cloned repo — run them (and all `node tooling/...` commands) **from the brand-system-kit repo root**, where `tooling/`, `profiles/`, and `diagrams/` live.
 
 ## Verify the install works
 

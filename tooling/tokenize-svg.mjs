@@ -51,10 +51,21 @@ const DEFAULTS = {
 };
 
 const args = process.argv.slice(2);
-const input = args.find(a => !a.startsWith('--'));
-if (!input) { console.error('usage: node tokenize-svg.mjs <in.svg> [out.svg] [--stdout] [--palette tokens.json]'); process.exit(2); }
 const toStdout = args.includes('--stdout');
-const out = args.filter(a => !a.startsWith('--'))[1] || input;
+// Positionals = non-flag args, EXCLUDING the value that follows a value-taking
+// flag like --palette. (Without this, `in.svg --palette tokens.json` would treat
+// tokens.json as the output path and overwrite the profile's source of truth.)
+const VALUE_FLAGS = new Set(['--palette']);
+const positionals = [];
+for (let i = 0; i < args.length; i++) {
+  const a = args[i];
+  if (VALUE_FLAGS.has(a)) { i++; continue; }   // skip the flag AND its value
+  if (a.startsWith('--')) continue;             // skip valueless flags (--stdout)
+  positionals.push(a);
+}
+const input = positionals[0];
+if (!input) { console.error('usage: node tokenize-svg.mjs <in.svg> [out.svg] [--stdout] [--palette tokens.json]'); process.exit(2); }
+const out = positionals[1] || input;
 
 let svg = readFileSync(input, 'utf8');
 
@@ -65,9 +76,15 @@ if (pi >= 0 && args[pi + 1]) {
   const tok = JSON.parse(readFileSync(args[pi + 1], 'utf8'));
   const c = tok.color || {};
   const pick = (k) => c[k]?.$value;
-  const xref = { ink: 'text-primary', body: 'text-body', secondary: 'text-secondary',
-    dim: 'text-dim', accent: 'accent', teal: 'accent-2', emphasis: 'emphasis',
-    bg: 'bg', card: 'bg-card', border: 'border' };
+  // Map EVERY diagram role onto a profile token so a re-skin is fully coherent
+  // even on a dark profile (no light leftovers). Roles a profile doesn't define
+  // collapse onto its nearest core token.
+  const xref = {
+    ink: 'text-primary', body: 'text-body', secondary: 'text-secondary', dim: 'text-dim',
+    accent: 'accent', 'accent-2': 'accent-2', teal: 'accent-2', 'accent-light': 'accent-2',
+    warm: 'accent', positive: 'accent', emphasis: 'emphasis',
+    bg: 'bg', card: 'bg-card', 'card-accent': 'bg-card', border: 'border',
+  };
   for (const [role, profKey] of Object.entries(xref)) {
     const v = pick(profKey); if (v) palette[role] = v.toLowerCase();
   }

@@ -4,9 +4,9 @@
 
 ## Use a diagram in your brand
 
-- **Re-skin to a profile** (writes the profile's palette into the SVG):
+- **Re-skin to a profile** (writes the profile's palette into the SVG). Run from the repo root, and always give an explicit output path:
   ```
-  node ../tooling/tokenize-svg.mjs diagrams/<name>.svg out.svg --palette ../profiles/<your-profile>/tokens.json
+  node tooling/tokenize-svg.mjs diagrams/<name>.svg out.svg --palette profiles/<name>/tokens.json
   ```
 - **Or inline it** into an HTML page that already defines the CSS variables (e.g. a page linking your `brand.css`) — the diagram inherits the host's `--accent`, `--ink`, etc. automatically.
 - **Fill the content**: replace the `{PLACEHOLDER}` / `{{COMPANY}}` / `{{PROGRAM}}` text.

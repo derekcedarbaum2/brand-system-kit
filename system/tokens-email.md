@@ -60,7 +60,7 @@ Always include full URL — relative URLs break.
 ## Signature (plain text variant)
 
 ```
-the author
+{{NAME}}
 {{COMPANY}}
 {{CONTACT}}
 {{URL}}
@@ -72,7 +72,7 @@ the author
 <table role="presentation" cellpadding="0" cellspacing="0" border="0">
   <tr>
     <td style="font-family:'Inter',Arial,sans-serif; font-size:13px; color:#333333; line-height:1.5;">
-      <strong style="color:#1C1C1C; font-weight:600;">the author</strong><br>
+      <strong style="color:#1C1C1C; font-weight:600;">{{NAME}}</strong><br>
       <span style="color:#3E5C8A; font-family:'JetBrains Mono',Menlo,monospace; font-size:11px; text-transform:uppercase; letter-spacing:1.5px;">{{COMPANY}}</span><br>
       <a href="mailto:{{CONTACT}}" style="color:#3E5C8A;">{{CONTACT}}</a>&nbsp;&middot;&nbsp;
       <a href="https://{{URL}}" style="color:#3E5C8A;">{{URL}}</a>

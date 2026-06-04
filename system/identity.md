@@ -1,6 +1,6 @@
 # Identity — Brand System
 
-This is the **generic** identity for the whole system. It carries the design philosophy that every venture inherits. Venture-specific identity (names, taglines, founders, wordmarks, positioning) lives in a profile — `<your-profile>/`, `<your-profile>/`, `<your-profile>/` — never here.
+This is the **generic** identity for the whole system. It carries the design philosophy every brand inherits. Brand-specific identity (names, taglines, wordmarks, positioning, palette) lives in a profile — e.g. `profiles/northwind/` or `profiles/graphite/` — never here.
 
 ## What this brand is
 
@@ -16,10 +16,10 @@ The system has one philosophy and two registers, because two different buyers gr
 
 | Register | Buyer | Trust comes from | Profile |
 |---|---|---|---|
-| **Restraint** | Technical operator who distrusts polish | Near-black, no color, mono labels — "we don't need to charm you" | `<your-profile>/` |
-| **Warmth** | Non-technical SMB CEO who distrusts hackers | Warm-light, serif headlines, editorial accent — "advisor, not vendor" | `<your-profile>/` |
+| **Restraint** | Technical operator who distrusts polish | Near-black, no color, mono labels — "we don't need to charm you" | the `graphite` demo |
+| **Warmth** | Non-technical exec who distrusts hype/vendors | Warm-light, serif headlines, editorial accent — "advisor, not vendor" | the `northwind` demo |
 
-Both are the same argument-delivery discipline. Restraint and warmth are not opposite *philosophies* — they're the same philosophy pointed at different fears. Full articulation: `Vault/Design/design-thesis.md`.
+Both are the same argument-delivery discipline. Restraint and warmth are not opposite *philosophies* — they're the same philosophy pointed at different fears. The two demo profiles (`graphite`, `northwind`) are worked examples of each.
 
 ## Design philosophy (universal)
 
@@ -41,7 +41,6 @@ Both are the same argument-delivery discipline. Restraint and warmth are not opp
 
 | Element | Value |
 |---|---|
-| Author | the author |
 | Mono label font | JetBrains Mono — uppercase, letter-spaced, used as seasoning |
 | Emphasis discipline | One decisive figure per section, maximum |
 | Forbidden everywhere | Gradients, stock photos, decorative icons, AI-shimmer, color-as-hierarchy-crutch |

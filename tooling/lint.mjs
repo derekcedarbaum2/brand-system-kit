@@ -80,6 +80,18 @@ if (palette.length) {
   should(stray.length > 0, `${stray.length} hex value(s) not in token palette: ${stray.slice(0, 6).join(', ')}${stray.length > 6 ? '…' : ''} (move to tokens.json or confirm intentional)`);
 }
 
+// --- accent budget (SHOULD) — distinct accent-family colors used in the artifact ---
+// "accent", "accent-2", … count; "accent-on-dark"/"accent-light" are variants, not extra accents.
+const maxAccents = lintCfg['max-accents'];
+if (typeof maxAccents === 'number') {
+  const colorTok = tokens.color || {};
+  const accentNames = Object.keys(colorTok).filter(k => /^accent(-\d+)?$/.test(k));
+  const used = accentNames.filter(n =>
+    src.includes(`var(--${n})`) || hexes.includes(String(colorTok[n].$value).toLowerCase()));
+  should(used.length > maxAccents,
+    `uses ${used.length} accent colors (${used.join(', ')}) — budget is ${maxAccents}`);
+}
+
 // --- foreign brand-name leakage (MUST) ---
 // Names come from this profile's tokens.json: lint["foreign-names"] = ["Other Brand", ...]
 // (the names of your OTHER profiles, so one brand's copy never leaks into another's artifact).

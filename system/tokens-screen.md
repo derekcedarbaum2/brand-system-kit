@@ -2,6 +2,8 @@
 
 CSS variables for all dark-bg HTML output: reveal.js presentations, dashboards, dark-mode web pages.
 
+> **The hex values in this file are illustrative.** The binding source of truth for any brand is its `profiles/<name>/tokens.json` and the `brand.css` generated from it. Read this file for *which roles to use where* and *medium-specific guidance* — not for the literal colors.
+
 For philosophy and rationale see `identity.md`. For the full palette and application rules see `color-system.md`.
 
 ## CSS variables

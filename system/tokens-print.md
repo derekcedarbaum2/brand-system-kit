@@ -10,6 +10,8 @@ CSS variables for print/PDF surfaces. Three distinct modes — pick one per docu
 
 All three share typography (Inter + JetBrains Mono) and structural patterns with the presentation system, but are optimized for 8.5×11 letter at print resolution.
 
+> **The hex values below are illustrative.** A brand's binding values live in its `profiles/<name>/tokens.json` (and the generated `brand.css`). Use this file for *which roles and structural rules apply per print mode* — not for the literal colors.
+
 ---
 
 ## Shared base

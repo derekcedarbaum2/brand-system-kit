@@ -15,6 +15,7 @@ node tooling/brand-qa.mjs <artifact>.html profiles/<name> --render   # contrast 
 - **No off-token hex (SHOULD-strength warning).** Hex values not in the profile palette are flagged — move them into `tokens.json` or confirm they're intentional.
 - **No foreign brand-name leakage.** Names in a profile's `lint.foreign-names` (your *other* brands) must not appear in this brand's artifact.
 - **Box-shadow** is allowed only for screen-preview page elevation, never on content components (warning).
+- **Accent budget (warning).** If an artifact uses more distinct accent-family colors (`--accent`, `--accent-2`, …) than the profile's `lint.max-accents`, it's flagged.
 
 ## SHOULD — human / visual checks (run with `--render`, then look)
 

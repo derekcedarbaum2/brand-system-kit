@@ -4,3 +4,7 @@
 # os cruft
 .DS_Store
 node_modules/
+
+# committed preview images (showcase)
+!docs/
+!docs/*.png

@@ -1,0 +1,71 @@
+/* =====================================================================
+   Graphite (demo) — RESTRAINT register component layer.
+   Near-black, no brand color, neutral sans headlines, mono labels.
+   The :root block is GENERATED from tokens.json by build-tokens.mjs.
+   ===================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* >>> AUTO-GENERATED TOKENS — do not edit by hand <<< */
+:root {
+  --bg: #0B0E14;
+  --bg-card: #141921;
+  --bg-dark: #070A0F;
+  --text-primary: #FFFFFF;
+  --text-body: #C5CCD6;
+  --text-secondary: #949DAD;
+  --text-dim: #6C7585;
+  --text-on-dark: #C5CCD6;
+  --border: #242C39;
+  --accent: #AEB9CC;
+  --accent-2: #7E8AA0;
+  --accent-on-dark: #AEB9CC;
+  --emphasis: #B5524A;
+  --font-serif: Inter, -apple-system, sans-serif;
+  --font-sans: Inter, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', Menlo, monospace;
+}
+/* >>> END AUTO-GENERATED TOKENS <<< */
+
+@page { size: letter; margin: 0; }
+html, body {
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  -webkit-font-smoothing: antialiased;
+  background: var(--bg); color: var(--text-body);
+  font-family: var(--font-sans); font-size: 12px; line-height: 1.7; margin: 0;
+}
+h1, h2 { font-family: var(--font-sans); color: var(--text-primary); }
+h1 { font-size: 30px; font-weight: 800; letter-spacing: -1px; line-height: 1.1; margin: 0 0 6px; }
+h2 { font-size: 19px; font-weight: 700; letter-spacing: -0.4px; margin: 30px 0 12px; padding-left: 14px; border-left: 2px solid var(--accent); }
+h3 { font-size: 13px; font-weight: 700; color: var(--text-primary); margin: 16px 0 6px; }
+p { margin: 8px 0; }
+strong { color: var(--text-primary); font-weight: 600; }
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+hr { border: none; border-top: 1px solid var(--border); margin: 30px 0; }
+
+.label, .meta {
+  font-family: var(--font-mono); font-size: 9px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 3px; color: var(--text-dim);
+}
+.meta { color: var(--text-secondary); margin-bottom: 16px; letter-spacing: 2px; }
+
+.doc-header { padding: 0.55in 0.65in 0.3in; background: var(--bg-dark); border-bottom: 1px solid var(--border); }
+.doc-header .wordmark { font-family: var(--font-mono); font-size: 13px; font-weight: 600; letter-spacing: 1px; color: var(--text-primary); margin-bottom: 22px; }
+.doc-header .accent-bar { width: 40px; height: 2px; background: var(--accent); margin-bottom: 16px; }
+.doc-body { padding: 0.3in 0.65in 0.5in; max-width: 7.25in; }
+
+.stat-row { display: flex; gap: 14px; margin: 22px 0; }
+.stat-card { flex: 1; padding: 16px 18px; background: var(--bg-card); border: 1px solid var(--border); border-top: 2px solid var(--accent); border-radius: 6px; }
+.stat-card .num { font-size: 26px; font-weight: 800; color: var(--text-primary); letter-spacing: -0.5px; }
+.stat-card .num.emphasis { color: var(--emphasis); }
+.stat-card .lbl { font-family: var(--font-mono); font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); }
+
+.pull { font-size: 16px; font-weight: 500; color: var(--text-primary); border-left: 2px solid var(--accent); padding-left: 16px; margin: 22px 0; max-width: 88%; }
+.callout { background: var(--bg-card); border: 1px solid var(--border); border-left: 2px solid var(--accent); border-radius: 6px; padding: 14px 18px; margin: 22px 0; }
+.callout.alt { border-left-color: var(--accent-2); }
+
+table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 10.5px; }
+th { text-align: left; font-family: var(--font-mono); font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); background: var(--bg-card); padding: 9px 12px; border-bottom: 1px solid var(--border); }
+td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+
+.doc-footer { background: var(--bg-dark); padding: 14px 0.65in; display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim); }

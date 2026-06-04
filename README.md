@@ -1,8 +1,26 @@
 # brand-system-kit
 
+[![CI](https://github.com/derekcedarbaum2/brand-system-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/derekcedarbaum2/brand-system-kit/actions/workflows/ci.yml)
+&nbsp;![Node ≥18](https://img.shields.io/badge/node-%E2%89%A518-3E5C8A)
+&nbsp;![License: MIT](https://img.shields.io/badge/license-MIT-1F6E7A)
+
 An **executable** brand system. Most brand guidelines are a PDF nobody enforces. This is the opposite: a token source-of-truth, a lint gate that blocks off-brand output, a WCAG checker, and a visual-critique loop — all zero-dependency Node, plus a Claude Code skill that interviews you and scaffolds your own brand in minutes.
 
-It ships with one demo brand (**Northwind**) so the whole pipeline runs the moment you clone it. Replace it with yours.
+It ships with two demo brands — **Northwind** (warmth register) and **Graphite** (restraint register) — so the whole pipeline runs the moment you clone it, and you see both halves of the thesis. Replace them with yours.
+
+## Preview
+
+Same kit, two registers. Left: Northwind (warmth — light, serif, editorial accent). Right: Graphite (restraint — near-black, no brand color, mono labels).
+
+| Northwind (warmth) | Graphite (restraint) |
+|---|---|
+| ![Northwind sample](docs/sample-northwind.png) | ![Graphite sample](docs/sample-graphite.png) |
+
+One diagram, re-skinned to each brand by swapping the token profile — nothing hand-edited:
+
+| `--palette northwind` | `--palette graphite` |
+|---|---|
+| ![Persona, Northwind](docs/diagram-northwind.png) | ![Persona, Graphite](docs/diagram-graphite.png) |
 
 > This is the *bones*, not a brand. There's no "right" palette here — the kit is the machine that makes any brand consistent and enforceable.
 

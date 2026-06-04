@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install xmllint
+        run: sudo apt-get update && sudo apt-get install -y libxml2-utils
+
+      - name: Contrast — every profile must pass WCAG AA
+        run: |
+          for p in profiles/*/; do
+            echo "::group::contrast $p"
+            node tooling/contrast-check.mjs "$p"
+            echo "::endgroup::"
+          done
+
+      - name: Token build is reproducible (no drift between tokens.json and generated files)
+        run: |
+          for p in profiles/*/; do
+            node tooling/build-tokens.mjs "$p/tokens.json" "$p/brand.css" --md "$p/color-system.md"
+          done
+          git diff --exit-code -- 'profiles/*/brand.css' 'profiles/*/color-system.md' \
+            || { echo "::error::Generated CSS/table is out of sync with tokens.json — run build-tokens and commit."; exit 1; }
+
+      - name: Lint — clean sample passes
+        run: |
+          node tooling/lint.mjs profiles/northwind/sample.html profiles/northwind
+          node tooling/lint.mjs profiles/graphite/sample.html profiles/graphite
+
+      - name: Lint — the deliberately bad artifact must FAIL
+        run: |
+          if node tooling/lint.mjs examples/bad.html profiles/northwind; then
+            echo "::error::examples/bad.html passed the linter — the gate is not biting."
+            exit 1
+          fi
+          echo "bad.html correctly rejected."
+
+      - name: Diagrams are well-formed XML
+        run: xmllint --noout diagrams/*.svg

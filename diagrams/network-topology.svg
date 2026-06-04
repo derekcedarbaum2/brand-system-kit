@@ -34,7 +34,7 @@
 
   <g id="header">
     <text x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">{SYSTEM} NETWORK TOPOLOGY</text>
-    <text x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Zones, services, protocols. Brand Red = primary system. Teal = supporting infra.</text>
+    <text x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Zones, services, protocols. emphasis = primary system. Teal = supporting infra.</text>
   </g>
 
   <g id="zone-internet">
@@ -104,6 +104,6 @@
     <text x="80" y="744" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• Public ↔ Internet: HTTPS only (port 443); WAF rules; rate limiting</text>
     <text x="80" y="764" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• Private ↔ Public: mTLS; service-to-service auth; private VPC only</text>
     <text x="80" y="784" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• Data ↔ Private: encrypted at rest + in transit; IAM-scoped access; audit logged</text>
-    <text x="80" y="804" font-size="10" font-style="italic" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">For air-gapped / vault deployments (e.g., JMPS): single VPC, no public subnet — adapt template by removing Internet zone.</text>
+    <text x="80" y="804" font-size="10" font-style="italic" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">For air-gapped / regulated deployments: single VPC, no public subnet — adapt template by removing Internet zone.</text>
   </g>
 </svg>

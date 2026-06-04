@@ -123,7 +123,7 @@
   <g id="legend">
     <rect x="60" y="700" width="1280" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
     <text x="80" y="720" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">HOW TO READ</text>
-    <text x="80" y="740" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Top-down: Frontend → Services → Data. Brand Red borders mark primary / under-design components.</text>
+    <text x="80" y="740" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Top-down: Frontend → Services → Data. emphasis borders mark primary / under-design components.</text>
     <text x="80" y="758" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Tech choices in [brackets]; arrow labels describe interaction type ("reads", "publishes events", "exports").</text>
   </g>
 </svg>

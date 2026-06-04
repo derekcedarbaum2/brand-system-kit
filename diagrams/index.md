@@ -8,10 +8,11 @@
   ```
   node tooling/tokenize-svg.mjs diagrams/<name>.svg out.svg --palette profiles/<name>/tokens.json
   ```
-- **Or inline it** into an HTML page that already defines the CSS variables (e.g. a page linking your `brand.css`) — the diagram inherits the host's `--accent`, `--ink`, etc. automatically.
 - **Fill the content**: replace the `{PLACEHOLDER}` / `{{COMPANY}}` / `{{PROGRAM}}` text.
 
-Token roles a diagram may reference: `--ink --body --secondary --dim --accent --accent-light --accent-2 --teal --warm --positive --emphasis --bg --card --card-accent --border`. A profile's `tokens.json` should define the ones its diagrams use (the demo `northwind` does).
+Each diagram ships with a baked-in `:root` palette (the demo defaults), so it renders standalone. To put it in **your** brand's colors, re-skin with `--palette` (above) — that rewrites the `:root` block. (Inlining a diagram into a page does **not** automatically adopt that page's brand, because diagrams use their own role names — `--ink`, `--teal`, `--warm`, etc. — which `tokenize-svg` maps from your profile's tokens on re-skin.)
+
+Diagram role names: `--ink --body --secondary --dim --accent --accent-light --accent-2 --teal --warm --positive --emphasis --bg --card --card-accent --border`. These are the diagrams' internal vocabulary; `tokenize-svg --palette` maps your profile's tokens (`--text-primary`, `--text-body`, `--accent`, `--accent-2`, …) onto them.
 
 ## Catalog
 

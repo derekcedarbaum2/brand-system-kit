@@ -143,6 +143,6 @@
     <text x="518" y="824" font-size="10" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Fail / Low / Blocked / Red</text>
     <rect x="710" y="812" width="20" height="14" rx="2" fill="var(--card)" stroke="var(--dim)"/>
     <text x="738" y="824" font-size="10" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">N/A / Not started</text>
-    <text x="80" y="850" font-size="9" font-style="italic" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">For RACI: replace heat colors with R (red) / A (Brand Red darker) / C (teal) / I (gray) letter cells.</text>
+    <text x="80" y="850" font-size="9" font-style="italic" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">For RACI: replace heat colors with R (red) / A (emphasis darker) / C (teal) / I (gray) letter cells.</text>
   </g>
 </svg>

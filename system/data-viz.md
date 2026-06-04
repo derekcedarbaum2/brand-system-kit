@@ -84,10 +84,10 @@ If the data is derived or estimated, say so: "{{COMPANY}} analysis — estimates
 
 ## Dashboards
 
-For Obsidian Dataview or other dashboards (CTA dashboard, morning briefing):
+For operational dashboards:
 
-- Inherit the light-mode palette (backgrounds white, text charcoal, accent `--accent`)
-- Tables > charts for operational dashboards — Dataview queries render cleanest as tables
+- Inherit the light-mode palette (background `--bg`, text `--text-body`, accent `--accent`)
+- Tables > charts for most operational dashboards — they read cleanest
 - Prefer one-glance readability over dense info — a dashboard that takes 30 seconds to read is failed design
 
 ## What NOT to do

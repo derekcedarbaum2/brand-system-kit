@@ -74,6 +74,6 @@
   <g id="footer">
     <rect x="60" y="820" width="1080" height="60" rx="4" fill="var(--card)" stroke="var(--border)"/>
     <text x="80" y="842" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">HOW TO READ</text>
-    <text x="80" y="860" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Bubble position = strategic position on two axes; size = quantitative dimension; dashed area = white space (no competitors). Brand Red bubble = us.</text>
+    <text x="80" y="860" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Bubble position = strategic position on two axes; size = quantitative dimension; dashed area = white space (no competitors). emphasis bubble = us.</text>
   </g>
 </svg>

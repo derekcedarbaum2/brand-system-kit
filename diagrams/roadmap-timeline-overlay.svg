@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   TEMPLATE (skeleton): Timeline / Programs Overlay
-  Source: roadmap-update skill / Slides 9, 10, 27, 78, 79 of canonical product roadmap deck.
   Purpose: Marquee multi-year timeline — dated launches/integrations + program lanes overlay.
   Layout: year columns × program lanes, with dated demo entries and SW version markers.
   Required Figma fonts: JetBrains Mono (700) for headlines/labels, Inter (400, 700) for body.
@@ -80,11 +79,11 @@
       <text x="600" y="190" font-size="9" fill="var(--secondary)" text-anchor="middle" font-weight="400">Q2 2027</text>
 
       <polygon points="855,215 870,200 885,215 870,230" fill="var(--emphasis)"/>
-      <text x="870" y="248" fill="var(--emphasis)" text-anchor="middle">{Gen 2 Launch *}</text>
+      <text x="870" y="248" fill="var(--emphasis)" text-anchor="middle">{v2 Launch *}</text>
       <text x="870" y="190" font-size="9" fill="var(--secondary)" text-anchor="middle" font-weight="400">Q3 2028</text>
 
       <polygon points="1165,215 1180,200 1195,215 1180,230" fill="var(--teal)"/>
-      <text x="1180" y="248" fill="var(--ink)" text-anchor="middle">{Fleet GA}</text>
+      <text x="1180" y="248" fill="var(--ink)" text-anchor="middle">{General Availability}</text>
       <text x="1180" y="190" font-size="9" fill="var(--secondary)" text-anchor="middle" font-weight="400">Q2 2029</text>
     </g>
   </g>
@@ -102,14 +101,14 @@
     <text x="1050" y="300" font-size="11" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">4.0 SW</text>
   </g>
 
-  <!-- LANE: PROGRAM FALCON (Gen 1) -->
-  <g id="lane-falcon">
-    <text x="60" y="360" font-size="12" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">PROJECT FALCON</text>
-    <text x="60" y="378" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Sentinel Gen 1</text>
+  <!-- LANE: PROGRAM HARBOR (v1) -->
+  <g id="lane-harbor">
+    <text x="60" y="360" font-size="12" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">PROJECT HARBOR</text>
+    <text x="60" y="378" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Meridian v1</text>
 
     <rect x="220" y="340" width="1120" height="50" rx="4" fill="var(--card)" stroke="var(--border)"/>
     <rect x="230" y="350" width="600" height="30" rx="4" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="1.5"/>
-    <text x="530" y="370" font-size="11" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Status: In dev — Heavy-Lift}</text>
+    <text x="530" y="370" font-size="11" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Status: In dev — Core}</text>
   </g>
 
   <!-- LANE: PROGRAM ATLAS -->
@@ -125,17 +124,17 @@
   <!-- LANE: PROGRAM APOLLO -->
   <g id="lane-apollo">
     <text x="60" y="500" font-size="12" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">PROJECT APOLLO</text>
-    <text x="60" y="518" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Sentinel Gen 2</text>
+    <text x="60" y="518" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Product B v2</text>
 
     <rect x="220" y="480" width="1120" height="50" rx="4" fill="var(--card)" stroke="var(--border)"/>
     <rect x="770" y="490" width="560" height="30" rx="4" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="1.5"/>
-    <text x="1050" y="510" font-size="11" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Status: Build — Goshawk airframe}</text>
+    <text x="1050" y="510" font-size="11" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Status: Build — core platform}</text>
   </g>
 
   <!-- LANE: PROGRAM HELIOS -->
   <g id="lane-helios">
     <text x="60" y="570" font-size="12" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">PROJECT HELIOS</text>
-    <text x="60" y="588" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Sentinel Gen 3</text>
+    <text x="60" y="588" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Meridian v3</text>
 
     <rect x="220" y="550" width="1120" height="50" rx="4" fill="var(--card)" stroke="var(--border)"/>
     <rect x="1060" y="560" width="270" height="30" rx="4" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,3"/>

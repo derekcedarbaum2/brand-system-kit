@@ -43,7 +43,7 @@ The audience's attention span is earned by showing you understand their world. L
 |---|---|
 | "Fast implementation" | "3–6 weeks to working prototype" |
 | "Significant ROI" | "5x return in year one" |
-| "Many companies" | "55+ portfolio companies" |
+| "Many companies" | "200+ customers" |
 | "Industry-leading" | [Delete this. It means nothing.] |
 
 ### 4. Write for the person who wasn't in the room
@@ -104,12 +104,11 @@ We don't need superlatives. Stating what we've done plainly IS the flex.
 
 ### Social / Twitter
 
-**Tone:** 60% serious/strategic, 30% deadpan/absurdist, 10% sharp political commentary.
+**Tone:** Define your own mix (the principal's voice — see "Personal voice" below). General guidance:
 
-- Grounded in real-world friction (defense, hardware, safety-critical ops)
-- Translate abstract AI predictions into messy, constraint-heavy reality
-- Either sharp insight or understated wit — never "great post" energy
-- Own the "builds AI for the real world and calls out the BS" lane
+- Grounded in real-world friction from your domain, not abstract takes
+- Either a sharp insight or understated wit — never "great post" energy
+- Have a point of view; own a specific lane rather than posting generically
 
 ### Marketing / GTM
 

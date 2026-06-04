@@ -11,8 +11,8 @@
 
    Mode-awareness: a pairing's background may be a token name OR a literal
    hex. `emphasis` is a document-mode token (used on a light page), so it
-   is tested against #ffffff, never the profile's default bg (near-black
-   for UL — testing there would be a context error).
+   is tested against #ffffff, never the profile's default bg (which is
+   near-black for a restraint profile — testing there would be a context error).
    ===================================================================== */
 
 import { readFileSync, existsSync } from 'node:fs';

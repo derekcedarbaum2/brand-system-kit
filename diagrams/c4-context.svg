@@ -3,7 +3,7 @@
   TEMPLATE: C4 Level 1 — System Context Diagram
   Required Figma fonts: JetBrains Mono (700) for headlines/labels, Inter (400, 700) for body.
   Use to show how the system under design relates to external systems, persons, and data flows.
-  Default canvas: 1400 × 1000. System under design uses Brand Red border. Externals use Dark Gray.
+  Default canvas: 1400 × 1000. System under design uses emphasis border. Externals use Dark Gray.
 -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000">
 <style>:root{

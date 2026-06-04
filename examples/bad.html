@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Off-brand artifact (intentional)</title>
+<style>
+  /* Intentionally wrong: pure white bg, pure black text, a gradient. */
+  body { background: #FFFFFF; color: #000000; font-family: Arial; }
+  .hero { background: linear-gradient(135deg, #6a00ff, #00e0ff); padding: 40px; }
+</style>
+</head>
+<body>
+<div class="hero">
+  <h1>We leverage world-class, cutting-edge AI to unlock synergy</h1>
+  <p>A best-in-class, seamless platform that will transform your business on your journey to the cloud.</p>
+</div>
+</body>
+</html>
+<!--
+  Run:  node tooling/lint.mjs examples/bad.html profiles/northwind
+  Expect: MUST violations (banned words, gradient, #FFFFFF bg, #000000 text) → exit 1.
+-->

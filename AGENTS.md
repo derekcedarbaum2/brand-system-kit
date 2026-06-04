@@ -1,0 +1,64 @@
+# AGENTS.md — install & operate this kit
+
+Instructions for an AI coding agent (Claude Code, etc.) to install and run **Brand System Kit** for a user. Follow these steps literally.
+
+## What this is
+An executable brand system: a DTCG token source-of-truth, generators, a lint gate, a WCAG contrast checker, an HTML→PNG render step, an SVG tokenizer, 37 diagram templates, and a `/brand-init` skill that scaffolds a new brand. Zero runtime dependencies (Node ≥18 stdlib only). Chrome/Chromium is needed only for `render.mjs`.
+
+## Install
+
+1. **Get the code.** Clone into the user's projects directory:
+   ```bash
+   git clone https://github.com/derekcedarbaum2/brand-system-kit.git
+   cd brand-system-kit
+   ```
+2. **Check Node.** Require `node --version` ≥ 18. No `npm install` is needed (zero dependencies).
+3. **(Optional) Chrome for rendering.** `render.mjs` auto-detects Chrome/Chromium on macOS/Linux/Windows; if not found, set `CHROME_PATH=/path/to/chrome`. Skip if the user doesn't need PNG previews.
+4. **(Optional) Install the scaffolding skill** so the user can run `/brand-init` in Claude Code:
+   ```bash
+   cp -R skill/brand-init ~/.claude/skills/brand-init
+   ```
+
+## Verify the install works
+
+Run the demo profile through the full gate — all should pass:
+```bash
+node tooling/contrast-check.mjs profiles/northwind          # WCAG AA, exit 0
+node tooling/build-tokens.mjs profiles/northwind/tokens.json profiles/northwind/brand.css --md profiles/northwind/color-system.md
+node tooling/lint.mjs profiles/northwind/sample.html profiles/northwind   # exit 0
+node tooling/lint.mjs examples/bad.html profiles/northwind   # exit 1 (intended — proves the gate bites)
+```
+
+## Create a brand for the user
+
+**Preferred:** run the `/brand-init` skill (interviews the user → scaffolds a profile). If skills aren't available, do it by hand:
+
+1. Copy the demo profile: `cp -R profiles/northwind profiles/<brand-slug>`
+2. Edit `profiles/<brand-slug>/tokens.json` — set the `color`, `fontFamily`, and `lint` blocks (DTCG format; mirror Northwind's structure). Derive the register from the audience: technical/skeptical-of-polish → restraint (dark, no brand color); non-technical exec → warmth (light, serif, one accent). See `system/identity.md` for the meta-thesis.
+3. Generate + verify (iterate the palette until contrast passes AA):
+   ```bash
+   node tooling/contrast-check.mjs profiles/<brand-slug>
+   node tooling/build-tokens.mjs profiles/<brand-slug>/tokens.json profiles/<brand-slug>/brand.css --md profiles/<brand-slug>/color-system.md
+   ```
+4. Re-skin any diagram to the new brand:
+   ```bash
+   node tooling/tokenize-svg.mjs diagrams/<name>.svg out.svg --palette profiles/<brand-slug>/tokens.json
+   ```
+
+## Gate any artifact before it ships
+```bash
+node tooling/brand-qa.mjs <artifact.html> profiles/<brand-slug> --render
+```
+Exit 0 = ship. Exit 1 = fix the reported MUST violations first. With `--render`, also open the produced `.qa.png` and judge the register visually (advisor vs. vendor) — the one check a script can't make.
+
+## Map of the repo
+- `system/` — the prose framework (read `system/identity.md` first: the meta-thesis).
+- `tooling/` — the executable scripts (see `tooling/README.md`).
+- `profiles/` — one folder per brand; `tokens.json` is the source of truth.
+- `diagrams/` — 37 token-driven SVG templates (`diagrams/index.md`).
+- `skill/brand-init/` — the scaffolding skill.
+
+## Rules
+- `tokens.json` is the only place hex lives. Never hand-edit a generated `:root` block or palette table — regenerate.
+- Every palette must pass `contrast-check` before use.
+- Don't let one profile's brand name leak into another's artifact (the linter checks `lint.foreign-names`).

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE: Generic Hierarchy / Tree
+  Required Figma fonts: JetBrains Mono (700) for headlines/labels, Inter (400, 700) for body.
+  Use for: information architecture, sitemap, org chart, team topology, metric tree, hypothesis tree,
+  opportunity-solution tree, OKR cascade, BOM/product structure, decision tree, component dependency,
+  threat tree (STRIDE), taxonomy. Parameterize by changing level labels and node content.
+  Default canvas: 1400 × 900. Adjust node positions for branching factor (2-5 children per parent works best).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>{Topic} — Hierarchy</title>
+  <desc>Top-down hierarchical tree. Root at top, descendants below, connected by lines. Use for sitemaps, org charts, metric trees, taxonomies, etc.</desc>
+
+  <g id="background">
+    <rect x="0" y="0" width="1400" height="900" fill="var(--bg)"/>
+  </g>
+
+  <g id="header">
+    <text id="title" x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">{TOPIC} HIERARCHY</text>
+    <text id="subtitle" x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Subtitle — e.g., "Product taxonomy as of Q2 2026" or "OKR cascade — engineering org"}</text>
+  </g>
+
+  <g id="level-labels">
+    <text x="60" y="180" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">LEVEL 1 (ROOT)</text>
+    <text x="60" y="380" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">LEVEL 2</text>
+    <text x="60" y="600" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">LEVEL 3</text>
+  </g>
+
+  <g id="root-node">
+    <rect x="540" y="160" width="320" height="80" rx="6" fill="var(--bg)" stroke="var(--accent)" stroke-width="2.5"/>
+    <text x="700" y="190" font-size="16" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Root node — top-level concept}</text>
+    <text x="700" y="212" font-size="11" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Brief description}</text>
+    <text x="700" y="230" font-size="10" font-style="italic" fill="var(--accent)" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.5" font-weight="700">{ROOT TAG}</text>
+  </g>
+
+  <g id="connectors-l1-to-l2">
+    <line x1="700" y1="240" x2="700" y2="280" stroke="var(--secondary)" stroke-width="1.5"/>
+    <line x1="240" y1="280" x2="1160" y2="280" stroke="var(--secondary)" stroke-width="1.5"/>
+    <line x1="240" y1="280" x2="240" y2="360" stroke="var(--secondary)" stroke-width="1.5"/>
+    <line x1="540" y1="280" x2="540" y2="360" stroke="var(--secondary)" stroke-width="1.5"/>
+    <line x1="860" y1="280" x2="860" y2="360" stroke="var(--secondary)" stroke-width="1.5"/>
+    <line x1="1160" y1="280" x2="1160" y2="360" stroke="var(--secondary)" stroke-width="1.5"/>
+  </g>
+
+  <g id="level-2-nodes">
+    <g id="l2-node-1">
+      <rect x="120" y="360" width="240" height="70" rx="6" fill="var(--card)" stroke="var(--teal)" stroke-width="1.5"/>
+      <text x="240" y="386" font-size="13" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Branch 1}</text>
+      <text x="240" y="406" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Description}</text>
+    </g>
+    <g id="l2-node-2">
+      <rect x="420" y="360" width="240" height="70" rx="6" fill="var(--card)" stroke="var(--teal)" stroke-width="1.5"/>
+      <text x="540" y="386" font-size="13" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Branch 2}</text>
+      <text x="540" y="406" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Description}</text>
+    </g>
+    <g id="l2-node-3">
+      <rect x="740" y="360" width="240" height="70" rx="6" fill="var(--card)" stroke="var(--teal)" stroke-width="1.5"/>
+      <text x="860" y="386" font-size="13" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Branch 3}</text>
+      <text x="860" y="406" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Description}</text>
+    </g>
+    <g id="l2-node-4">
+      <rect x="1040" y="360" width="240" height="70" rx="6" fill="var(--card)" stroke="var(--teal)" stroke-width="1.5"/>
+      <text x="1160" y="386" font-size="13" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Branch 4}</text>
+      <text x="1160" y="406" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Description}</text>
+    </g>
+  </g>
+
+  <g id="connectors-l2-to-l3">
+    <line x1="240" y1="430" x2="240" y2="490" stroke="var(--secondary)" stroke-width="1.5"/>
+    <line x1="160" y1="490" x2="320" y2="490" stroke="var(--secondary)" stroke-width="1.5"/>
+    <line x1="160" y1="490" x2="160" y2="570" stroke="var(--secondary)" stroke-width="1.5"/>
+    <line x1="320" y1="490" x2="320" y2="570" stroke="var(--secondary)" stroke-width="1.5"/>
+
+    <line x1="540" y1="430" x2="540" y2="570" stroke="var(--secondary)" stroke-width="1.5"/>
+
+    <line x1="860" y1="430" x2="860" y2="490" stroke="var(--secondary)" stroke-width="1.5"/>
+    <line x1="780" y1="490" x2="940" y2="490" stroke="var(--secondary)" stroke-width="1.5"/>
+    <line x1="780" y1="490" x2="780" y2="570" stroke="var(--secondary)" stroke-width="1.5"/>
+    <line x1="940" y1="490" x2="940" y2="570" stroke="var(--secondary)" stroke-width="1.5"/>
+
+    <line x1="1160" y1="430" x2="1160" y2="570" stroke="var(--secondary)" stroke-width="1.5"/>
+  </g>
+
+  <g id="level-3-nodes">
+    <g id="l3-node-1a">
+      <rect x="80" y="570" width="160" height="60" rx="4" fill="var(--card)" stroke="var(--dim)" stroke-width="1.5"/>
+      <text x="160" y="594" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Leaf 1a}</text>
+      <text x="160" y="612" font-size="9" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{detail}</text>
+    </g>
+    <g id="l3-node-1b">
+      <rect x="240" y="570" width="160" height="60" rx="4" fill="var(--card)" stroke="var(--dim)" stroke-width="1.5"/>
+      <text x="320" y="594" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Leaf 1b}</text>
+      <text x="320" y="612" font-size="9" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{detail}</text>
+    </g>
+    <g id="l3-node-2">
+      <rect x="460" y="570" width="160" height="60" rx="4" fill="var(--card)" stroke="var(--dim)" stroke-width="1.5"/>
+      <text x="540" y="594" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Leaf 2}</text>
+      <text x="540" y="612" font-size="9" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{detail}</text>
+    </g>
+    <g id="l3-node-3a">
+      <rect x="700" y="570" width="160" height="60" rx="4" fill="var(--card)" stroke="var(--dim)" stroke-width="1.5"/>
+      <text x="780" y="594" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Leaf 3a}</text>
+    </g>
+    <g id="l3-node-3b">
+      <rect x="860" y="570" width="160" height="60" rx="4" fill="var(--card)" stroke="var(--dim)" stroke-width="1.5"/>
+      <text x="940" y="594" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Leaf 3b}</text>
+    </g>
+    <g id="l3-node-4">
+      <rect x="1080" y="570" width="160" height="60" rx="4" fill="var(--card)" stroke="var(--dim)" stroke-width="1.5"/>
+      <text x="1160" y="594" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Leaf 4}</text>
+    </g>
+  </g>
+
+  <g id="footer-caption">
+    <rect x="60" y="780" width="1280" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="800" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">HOW TO READ</text>
+    <text x="80" y="820" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Top-down hierarchy. Root in red border = primary concept. Level 2 in teal = major branches. Level 3 in gray = leaves.</text>
+    <text x="80" y="838" font-size="10" font-style="italic" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Use cases: sitemap, org chart, team topology, metric tree, hypothesis tree, OST, OKR cascade, BOM, taxonomy, threat tree.</text>
+  </g>
+</svg>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE: Mental Model — Concentric Rings
+  Required fonts: JetBrains Mono (500-700), Inter (400-700). {{COMPANY}} brand.
+  Concentric rings showing layered user expectation: surface (UI) → behavior → core (mental model).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1100">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>{Topic} — Mental Model Rings</title>
+  <desc>Concentric rings of user expectation from outermost (surface UI) to innermost (core mental model). Use for design strategy framing.</desc>
+
+  <g id="background"><rect x="0" y="0" width="1100" height="1100" fill="var(--bg)"/></g>
+
+  <g id="header">
+    <text x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">{TOPIC} — MENTAL MODEL</text>
+    <text x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Layered user expectation. Innermost = invariant truth; outermost = changeable surface.</text>
+  </g>
+
+  <g id="rings">
+    <circle cx="550" cy="600" r="400" fill="var(--card)" stroke="var(--dim)" stroke-width="1.5"/>
+    <circle cx="550" cy="600" r="300" fill="var(--card)" stroke="var(--accent)" stroke-width="1.5"/>
+    <circle cx="550" cy="600" r="200" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="2"/>
+    <circle cx="550" cy="600" r="100" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="2.5"/>
+  </g>
+
+  <g id="ring-labels">
+    <text x="550" y="220" font-size="14" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">SURFACE — UI / VISUAL</text>
+    <text x="550" y="240" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Buttons, layouts, copy — changes often}</text>
+
+    <text x="550" y="320" font-size="14" font-weight="700" fill="var(--accent)" letter-spacing="1.5" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">BEHAVIOR — INTERACTION</text>
+    <text x="550" y="340" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Flows, states, gestures — changes per release}</text>
+
+    <text x="550" y="420" font-size="14" font-weight="700" fill="var(--teal)" letter-spacing="1.5" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">CONCEPTS — MODEL</text>
+    <text x="550" y="440" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Domain objects + relationships — rare changes}</text>
+
+    <text x="550" y="568" font-size="14" font-weight="700" fill="var(--accent)" letter-spacing="1.5" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">CORE — INVARIANT</text>
+    <text x="550" y="590" font-size="11" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{The user's core mental</text>
+    <text x="550" y="608" font-size="11" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">model — never violate}</text>
+    <text x="550" y="630" font-size="9" font-style="italic" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">"a flight is a sortie"</text>
+  </g>
+
+  <g id="footer">
+    <rect x="60" y="1020" width="980" height="60" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="1042" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">DESIGN PRINCIPLE</text>
+    <text x="80" y="1062" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">The further out, the more often you can change without breaking the user. The closer to the core, the more violations cost trust. Keep the center stable; iterate on the surface.</text>
+  </g>
+</svg>

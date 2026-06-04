@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE: C4 Level 1 — System Context Diagram
+  Required Figma fonts: JetBrains Mono (700) for headlines/labels, Inter (400, 700) for body.
+  Use to show how the system under design relates to external systems, persons, and data flows.
+  Default canvas: 1400 × 1000. System under design uses Brand Red border. Externals use Dark Gray.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>{System Name} — System Context (C4 L1)</title>
+  <desc>C4 Level 1 system context diagram with the system under design at center, external systems on left/right, labeled data-flow arrows.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--body)"/>
+    </marker>
+    <marker id="arrowfaint" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--dim)"/>
+    </marker>
+  </defs>
+
+  <g id="background">
+    <rect x="0" y="0" width="1400" height="1000" fill="var(--bg)"/>
+  </g>
+
+  <g id="header">
+    <text id="title" x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">{SYSTEM NAME} — SYSTEM CONTEXT (C4 L1)</text>
+    <text id="subtitle" x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Source anchor — e.g., "PRD §X.Y"}</text>
+  </g>
+
+  <g id="legend">
+    <rect x="1100" y="46" width="280" height="100" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="1116" y="64" font-size="9" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">LEGEND (C4 NOTATION)</text>
+    <rect x="1116" y="74" width="14" height="10" rx="2" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="1136" y="83" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[Software System] — under design</text>
+    <rect x="1116" y="90" width="14" height="10" rx="2" fill="var(--card)" stroke="var(--body)" stroke-width="1.5"/>
+    <text x="1136" y="99" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[External System] / [Person]</text>
+    <line x1="1116" y1="112" x2="1136" y2="112" stroke="var(--body)" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="1142" y="116" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Current data flow</text>
+    <line x1="1116" y1="128" x2="1136" y2="128" stroke="var(--dim)" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="1142" y="132" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Future / out-of-scope</text>
+  </g>
+
+  <g id="column-headers">
+    <text x="60" y="180" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">EXTERNAL SOURCES (UPSTREAM)</text>
+    <text x="560" y="180" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">SYSTEM UNDER DESIGN</text>
+    <text x="1080" y="180" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">DOWNSTREAM CONSUMERS</text>
+  </g>
+
+  <g id="upstream-source-1">
+    <rect x="60" y="200" width="260" height="120" rx="6" fill="var(--card)" stroke="var(--body)" stroke-width="1.5"/>
+    <text x="76" y="220" font-size="9" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">[EXTERNAL SYSTEM]</text>
+    <text x="76" y="244" font-size="16" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Source 1}</text>
+    <text x="76" y="262" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{One-line description}</text>
+    <text x="76" y="284" font-size="10" font-weight="700" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Owns: {data items}</text>
+  </g>
+
+  <g id="upstream-source-2">
+    <rect x="60" y="340" width="260" height="120" rx="6" fill="var(--card)" stroke="var(--body)" stroke-width="1.5"/>
+    <text x="76" y="360" font-size="9" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">[PERSON]</text>
+    <text x="76" y="384" font-size="14" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Person/Actor name}</text>
+    <text x="76" y="402" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Role description}</text>
+    <text x="76" y="424" font-size="10" font-weight="700" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Provides: {inputs}</text>
+  </g>
+
+  <g id="system-under-design">
+    <rect id="system-boundary" x="500" y="200" width="500" height="500" rx="8" fill="var(--bg)" stroke="var(--accent)" stroke-width="2.5"/>
+    <text x="520" y="222" font-size="9" font-weight="700" fill="var(--accent)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">[SOFTWARE SYSTEM — UNDER DESIGN]</text>
+    <text x="520" y="248" font-size="20" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{System Name}</text>
+    <text x="520" y="266" font-size="11" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{One-line system purpose}</text>
+
+    <g id="container-1">
+      <rect x="520" y="290" width="460" height="180" rx="6" fill="var(--card)" stroke="var(--teal)" stroke-width="1.5"/>
+      <text x="535" y="310" font-size="9" font-weight="700" fill="var(--teal)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">[CONTAINER]</text>
+      <text x="535" y="332" font-size="14" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Container Name}</text>
+      <text x="535" y="350" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{What this container does}</text>
+      <text x="535" y="372" font-size="10" font-weight="700" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Consumes:</text>
+      <text x="545" y="388" font-size="10" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• {Input 1}</text>
+      <text x="545" y="402" font-size="10" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• {Input 2}</text>
+      <text x="535" y="430" font-size="10" font-weight="700" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Produces: {output}</text>
+    </g>
+
+    <g id="data-store">
+      <rect x="520" y="490" width="460" height="60" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="1.5"/>
+      <text x="535" y="510" font-size="9" font-weight="700" fill="var(--accent)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">[DATA STORE]</text>
+      <text x="535" y="532" font-size="12" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Storage description}</text>
+    </g>
+  </g>
+
+  <g id="downstream-consumer-1">
+    <rect x="1080" y="200" width="280" height="120" rx="6" fill="var(--card)" stroke="var(--body)" stroke-width="1.5"/>
+    <text x="1096" y="220" font-size="9" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">[EXTERNAL SYSTEM]</text>
+    <text x="1096" y="244" font-size="14" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Consumer 1}</text>
+    <text x="1096" y="262" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Description}</text>
+    <text x="1096" y="284" font-size="10" font-weight="700" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Receives: {data items}</text>
+  </g>
+
+  <g id="out-of-scope-future">
+    <rect x="1080" y="340" width="280" height="100" rx="6" fill="var(--card)" stroke="var(--dim)" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.7"/>
+    <text x="1096" y="360" font-size="9" font-weight="700" fill="var(--dim)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">[OUT OF SCOPE]</text>
+    <text x="1096" y="384" font-size="13" font-weight="700" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Future/out-of-scope item}</text>
+    <text x="1096" y="402" font-size="9" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Why out of scope}</text>
+  </g>
+
+  <g id="data-flow-arrows" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+    <g id="arrow-source-1-to-system">
+      <path d="M 320 260 L 500 320" fill="none" stroke="var(--body)" stroke-width="1.7" marker-end="url(#arrow)"/>
+      <text x="408" y="278" font-size="10" font-weight="700" fill="var(--body)">{data items}</text>
+      <text x="408" y="291" font-size="9" fill="var(--secondary)">{priority/notes}</text>
+    </g>
+    <g id="arrow-system-to-consumer-1">
+      <path d="M 1000 280 L 1080 260" fill="none" stroke="var(--body)" stroke-width="2" marker-end="url(#arrow)"/>
+      <text x="1040" y="278" font-size="10" font-weight="700" fill="var(--body)" text-anchor="middle">{output type}</text>
+    </g>
+  </g>
+
+  <g id="footer-governance">
+    <rect x="60" y="900" width="1300" height="80" rx="4" fill="var(--card)" stroke="var(--accent)" stroke-width="1"/>
+    <text x="80" y="922" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">GOVERNANCE / HOW TO READ</text>
+    <text x="80" y="942" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Governance principle or "how to read" instructions for non-technical readers}</text>
+    <text x="80" y="958" font-size="10" font-style="italic" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Read left → right: external sources feed system; system produces outputs consumed downstream.</text>
+  </g>
+</svg>

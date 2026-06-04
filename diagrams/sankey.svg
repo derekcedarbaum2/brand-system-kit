@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE: Sankey Diagram
+  Required fonts: JetBrains Mono (500-700), Inter (400-700). {{COMPANY}} brand.
+  Flow widths proportional to magnitude. Use for: budget allocation, energy/data flow, conversion paths, headcount distribution.
+  NOTE: Hand-authored Sankey is approximate — for precise proportions, use a Sankey generator. This template gives you the visual style.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>{Topic} — Sankey Flow</title>
+  <desc>Flow diagram with proportional widths showing magnitude. Sources on left, sinks on right.</desc>
+
+  <g id="background"><rect x="0" y="0" width="1400" height="900" fill="var(--bg)"/></g>
+
+  <g id="header">
+    <text x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">{TOPIC} — SANKEY FLOW</text>
+    <text x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Flow widths proportional to magnitude. {e.g., "$M flow Q3 2026" or "User funnel by source"}</text>
+  </g>
+
+  <g id="left-column-header">
+    <text x="60" y="140" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">SOURCES (TOTAL: {amount})</text>
+  </g>
+
+  <g id="middle-column-header">
+    <text x="600" y="140" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">INTERMEDIATE</text>
+  </g>
+
+  <g id="right-column-header">
+    <text x="1080" y="140" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">SINKS</text>
+  </g>
+
+  <g id="source-nodes">
+    <rect x="60" y="160" width="180" height="100" rx="4" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="150" y="194" font-size="13" font-weight="700" fill="var(--accent)" letter-spacing="0.8" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">SOURCE 1</text>
+    <text x="150" y="220" font-size="14" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{$50M}</text>
+    <text x="150" y="240" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{50% of total}</text>
+
+    <rect x="60" y="320" width="180" height="60" rx="4" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="150" y="346" font-size="12" font-weight="700" fill="var(--accent)" letter-spacing="0.8" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">SOURCE 2</text>
+    <text x="150" y="366" font-size="13" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{$30M — 30%}</text>
+
+    <rect x="60" y="420" width="180" height="40" rx="4" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="150" y="438" font-size="11" font-weight="700" fill="var(--accent)" letter-spacing="0.8" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">SOURCE 3</text>
+    <text x="150" y="453" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{$20M}</text>
+  </g>
+
+  <g id="middle-nodes">
+    <rect x="540" y="180" width="200" height="80" rx="4" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="2"/>
+    <text x="640" y="208" font-size="13" font-weight="700" fill="var(--teal)" letter-spacing="0.8" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">CATEGORY A</text>
+    <text x="640" y="232" font-size="13" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{$60M}</text>
+
+    <rect x="540" y="300" width="200" height="60" rx="4" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="2"/>
+    <text x="640" y="328" font-size="12" font-weight="700" fill="var(--teal)" letter-spacing="0.8" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">CATEGORY B</text>
+    <text x="640" y="348" font-size="12" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{$25M}</text>
+
+    <rect x="540" y="400" width="200" height="40" rx="4" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="2"/>
+    <text x="640" y="418" font-size="11" font-weight="700" fill="var(--teal)" letter-spacing="0.8" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">CATEGORY C</text>
+    <text x="640" y="433" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{$15M}</text>
+  </g>
+
+  <g id="sink-nodes">
+    <rect x="1040" y="160" width="200" height="60" rx="4" fill="var(--card)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="1140" y="184" font-size="12" font-weight="700" fill="var(--accent)" letter-spacing="0.8" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">OUTCOME 1</text>
+    <text x="1140" y="206" font-size="12" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{$40M}</text>
+
+    <rect x="1040" y="260" width="200" height="60" rx="4" fill="var(--card)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="1140" y="284" font-size="12" font-weight="700" fill="var(--accent)" letter-spacing="0.8" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">OUTCOME 2</text>
+    <text x="1140" y="306" font-size="12" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{$30M}</text>
+
+    <rect x="1040" y="360" width="200" height="60" rx="4" fill="var(--card)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="1140" y="384" font-size="12" font-weight="700" fill="var(--accent)" letter-spacing="0.8" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">OUTCOME 3</text>
+    <text x="1140" y="406" font-size="12" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{$20M}</text>
+
+    <rect x="1040" y="460" width="200" height="40" rx="4" fill="var(--card)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="1140" y="478" font-size="11" font-weight="700" fill="var(--accent)" letter-spacing="0.8" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">OUTCOME 4</text>
+    <text x="1140" y="492" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{$10M}</text>
+  </g>
+
+  <g id="flows-source-to-mid" opacity="0.4">
+    <path d="M 240 210 C 380 210, 400 220, 540 220" fill="none" stroke="var(--accent)" stroke-width="60"/>
+    <path d="M 240 350 C 380 350, 400 320, 540 330" fill="none" stroke="var(--accent)" stroke-width="40"/>
+    <path d="M 240 440 C 380 440, 400 420, 540 420" fill="none" stroke="var(--accent)" stroke-width="20"/>
+  </g>
+
+  <g id="flows-mid-to-sink" opacity="0.4">
+    <path d="M 740 200 C 880 200, 900 190, 1040 190" fill="none" stroke="var(--teal)" stroke-width="40"/>
+    <path d="M 740 240 C 880 240, 900 290, 1040 290" fill="none" stroke="var(--teal)" stroke-width="30"/>
+    <path d="M 740 330 C 880 330, 900 390, 1040 390" fill="none" stroke="var(--teal)" stroke-width="25"/>
+    <path d="M 740 420 C 880 420, 900 480, 1040 480" fill="none" stroke="var(--teal)" stroke-width="15"/>
+  </g>
+
+  <g id="footer">
+    <rect x="60" y="800" width="1280" height="60" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="822" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">HOW TO READ</text>
+    <text x="80" y="842" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Width of each flow band ≈ proportion of total. Sources on left, intermediate categories in middle, sinks/outcomes on right. Use cases: budget allocation, energy/data flow, signup paths, headcount.</text>
+  </g>
+</svg>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE: V-Model (Systems Engineering)
+  Required fonts: JetBrains Mono (500-700), Inter (400-700). {{COMPANY}} brand.
+  Left arm: requirements decomposition (top to bottom). Bottom: implementation. Right arm: verification & validation (bottom to top).
+  Horizontal "validation" lines connect each design level to its corresponding test level.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>{Project} — Systems Engineering V-Model</title>
+  <desc>V-shaped diagram with requirements/design on the left arm and verification/validation on the right arm. Horizontal lines link each design phase to its corresponding test phase.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--body)"/>
+    </marker>
+  </defs>
+
+  <g id="background"><rect x="0" y="0" width="1400" height="900" fill="var(--bg)"/></g>
+
+  <g id="header">
+    <text x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">{PROJECT} V-MODEL</text>
+    <text x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Systems engineering V — left = decomposition, right = integration; horizontal lines = verification linkage</text>
+  </g>
+
+  <g id="left-arm-decomposition">
+    <text x="60" y="140" font-size="11" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">DECOMPOSITION (DESIGN)</text>
+
+    <rect x="80" y="160" width="280" height="80" rx="6" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="220" y="186" font-size="12" font-weight="700" fill="var(--accent)" letter-spacing="1" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">CONOPS / USER REQS</text>
+    <text x="220" y="208" font-size="11" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{stakeholder needs,</text>
+    <text x="220" y="224" font-size="11" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">use cases, ConOps}</text>
+
+    <line x1="200" y1="240" x2="280" y2="320" stroke="var(--secondary)" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <rect x="220" y="320" width="260" height="80" rx="6" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="350" y="346" font-size="12" font-weight="700" fill="var(--accent)" letter-spacing="1" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">SYSTEM REQS</text>
+    <text x="350" y="368" font-size="11" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{functional, perf,</text>
+    <text x="350" y="384" font-size="11" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">non-functional}</text>
+
+    <line x1="340" y1="400" x2="420" y2="480" stroke="var(--secondary)" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <rect x="360" y="480" width="260" height="80" rx="6" fill="var(--bg)" stroke="var(--teal)" stroke-width="1.5"/>
+    <text x="490" y="506" font-size="12" font-weight="700" fill="var(--teal)" letter-spacing="1" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">ARCHITECTURE</text>
+    <text x="490" y="528" font-size="11" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{subsystems,</text>
+    <text x="490" y="544" font-size="11" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">interfaces}</text>
+
+    <line x1="480" y1="560" x2="560" y2="640" stroke="var(--secondary)" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <rect x="500" y="640" width="260" height="80" rx="6" fill="var(--bg)" stroke="var(--teal)" stroke-width="1.5"/>
+    <text x="630" y="666" font-size="12" font-weight="700" fill="var(--teal)" letter-spacing="1" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">DETAILED DESIGN</text>
+    <text x="630" y="688" font-size="11" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{components,</text>
+    <text x="630" y="704" font-size="11" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">unit specs}</text>
+  </g>
+
+  <g id="bottom-implementation">
+    <line x1="620" y1="720" x2="720" y2="780" stroke="var(--secondary)" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <rect x="600" y="780" width="200" height="60" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="700" y="806" font-size="13" font-weight="700" fill="var(--ink)" letter-spacing="1" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">IMPLEMENTATION</text>
+    <text x="700" y="824" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{code / build / fab}</text>
+    <line x1="800" y1="810" x2="900" y2="720" stroke="var(--secondary)" stroke-width="1.5" marker-end="url(#arrow)"/>
+  </g>
+
+  <g id="right-arm-integration">
+    <text x="1100" y="140" font-size="11" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" text-anchor="end" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">INTEGRATION (TEST &amp; VERIFICATION)</text>
+
+    <rect x="1040" y="160" width="280" height="80" rx="6" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="1180" y="186" font-size="12" font-weight="700" fill="var(--accent)" letter-spacing="1" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">ACCEPTANCE TEST</text>
+    <text x="1180" y="208" font-size="11" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{validate vs ConOps,</text>
+    <text x="1180" y="224" font-size="11" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">user acceptance}</text>
+
+    <rect x="920" y="320" width="260" height="80" rx="6" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="1050" y="346" font-size="12" font-weight="700" fill="var(--accent)" letter-spacing="1" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">SYSTEM TEST</text>
+    <text x="1050" y="368" font-size="11" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{end-to-end,</text>
+    <text x="1050" y="384" font-size="11" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">verify reqs}</text>
+
+    <rect x="780" y="480" width="260" height="80" rx="6" fill="var(--bg)" stroke="var(--teal)" stroke-width="1.5"/>
+    <text x="910" y="506" font-size="12" font-weight="700" fill="var(--teal)" letter-spacing="1" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">INTEGRATION TEST</text>
+    <text x="910" y="528" font-size="11" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{subsystems work</text>
+    <text x="910" y="544" font-size="11" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">together}</text>
+
+    <rect x="640" y="640" width="260" height="80" rx="6" fill="var(--bg)" stroke="var(--teal)" stroke-width="1.5"/>
+    <text x="770" y="666" font-size="12" font-weight="700" fill="var(--teal)" letter-spacing="1" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">UNIT TEST</text>
+    <text x="770" y="688" font-size="11" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{individual</text>
+    <text x="770" y="704" font-size="11" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">components}</text>
+  </g>
+
+  <g id="verification-links" stroke="var(--dim)" stroke-width="1" stroke-dasharray="4,3">
+    <line x1="360" y1="200" x2="1040" y2="200"/>
+    <line x1="480" y1="360" x2="920" y2="360"/>
+    <line x1="620" y1="520" x2="780" y2="520"/>
+    <line x1="760" y1="680" x2="640" y2="680"/>
+  </g>
+  <text x="700" y="194" font-size="9" font-style="italic" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">validates against</text>
+
+  <g id="footer">
+    <rect x="60" y="860" width="1280" height="30" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="880" font-size="10" font-style="italic" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Each design level (left) has a corresponding verification/test level (right). Dashed lines = traceability.</text>
+  </g>
+</svg>

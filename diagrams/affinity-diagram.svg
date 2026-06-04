@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE: Affinity Diagram (clustered research insights)
+  Required fonts: JetBrains Mono (500-700), Inter (400-700). {{COMPANY}} brand.
+  Sticky-note style cards grouped into themed clusters. Use after research synthesis.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>{Research Topic} — Affinity Diagram</title>
+  <desc>Clustered research insights. Sticky notes grouped into themes; each theme labeled.</desc>
+
+  <g id="background"><rect x="0" y="0" width="1400" height="900" fill="var(--bg)"/></g>
+
+  <g id="header">
+    <text x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">{TOPIC} — AFFINITY</text>
+    <text x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">N participants × N insights, clustered into themes. {date} synthesis.</text>
+  </g>
+
+  <g id="cluster-1">
+    <rect x="60" y="140" width="420" height="320" rx="6" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="2" stroke-dasharray="8,4"/>
+    <text x="80" y="166" font-size="13" font-weight="700" fill="var(--accent)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">{THEME 1 — PAIN POINT}</text>
+    <text x="80" y="184" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{n insights from m participants}</text>
+
+    <rect x="80" y="200" width="180" height="80" rx="4" fill="var(--card)" stroke="var(--accent)"/>
+    <text x="92" y="218" font-size="9" font-weight="700" fill="var(--accent)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.5">P3 • R-INTV-12</text>
+    <text x="92" y="236" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">"{Direct quote}"</text>
+    <text x="92" y="252" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{paraphrase}</text>
+
+    <rect x="280" y="200" width="180" height="80" rx="4" fill="var(--card)" stroke="var(--accent)"/>
+    <text x="292" y="218" font-size="9" font-weight="700" fill="var(--accent)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.5">P5 • R-INTV-08</text>
+    <text x="292" y="236" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">"{Quote}"</text>
+
+    <rect x="80" y="300" width="180" height="80" rx="4" fill="var(--card)" stroke="var(--accent)"/>
+    <text x="92" y="318" font-size="9" font-weight="700" fill="var(--accent)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.5">P7</text>
+    <text x="92" y="336" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{insight}</text>
+
+    <rect x="280" y="300" width="180" height="80" rx="4" fill="var(--card)" stroke="var(--accent)"/>
+    <text x="292" y="318" font-size="9" font-weight="700" fill="var(--accent)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.5">P9</text>
+    <text x="292" y="336" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{insight}</text>
+
+    <rect x="180" y="400" width="180" height="40" rx="4" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="270" y="424" font-size="10" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.5">SO WHAT? → {INSIGHT}</text>
+  </g>
+
+  <g id="cluster-2">
+    <rect x="500" y="140" width="420" height="320" rx="6" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="2" stroke-dasharray="8,4"/>
+    <text x="520" y="166" font-size="13" font-weight="700" fill="var(--teal)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">{THEME 2 — DESIRE / NEED}</text>
+    <text x="520" y="184" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{n insights from m participants}</text>
+
+    <rect x="520" y="200" width="180" height="80" rx="4" fill="var(--card)" stroke="var(--accent)"/>
+    <text x="532" y="218" font-size="9" font-weight="700" fill="var(--accent)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.5">P1</text>
+    <text x="532" y="236" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{insight}</text>
+
+    <rect x="720" y="200" width="180" height="80" rx="4" fill="var(--card)" stroke="var(--accent)"/>
+    <text x="732" y="218" font-size="9" font-weight="700" fill="var(--accent)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.5">P2</text>
+    <text x="732" y="236" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{insight}</text>
+
+    <rect x="520" y="300" width="180" height="80" rx="4" fill="var(--card)" stroke="var(--accent)"/>
+    <text x="532" y="336" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{insight}</text>
+
+    <rect x="620" y="400" width="180" height="40" rx="4" fill="var(--bg)" stroke="var(--teal)" stroke-width="1.5"/>
+    <text x="710" y="424" font-size="10" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.5">SO WHAT? → {INSIGHT}</text>
+  </g>
+
+  <g id="cluster-3">
+    <rect x="940" y="140" width="420" height="320" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="2" stroke-dasharray="8,4"/>
+    <text x="960" y="166" font-size="13" font-weight="700" fill="var(--accent)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">{THEME 3 — WORKAROUND}</text>
+    <text x="960" y="184" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{n insights}</text>
+
+    <rect x="960" y="200" width="180" height="80" rx="4" fill="var(--card)" stroke="var(--accent)"/>
+    <text x="972" y="236" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{insight}</text>
+
+    <rect x="1160" y="200" width="180" height="80" rx="4" fill="var(--card)" stroke="var(--accent)"/>
+    <text x="1172" y="236" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{insight}</text>
+  </g>
+
+  <g id="cluster-4">
+    <rect x="60" y="500" width="1300" height="280" rx="6" fill="var(--card)" stroke="var(--dim)" stroke-width="2" stroke-dasharray="8,4"/>
+    <text x="80" y="526" font-size="13" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">{THEME 4 — ENVIRONMENT / CONTEXT}</text>
+    <text x="80" y="544" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{n insights from m participants}</text>
+
+    <rect x="80" y="560" width="200" height="80" rx="4" fill="var(--card)" stroke="var(--accent)"/>
+    <text x="92" y="596" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{insight}</text>
+
+    <rect x="300" y="560" width="200" height="80" rx="4" fill="var(--card)" stroke="var(--accent)"/>
+    <text x="312" y="596" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{insight}</text>
+
+    <rect x="520" y="560" width="200" height="80" rx="4" fill="var(--card)" stroke="var(--accent)"/>
+    <text x="532" y="596" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{insight}</text>
+
+    <rect x="740" y="560" width="200" height="80" rx="4" fill="var(--card)" stroke="var(--accent)"/>
+    <text x="752" y="596" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{insight}</text>
+
+    <rect x="960" y="560" width="200" height="80" rx="4" fill="var(--card)" stroke="var(--accent)"/>
+    <text x="972" y="596" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{insight}</text>
+
+    <rect x="540" y="680" width="280" height="40" rx="4" fill="var(--bg)" stroke="var(--secondary)" stroke-width="1.5"/>
+    <text x="680" y="704" font-size="10" font-weight="700" fill="var(--secondary)" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.5">SO WHAT? → {INSIGHT}</text>
+  </g>
+
+  <g id="footer">
+    <rect x="60" y="800" width="1280" height="60" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="824" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">SOURCE TRACEABILITY</text>
+    <text x="80" y="844" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Each note tagged with participant ID + source (interview number, survey, observation). Clusters labeled with theme + insight count. "So what?" boxes capture the design implication per cluster.</text>
+  </g>
+</svg>

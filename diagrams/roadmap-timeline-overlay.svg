@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE (skeleton): Timeline / Programs Overlay
+  Source: roadmap-update skill / Slides 9, 10, 27, 78, 79 of canonical product roadmap deck.
+  Purpose: Marquee multi-year timeline — dated launches/integrations + program lanes overlay.
+  Layout: year columns × program lanes, with dated demo entries and SW version markers.
+  Required Figma fonts: JetBrains Mono (700) for headlines/labels, Inter (400, 700) for body.
+  Canvas: 1400 × 800.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>Timeline / Programs Overlay — Template</title>
+  <desc>Multi-year timeline with year columns, program lanes, dated demos, SW version markers.</desc>
+
+  <g id="background">
+    <rect x="0" y="0" width="1400" height="800" fill="var(--bg)"/>
+  </g>
+
+  <g id="header">
+    <text x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">BIG STUFF — PROGRAMS OVERLAY</text>
+    <text x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">As of {date}. Asterisk = desire to move earlier.</text>
+  </g>
+
+  <!-- YEAR HEADER ROW -->
+  <g id="year-header">
+    <rect x="220" y="110" width="280" height="44" fill="var(--ink)"/>
+    <text x="360" y="138" font-size="18" font-weight="700" fill="var(--bg)" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.5">2026</text>
+    <rect x="500" y="110" width="280" height="44" fill="var(--ink)"/>
+    <text x="640" y="138" font-size="18" font-weight="700" fill="var(--bg)" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.5">2027</text>
+    <rect x="780" y="110" width="280" height="44" fill="var(--ink)"/>
+    <text x="920" y="138" font-size="18" font-weight="700" fill="var(--bg)" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.5">2028</text>
+    <rect x="1060" y="110" width="280" height="44" fill="var(--ink)"/>
+    <text x="1200" y="138" font-size="18" font-weight="700" fill="var(--bg)" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.5">2029</text>
+
+    <!-- quarter ticks -->
+    <g font-size="10" fill="var(--bg)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-weight="700">
+      <text x="255" y="138" text-anchor="middle">Q1</text><text x="325" y="138" text-anchor="middle">Q2</text><text x="395" y="138" text-anchor="middle">Q3</text><text x="465" y="138" text-anchor="middle">Q4</text>
+      <text x="535" y="138" text-anchor="middle">Q1</text><text x="605" y="138" text-anchor="middle">Q2</text><text x="675" y="138" text-anchor="middle">Q3</text><text x="745" y="138" text-anchor="middle">Q4</text>
+      <text x="815" y="138" text-anchor="middle">Q1</text><text x="885" y="138" text-anchor="middle">Q2</text><text x="955" y="138" text-anchor="middle">Q3</text><text x="1025" y="138" text-anchor="middle">Q4</text>
+      <text x="1095" y="138" text-anchor="middle">Q1</text><text x="1165" y="138" text-anchor="middle">Q2</text><text x="1235" y="138" text-anchor="middle">Q3</text><text x="1305" y="138" text-anchor="middle">Q4</text>
+    </g>
+  </g>
+
+  <!-- TODAY MARKER -->
+  <g id="today-marker">
+    <line x1="395" y1="160" x2="395" y2="600" stroke="var(--emphasis)" stroke-width="2" stroke-dasharray="6,3"/>
+    <text x="395" y="155" font-size="10" font-weight="700" fill="var(--emphasis)" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.5">TODAY</text>
+  </g>
+
+  <!-- LANE: BIG STUFF -->
+  <g id="lane-bigstuff">
+    <text x="60" y="200" font-size="12" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">BIG STUFF</text>
+    <text x="60" y="218" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">launches + integrations</text>
+
+    <rect x="220" y="175" width="1120" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <!-- dated events -->
+    <g font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" font-weight="700">
+      <polygon points="325,215 340,200 355,215 340,230" fill="var(--teal)"/>
+      <text x="340" y="248" fill="var(--ink)" text-anchor="middle">{Field Demo}</text>
+      <text x="340" y="190" font-size="9" fill="var(--secondary)" text-anchor="middle" font-weight="400">Q2 2026</text>
+
+      <polygon points="585,215 600,200 615,215 600,230" fill="var(--teal)"/>
+      <text x="600" y="248" fill="var(--ink)" text-anchor="middle">{Customer Beta}</text>
+      <text x="600" y="190" font-size="9" fill="var(--secondary)" text-anchor="middle" font-weight="400">Q2 2027</text>
+
+      <polygon points="855,215 870,200 885,215 870,230" fill="var(--emphasis)"/>
+      <text x="870" y="248" fill="var(--emphasis)" text-anchor="middle">{Gen 2 Launch *}</text>
+      <text x="870" y="190" font-size="9" fill="var(--secondary)" text-anchor="middle" font-weight="400">Q3 2028</text>
+
+      <polygon points="1165,215 1180,200 1195,215 1180,230" fill="var(--teal)"/>
+      <text x="1180" y="248" fill="var(--ink)" text-anchor="middle">{Fleet GA}</text>
+      <text x="1180" y="190" font-size="9" fill="var(--secondary)" text-anchor="middle" font-weight="400">Q2 2029</text>
+    </g>
+  </g>
+
+  <!-- LANE: SW VERSIONS -->
+  <g id="lane-sw">
+    <text x="60" y="290" font-size="12" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">SW VERSIONS</text>
+
+    <rect x="220" y="270" width="1120" height="50" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <rect x="230" y="280" width="320" height="30" rx="4" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="1.5"/>
+    <text x="390" y="300" font-size="11" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">3.0 SW</text>
+    <rect x="560" y="280" width="200" height="30" rx="4" fill="var(--card)" stroke="var(--warm)" stroke-width="1.5"/>
+    <text x="660" y="300" font-size="11" font-weight="700" fill="var(--warm)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">1.3 SW (bridge)</text>
+    <rect x="770" y="280" width="560" height="30" rx="4" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="1.5"/>
+    <text x="1050" y="300" font-size="11" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">4.0 SW</text>
+  </g>
+
+  <!-- LANE: PROGRAM FALCON (Gen 1) -->
+  <g id="lane-falcon">
+    <text x="60" y="360" font-size="12" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">PROJECT FALCON</text>
+    <text x="60" y="378" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Sentinel Gen 1</text>
+
+    <rect x="220" y="340" width="1120" height="50" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <rect x="230" y="350" width="600" height="30" rx="4" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="1.5"/>
+    <text x="530" y="370" font-size="11" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Status: In dev — Heavy-Lift}</text>
+  </g>
+
+  <!-- LANE: PROGRAM ATLAS -->
+  <g id="lane-atlas">
+    <text x="60" y="430" font-size="12" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">PROJECT ATLAS</text>
+    <text x="60" y="448" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Light Platform</text>
+
+    <rect x="220" y="410" width="1120" height="50" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <rect x="500" y="420" width="450" height="30" rx="4" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="725" y="440" font-size="11" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Status: Discovery — at risk}</text>
+  </g>
+
+  <!-- LANE: PROGRAM APOLLO -->
+  <g id="lane-apollo">
+    <text x="60" y="500" font-size="12" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">PROJECT APOLLO</text>
+    <text x="60" y="518" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Sentinel Gen 2</text>
+
+    <rect x="220" y="480" width="1120" height="50" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <rect x="770" y="490" width="560" height="30" rx="4" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="1.5"/>
+    <text x="1050" y="510" font-size="11" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Status: Build — Goshawk airframe}</text>
+  </g>
+
+  <!-- LANE: PROGRAM HELIOS -->
+  <g id="lane-helios">
+    <text x="60" y="570" font-size="12" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">PROJECT HELIOS</text>
+    <text x="60" y="588" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Sentinel Gen 3</text>
+
+    <rect x="220" y="550" width="1120" height="50" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <rect x="1060" y="560" width="270" height="30" rx="4" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="1195" y="580" font-size="11" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Status: Concept}</text>
+  </g>
+
+  <!-- LEGEND -->
+  <g id="legend">
+    <rect x="60" y="680" width="1280" height="100" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="700" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">LEGEND</text>
+    <rect x="80" y="712" width="40" height="12" rx="2" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="1.5"/>
+    <text x="130" y="722" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Committed program / SW release</text>
+    <rect x="350" y="712" width="40" height="12" rx="2" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="400" y="722" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Discovery / at risk</text>
+    <polygon points="585,718 600,706 615,718 600,730" fill="var(--teal)"/>
+    <text x="630" y="722" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Dated demo / launch</text>
+    <text x="800" y="722" font-size="11" font-weight="700" fill="var(--emphasis)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">*</text>
+    <text x="815" y="722" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Desire to move earlier</text>
+    <line x1="990" y1="712" x2="990" y2="724" stroke="var(--emphasis)" stroke-width="2" stroke-dasharray="3,2"/>
+    <text x="1005" y="722" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Today marker</text>
+    <text x="80" y="755" font-size="10" font-style="italic" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Note: changes propagate across all five alternate-view slides (9, 10, 27, 78, 79) simultaneously.</text>
+  </g>
+</svg>

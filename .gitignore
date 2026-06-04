@@ -1,0 +1,6 @@
+# render artifacts
+*.qa.png
+*.png
+# os cruft
+.DS_Store
+node_modules/

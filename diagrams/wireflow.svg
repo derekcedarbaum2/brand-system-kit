@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE: Wireflow (UX low-fi screens + connectors)
+  Required fonts: JetBrains Mono (500-700), Inter (400-700). {{COMPANY}} brand.
+  Each "screen" is a labeled rectangle with placeholder UI bars; arrows connect screens by user action.
+  Decisions are diamonds. Use for onboarding flows, checkout flows, error/edge-case branches.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>{Topic} — Wireflow</title>
+  <desc>Sequence of low-fi screens connected by user-action arrows. Diamonds mark decisions / branches.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--body)"/>
+    </marker>
+  </defs>
+
+  <g id="background"><rect x="0" y="0" width="1400" height="900" fill="var(--bg)"/></g>
+
+  <g id="header">
+    <text x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">{TOPIC} WIREFLOW</text>
+    <text x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Low-fidelity screens connected by user actions; decisions in amber diamonds.</text>
+  </g>
+
+  <!-- Screen 1 -->
+  <g id="screen-1">
+    <rect x="80" y="180" width="220" height="280" rx="8" fill="var(--bg)" stroke="var(--teal)" stroke-width="2"/>
+    <rect x="80" y="180" width="220" height="36" rx="8" fill="var(--teal)"/>
+    <text x="190" y="204" font-size="11" font-weight="700" fill="var(--bg)" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">SCREEN 1 — {NAME}</text>
+    <rect x="100" y="240" width="180" height="14" rx="2" fill="var(--border)"/>
+    <rect x="100" y="266" width="140" height="10" rx="2" fill="var(--border)"/>
+    <rect x="100" y="290" width="160" height="10" rx="2" fill="var(--border)"/>
+    <rect x="100" y="320" width="180" height="60" rx="4" fill="var(--card)" stroke="var(--dim)"/>
+    <text x="190" y="356" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[content placeholder]</text>
+    <rect x="100" y="400" width="180" height="36" rx="4" fill="var(--accent)"/>
+    <text x="190" y="423" font-size="11" font-weight="700" fill="var(--bg)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[Primary CTA]</text>
+  </g>
+  <text x="190" y="490" font-size="10" font-style="italic" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{user action / intent}</text>
+  <line x1="300" y1="320" x2="380" y2="320" stroke="var(--body)" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Screen 2 -->
+  <g id="screen-2">
+    <rect x="380" y="180" width="220" height="280" rx="8" fill="var(--bg)" stroke="var(--teal)" stroke-width="2"/>
+    <rect x="380" y="180" width="220" height="36" rx="8" fill="var(--teal)"/>
+    <text x="490" y="204" font-size="11" font-weight="700" fill="var(--bg)" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">SCREEN 2 — {NAME}</text>
+    <rect x="400" y="240" width="180" height="14" rx="2" fill="var(--border)"/>
+    <rect x="400" y="266" width="180" height="40" rx="2" fill="var(--card)" stroke="var(--dim)"/>
+    <text x="490" y="290" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[input field]</text>
+    <rect x="400" y="320" width="180" height="60" rx="4" fill="var(--card)" stroke="var(--dim)"/>
+    <rect x="400" y="400" width="180" height="36" rx="4" fill="var(--accent)"/>
+    <text x="490" y="423" font-size="11" font-weight="700" fill="var(--bg)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[Submit]</text>
+  </g>
+
+  <!-- Decision diamond -->
+  <g id="decision-1">
+    <polygon points="780,320 880,260 980,320 880,380" fill="var(--card)" stroke="var(--accent)" stroke-width="2.5"/>
+    <text x="880" y="318" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.5">{DECISION?}</text>
+    <text x="880" y="335" font-size="10" font-style="italic" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[guard]</text>
+  </g>
+  <line x1="600" y1="320" x2="780" y2="320" stroke="var(--body)" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Screen 3 success branch -->
+  <g id="screen-3-success">
+    <rect x="1080" y="180" width="220" height="280" rx="8" fill="var(--bg)" stroke="var(--teal)" stroke-width="2"/>
+    <rect x="1080" y="180" width="220" height="36" rx="8" fill="var(--teal)"/>
+    <text x="1190" y="204" font-size="11" font-weight="700" fill="var(--bg)" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">SCREEN 3 — {SUCCESS}</text>
+    <circle cx="1190" cy="290" r="40" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="2"/>
+    <text x="1190" y="296" font-size="22" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">✓</text>
+    <text x="1190" y="380" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[Confirmation]</text>
+    <rect x="1100" y="400" width="180" height="36" rx="4" fill="var(--card)" stroke="var(--dim)"/>
+    <text x="1190" y="423" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[Continue]</text>
+  </g>
+  <line x1="980" y1="320" x2="1080" y2="320" stroke="var(--body)" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="1030" y="312" font-size="10" font-style="italic" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[valid]</text>
+
+  <!-- Error state below -->
+  <g id="screen-3-error">
+    <rect x="780" y="540" width="200" height="180" rx="8" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/>
+    <rect x="780" y="540" width="200" height="32" rx="8" fill="var(--accent)"/>
+    <text x="880" y="562" font-size="10" font-weight="700" fill="var(--bg)" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">ERROR STATE</text>
+    <text x="880" y="610" font-size="22" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">⚠</text>
+    <text x="880" y="640" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[Error message]</text>
+    <rect x="800" y="660" width="160" height="32" rx="4" fill="var(--card-accent)" stroke="var(--accent)"/>
+    <text x="880" y="681" font-size="10" fill="var(--accent)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[Retry]</text>
+  </g>
+  <line x1="880" y1="380" x2="880" y2="540" stroke="var(--body)" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="900" y="460" font-size="10" font-style="italic" fill="var(--accent)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[invalid]</text>
+  <path d="M 800 600 L 600 600 L 600 460" fill="none" stroke="var(--body)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrow)"/>
+  <text x="690" y="592" font-size="10" font-style="italic" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[retry → back to Screen 2]</text>
+
+  <g id="footer">
+    <rect x="60" y="800" width="1280" height="60" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="820" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">HOW TO READ</text>
+    <text x="80" y="840" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Each rectangle is a screen with placeholder UI elements. Arrows = user actions; diamonds = decision points. Error states branch off in red; success in teal.</text>
+  </g>
+</svg>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE: Entity-Relationship (ER) Diagram
+  Required fonts: JetBrains Mono (500-700), Inter (400-700). {{COMPANY}} brand.
+  Entity = rectangle with stacked attribute rows. Relationship = labeled line with cardinality (1 / 0..1 / 1..* / 0..*).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>{Schema} — ER Diagram</title>
+  <desc>Entity-relationship diagram. Entities = rectangles with attribute lists. Relationships = lines with cardinality.</desc>
+
+  <g id="background"><rect x="0" y="0" width="1400" height="900" fill="var(--bg)"/></g>
+
+  <g id="header">
+    <text x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">{SCHEMA} — ER DIAGRAM</text>
+    <text x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Crow's-foot notation. PK = primary key, FK = foreign key.</text>
+  </g>
+
+  <g id="entity-user">
+    <rect x="80" y="160" width="240" height="240" rx="6" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/>
+    <rect x="80" y="160" width="240" height="36" rx="6" fill="var(--accent)"/>
+    <text x="200" y="184" font-size="14" font-weight="700" fill="var(--bg)" letter-spacing="0.8" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">USER</text>
+    <line x1="80" y1="220" x2="320" y2="220" stroke="var(--border)"/>
+    <text x="100" y="238" font-size="11" font-weight="700" fill="var(--accent)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">PK</text>
+    <text x="140" y="238" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">id : UUID</text>
+    <text x="100" y="260" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">      email : string</text>
+    <text x="100" y="282" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">      name : string</text>
+    <text x="100" y="304" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">      created_at : timestamp</text>
+    <text x="100" y="326" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">      updated_at : timestamp</text>
+    <text x="100" y="356" font-size="11" font-weight="700" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">FK</text>
+    <text x="140" y="356" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">org_id → ORG</text>
+  </g>
+
+  <g id="entity-flight">
+    <rect x="540" y="160" width="280" height="280" rx="6" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/>
+    <rect x="540" y="160" width="280" height="36" rx="6" fill="var(--accent)"/>
+    <text x="680" y="184" font-size="14" font-weight="700" fill="var(--bg)" letter-spacing="0.8" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">FLIGHT</text>
+    <line x1="540" y1="220" x2="820" y2="220" stroke="var(--border)"/>
+    <text x="560" y="238" font-size="11" font-weight="700" fill="var(--accent)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">PK</text>
+    <text x="600" y="238" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">id : UUID</text>
+    <text x="560" y="260" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">      name : string</text>
+    <text x="560" y="282" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">      airspace : string</text>
+    <text x="560" y="304" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">      start_time_utc : timestamp</text>
+    <text x="560" y="326" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">      vul_time_min : int</text>
+    <text x="560" y="348" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">      status : enum</text>
+    <text x="560" y="378" font-size="11" font-weight="700" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">FK</text>
+    <text x="600" y="378" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">owner_user_id → USER</text>
+    <text x="560" y="400" font-size="11" font-weight="700" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">FK</text>
+    <text x="600" y="400" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">scenario_id → SCENARIO</text>
+  </g>
+
+  <g id="entity-scenario">
+    <rect x="1040" y="160" width="280" height="240" rx="6" fill="var(--bg)" stroke="var(--teal)" stroke-width="2"/>
+    <rect x="1040" y="160" width="280" height="36" rx="6" fill="var(--teal)"/>
+    <text x="1180" y="184" font-size="14" font-weight="700" fill="var(--bg)" letter-spacing="0.8" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">SCENARIO</text>
+    <line x1="1040" y1="220" x2="1320" y2="220" stroke="var(--border)"/>
+    <text x="1060" y="238" font-size="11" font-weight="700" fill="var(--teal)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">PK</text>
+    <text x="1100" y="238" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">id : UUID</text>
+    <text x="1060" y="260" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">      name : string</text>
+    <text x="1060" y="282" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">      type : enum</text>
+    <text x="1060" y="304" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">      template : bool</text>
+    <text x="1060" y="326" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">      created_at : timestamp</text>
+  </g>
+
+  <g id="entity-aircraft">
+    <rect x="540" y="500" width="280" height="200" rx="6" fill="var(--bg)" stroke="var(--teal)" stroke-width="2"/>
+    <rect x="540" y="500" width="280" height="36" rx="6" fill="var(--teal)"/>
+    <text x="680" y="524" font-size="14" font-weight="700" fill="var(--bg)" letter-spacing="0.8" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">AIRCRAFT</text>
+    <line x1="540" y1="560" x2="820" y2="560" stroke="var(--border)"/>
+    <text x="560" y="580" font-size="11" font-weight="700" fill="var(--teal)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">PK</text>
+    <text x="600" y="580" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">id : UUID</text>
+    <text x="560" y="602" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">      tail_number : string</text>
+    <text x="560" y="624" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">      platform : enum</text>
+    <text x="560" y="646" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">      side : enum</text>
+    <text x="560" y="676" font-size="11" font-weight="700" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">FK</text>
+    <text x="600" y="676" font-size="11" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">flight_id → FLIGHT</text>
+  </g>
+
+  <g id="relationships">
+    <line x1="320" y1="290" x2="540" y2="290" stroke="var(--body)" stroke-width="1.5"/>
+    <text x="430" y="280" font-size="11" font-weight="700" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">owns</text>
+    <text x="335" y="304" font-size="11" font-weight="700" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">1</text>
+    <text x="510" y="304" font-size="11" font-weight="700" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">0..*</text>
+
+    <line x1="820" y1="290" x2="1040" y2="290" stroke="var(--body)" stroke-width="1.5"/>
+    <text x="930" y="280" font-size="11" font-weight="700" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">uses</text>
+    <text x="835" y="304" font-size="11" font-weight="700" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">0..*</text>
+    <text x="1010" y="304" font-size="11" font-weight="700" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">1</text>
+
+    <line x1="680" y1="440" x2="680" y2="500" stroke="var(--body)" stroke-width="1.5"/>
+    <text x="700" y="475" font-size="11" font-weight="700" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">contains</text>
+    <text x="700" y="448" font-size="11" font-weight="700" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">1</text>
+    <text x="700" y="496" font-size="11" font-weight="700" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">1..4</text>
+  </g>
+
+  <g id="footer">
+    <rect x="60" y="760" width="1280" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="782" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">CARDINALITY NOTATION</text>
+    <text x="80" y="802" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">1 = exactly one • 0..1 = zero or one • 1..* = one or more • 0..* = zero or more • 1..N = exact range (e.g., 1..4 for fixed multi-ship)</text>
+    <text x="80" y="822" font-size="10" font-style="italic" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Brand Red entities = the headline aggregate roots. Teal = supporting entities. Lines are simple labeled connections (use crow's-foot symbols in Figma if needed).</text>
+  </g>
+</svg>

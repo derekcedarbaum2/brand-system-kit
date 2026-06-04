@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE: Service Blueprint
+  Required fonts: JetBrains Mono (500-700), Inter (400-700). {{COMPANY}} brand.
+  Horizontal lanes (top to bottom): Customer actions / Touchpoints / Front-stage / Back-stage / Supporting processes.
+  "Line of interaction" between Customer and Front-stage; "Line of visibility" between Front-stage and Back-stage.
+  Time runs left to right across phases.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>{Service Name} — Service Blueprint</title>
+  <desc>Five-lane service blueprint mapping customer journey across phases against front-stage, back-stage, and supporting processes.</desc>
+
+  <g id="background"><rect x="0" y="0" width="1400" height="1000" fill="var(--bg)"/></g>
+
+  <g id="header">
+    <text x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">{SERVICE NAME} BLUEPRINT</text>
+    <text x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Customer journey × front-stage × back-stage × support processes, plotted across phases</text>
+  </g>
+
+  <g id="phase-headers">
+    <rect x="280" y="120" width="265" height="32" rx="4" fill="var(--teal)"/>
+    <text x="412" y="142" font-size="12" font-weight="700" fill="var(--bg)" letter-spacing="1.5" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">PHASE 1</text>
+    <rect x="555" y="120" width="265" height="32" rx="4" fill="var(--teal)"/>
+    <text x="687" y="142" font-size="12" font-weight="700" fill="var(--bg)" letter-spacing="1.5" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">PHASE 2</text>
+    <rect x="830" y="120" width="265" height="32" rx="4" fill="var(--teal)"/>
+    <text x="962" y="142" font-size="12" font-weight="700" fill="var(--bg)" letter-spacing="1.5" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">PHASE 3</text>
+    <rect x="1105" y="120" width="265" height="32" rx="4" fill="var(--teal)"/>
+    <text x="1237" y="142" font-size="12" font-weight="700" fill="var(--bg)" letter-spacing="1.5" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">PHASE 4</text>
+  </g>
+
+  <g id="lane-customer-actions">
+    <text x="60" y="186" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">CUSTOMER</text>
+    <text x="60" y="200" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">ACTIONS</text>
+    <rect x="280" y="170" width="1090" height="80" rx="4" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="1"/>
+    <text x="412" y="200" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{action}</text>
+    <text x="412" y="222" font-size="9" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{detail}</text>
+    <text x="687" y="200" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{action}</text>
+    <text x="962" y="200" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{action}</text>
+    <text x="1237" y="200" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{action}</text>
+  </g>
+
+  <g id="lane-touchpoints">
+    <text x="60" y="290" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">TOUCHPOINTS</text>
+    <rect x="280" y="270" width="1090" height="60" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="412" y="296" font-size="11" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{e.g., website}</text>
+    <text x="687" y="296" font-size="11" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{e.g., support call}</text>
+    <text x="962" y="296" font-size="11" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{e.g., onsite}</text>
+    <text x="1237" y="296" font-size="11" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{e.g., email follow-up}</text>
+  </g>
+
+  <line x1="60" y1="340" x2="1370" y2="340" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="60" y="356" font-size="9" font-weight="700" fill="var(--accent)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">— LINE OF INTERACTION —</text>
+
+  <g id="lane-frontstage">
+    <text x="60" y="406" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">FRONT-STAGE</text>
+    <text x="60" y="420" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">(VISIBLE)</text>
+    <rect x="280" y="380" width="1090" height="80" rx="4" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="1"/>
+    <text x="412" y="410" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{front-stage action}</text>
+    <text x="412" y="430" font-size="9" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{who, what}</text>
+    <text x="687" y="410" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{action}</text>
+    <text x="962" y="410" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{action}</text>
+    <text x="1237" y="410" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{action}</text>
+  </g>
+
+  <line x1="60" y1="490" x2="1370" y2="490" stroke="var(--teal)" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="60" y="506" font-size="9" font-weight="700" fill="var(--teal)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">— LINE OF VISIBILITY —</text>
+
+  <g id="lane-backstage">
+    <text x="60" y="556" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">BACK-STAGE</text>
+    <text x="60" y="570" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">(NOT VISIBLE)</text>
+    <rect x="280" y="530" width="1090" height="80" rx="4" fill="var(--card)" stroke="var(--dim)" stroke-width="1"/>
+    <text x="412" y="560" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{back-stage action}</text>
+    <text x="687" y="560" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{e.g., CRM update}</text>
+    <text x="962" y="560" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{action}</text>
+    <text x="1237" y="560" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{action}</text>
+  </g>
+
+  <line x1="60" y1="640" x2="1370" y2="640" stroke="var(--dim)" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="60" y="656" font-size="9" font-weight="700" fill="var(--dim)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">— LINE OF INTERNAL INTERACTION —</text>
+
+  <g id="lane-support">
+    <text x="60" y="706" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">SUPPORTING</text>
+    <text x="60" y="720" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">PROCESSES</text>
+    <rect x="280" y="680" width="1090" height="80" rx="4" fill="var(--card)" stroke="var(--accent)" stroke-width="1"/>
+    <text x="412" y="710" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{system / vendor}</text>
+    <text x="412" y="728" font-size="9" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{e.g., billing system}</text>
+    <text x="687" y="710" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{support}</text>
+    <text x="962" y="710" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{support}</text>
+    <text x="1237" y="710" font-size="11" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{support}</text>
+  </g>
+
+  <g id="footer">
+    <rect x="60" y="800" width="1280" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="820" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">HOW TO READ</text>
+    <text x="80" y="840" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Five horizontal lanes; time flows left → right. Customer actions on top; underlying systems on bottom. Dashed lines mark visibility boundaries.</text>
+    <text x="80" y="860" font-size="10" font-style="italic" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Use to identify gaps: where a customer action lacks supporting back-stage process, or where a back-stage process has no front-stage manifestation.</text>
+  </g>
+</svg>

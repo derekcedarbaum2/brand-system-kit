@@ -1,0 +1,75 @@
+/* =====================================================================
+   Northwind (demo) — component layer.
+   The :root token block below is GENERATED from tokens.json by
+   ../../tooling/build-tokens.mjs. Edit tokens.json, never the block.
+   ===================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap');
+
+/* >>> AUTO-GENERATED TOKENS — do not edit by hand <<< */
+:root {
+  --bg: #FBFAF7;
+  --bg-card: #F0EEE8;
+  --bg-dark: #14201F;
+  --text-primary: #161A19;
+  --text-body: #353B3A;
+  --text-secondary: #5C6463;
+  --text-dim: #6E7574;
+  --text-on-dark: #E6E9E7;
+  --border: #E3E0D8;
+  --accent: #1F6E7A;
+  --accent-2: #3E5C8A;
+  --accent-on-dark: #5FB3BF;
+  --emphasis: #9A2D2D;
+  --font-serif: 'Source Serif 4', Georgia, serif;
+  --font-sans: Inter, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', Menlo, monospace;
+}
+/* >>> END AUTO-GENERATED TOKENS <<< */
+
+@page { size: letter; margin: 0; }
+html, body {
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  -webkit-font-smoothing: antialiased;
+  background: var(--bg); color: var(--text-body);
+  font-family: var(--font-sans); font-size: 12px; line-height: 1.7; margin: 0;
+}
+h1, h2 { font-family: var(--font-serif); color: var(--text-primary); letter-spacing: -0.3px; }
+h1 { font-size: 32px; font-weight: 700; line-height: 1.15; margin: 0 0 6px; }
+h2 { font-size: 20px; font-weight: 700; margin: 30px 0 12px; padding-left: 14px; border-left: 3px solid var(--accent); }
+h3 { font-family: var(--font-sans); font-size: 14px; font-weight: 700; color: var(--text-primary); margin: 16px 0 6px; }
+p { margin: 8px 0; }
+strong { color: var(--text-primary); font-weight: 600; }
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+hr { border: none; border-top: 1px solid var(--border); margin: 30px 0; }
+
+.label, .meta {
+  font-family: var(--font-mono); font-size: 9px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim);
+}
+.meta { color: var(--text-secondary); margin-bottom: 16px; }
+
+.doc-header { padding: 0.55in 0.65in 0.3in; border-bottom: 1px solid var(--border); }
+.doc-header .wordmark { font-family: var(--font-serif); font-size: 14px; font-weight: 700; color: var(--text-primary); margin-bottom: 22px; }
+.doc-header .accent-bar { width: 48px; height: 2px; background: var(--accent); margin-bottom: 16px; }
+.doc-body { padding: 0.3in 0.65in 0.5in; max-width: 7.25in; }
+
+.stat-row { display: flex; gap: 14px; margin: 22px 0; }
+.stat-card { flex: 1; padding: 16px 18px; background: var(--bg-card); border: 1px solid var(--border); border-top: 2px solid var(--accent); border-radius: 4px; }
+.stat-card .num { font-size: 26px; font-weight: 800; color: var(--text-primary); letter-spacing: -0.5px; }
+.stat-card .num.emphasis { color: var(--emphasis); }
+.stat-card .lbl { font-family: var(--font-mono); font-size: 9px; font-weight: 600; text-transform: uppercase; color: var(--text-secondary); }
+
+.pull { font-family: var(--font-serif); font-size: 16px; font-style: italic; font-weight: 600; color: var(--text-primary); border-left: 2px solid var(--accent); padding-left: 16px; margin: 22px 0; max-width: 88%; }
+.callout { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 4px; padding: 14px 18px; margin: 22px 0; }
+.callout.alt { border-left-color: var(--accent-2); }
+
+table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 10.5px; }
+th { text-align: left; font-family: var(--font-mono); font-size: 9px; font-weight: 600; text-transform: uppercase; color: var(--text-secondary); background: var(--bg-card); padding: 9px 12px; border-bottom: 1px solid var(--border); }
+td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+
+.panel-dark { background: var(--bg-dark); color: var(--text-on-dark); padding: 26px 0.65in; margin: 30px -0.65in; }
+.panel-dark h2 { color: var(--text-on-dark); border-left-color: var(--accent-on-dark); }
+.panel-dark .label { color: var(--accent-on-dark); }
+
+.doc-footer { border-top: 1px solid var(--border); padding: 14px 0.65in; display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-secondary); }

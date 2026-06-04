@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE: UML State Diagram
+  Required fonts: JetBrains Mono (500-700), Inter (400-700). {{COMPANY}} brand.
+  States as rounded rectangles; transitions as labeled arrows. Initial = filled circle, final = ringed circle.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>{Object} — State Diagram</title>
+  <desc>UML state diagram with initial/final pseudo-states, named states, and labeled transitions.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--body)"/>
+    </marker>
+  </defs>
+
+  <g id="background"><rect x="0" y="0" width="1400" height="800" fill="var(--bg)"/></g>
+
+  <g id="header">
+    <text x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">{OBJECT} STATE DIAGRAM</text>
+    <text x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">UML 2.x. States = rounded rectangles. Transitions labeled with [trigger / guard / action].</text>
+  </g>
+
+  <g id="initial">
+    <circle cx="120" cy="300" r="14" fill="var(--ink)"/>
+    <line x1="134" y1="300" x2="190" y2="300" stroke="var(--body)" stroke-width="1.5" marker-end="url(#arrow)"/>
+  </g>
+
+  <g id="state-draft">
+    <rect x="190" y="240" width="220" height="120" rx="20" fill="var(--card)" stroke="var(--teal)" stroke-width="2"/>
+    <text x="300" y="270" font-size="14" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{State 1: DRAFT}</text>
+    <line x1="200" y1="284" x2="400" y2="284" stroke="var(--border)"/>
+    <text x="210" y="306" font-size="10" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">entry / {action on entry}</text>
+    <text x="210" y="324" font-size="10" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">do / {ongoing action}</text>
+    <text x="210" y="342" font-size="10" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">exit / {action on exit}</text>
+  </g>
+
+  <g id="state-active">
+    <rect x="540" y="240" width="220" height="120" rx="20" fill="var(--card)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="650" y="270" font-size="14" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{State 2: ACTIVE}</text>
+    <line x1="550" y1="284" x2="750" y2="284" stroke="var(--border)"/>
+    <text x="560" y="306" font-size="10" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">entry / {action}</text>
+  </g>
+
+  <g id="state-done">
+    <rect x="890" y="240" width="220" height="120" rx="20" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="2"/>
+    <text x="1000" y="270" font-size="14" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{State 3: DONE}</text>
+  </g>
+
+  <g id="state-error">
+    <rect x="540" y="450" width="220" height="120" rx="20" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="2" stroke-dasharray="5,3"/>
+    <text x="650" y="480" font-size="14" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{ERROR (interrupt)}</text>
+    <line x1="550" y1="494" x2="750" y2="494" stroke="var(--border)"/>
+    <text x="560" y="516" font-size="10" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">do / {log + alert}</text>
+  </g>
+
+  <g id="final">
+    <circle cx="1240" cy="300" r="14" fill="var(--bg)" stroke="var(--ink)" stroke-width="2"/>
+    <circle cx="1240" cy="300" r="7" fill="var(--ink)"/>
+  </g>
+
+  <g id="transitions">
+    <line x1="410" y1="300" x2="540" y2="300" stroke="var(--body)" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="475" y="290" font-size="10" font-style="italic" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[submit / validate]</text>
+
+    <line x1="760" y1="300" x2="890" y2="300" stroke="var(--body)" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="825" y="290" font-size="10" font-style="italic" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[complete]</text>
+
+    <line x1="650" y1="360" x2="650" y2="450" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="670" y="410" font-size="10" font-style="italic" fill="var(--accent)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[failure]</text>
+
+    <path d="M 540 510 C 400 510, 350 410, 300 360" fill="none" stroke="var(--body)" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrow)"/>
+    <text x="395" y="450" font-size="10" font-style="italic" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[retry]</text>
+
+    <line x1="1110" y1="300" x2="1226" y2="300" stroke="var(--body)" stroke-width="1.5" marker-end="url(#arrow)"/>
+  </g>
+
+  <g id="footer">
+    <rect x="60" y="660" width="1280" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="682" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">HOW TO READ</text>
+    <text x="80" y="702" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Filled circle = initial pseudo-state. Ringed circle = final. Rounded rectangles = states with optional entry/do/exit actions. Arrow labels: [trigger / guard / action] in italic.</text>
+    <text x="80" y="720" font-size="10" font-style="italic" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Use for: lifecycle (draft → review → published), workflow status, discrete-system behavior over time, finite-state machines.</text>
+  </g>
+</svg>

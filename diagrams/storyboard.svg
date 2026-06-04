@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE: Storyboard (4-6 sequential narrative panels)
+  Required fonts: JetBrains Mono (500-700), Inter (400-700). {{COMPANY}} brand.
+  Each panel: image area + caption. Use to humanize a user scenario in pitch decks.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>{Scenario} — Storyboard</title>
+  <desc>Sequential narrative panels showing a user scenario over time. Each panel = image area + caption.</desc>
+
+  <g id="background"><rect x="0" y="0" width="1400" height="900" fill="var(--bg)"/></g>
+
+  <g id="header">
+    <text x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">{SCENARIO} — STORYBOARD</text>
+    <text x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Persona: {name} • Context: {when/where}</text>
+  </g>
+
+  <g id="panel-1">
+    <rect x="60" y="140" width="320" height="240" rx="6" fill="var(--card)" stroke="var(--teal)" stroke-width="1.5"/>
+    <rect x="60" y="140" width="320" height="32" rx="6" fill="var(--teal)"/>
+    <text x="220" y="161" font-size="12" font-weight="700" fill="var(--bg)" letter-spacing="1" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">PANEL 1 — SETUP</text>
+    <text x="220" y="270" font-size="48" fill="var(--dim)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[image]</text>
+    <text x="220" y="310" font-size="11" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{describe what happens visually}</text>
+    <rect x="60" y="380" width="320" height="80" rx="0 0 6 6" fill="var(--bg)" stroke="var(--teal)" stroke-width="1.5"/>
+    <text x="80" y="402" font-size="13" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">"{Quote or caption}"</text>
+    <text x="80" y="424" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Setup: who, where, what they're doing}</text>
+    <text x="80" y="442" font-size="9" font-style="italic" fill="var(--accent)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.5" font-weight="700">FRICTION: {what's broken}</text>
+  </g>
+
+  <g id="panel-2">
+    <rect x="400" y="140" width="320" height="240" rx="6" fill="var(--card)" stroke="var(--teal)" stroke-width="1.5"/>
+    <rect x="400" y="140" width="320" height="32" rx="6" fill="var(--teal)"/>
+    <text x="560" y="161" font-size="12" font-weight="700" fill="var(--bg)" letter-spacing="1" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">PANEL 2 — CONFLICT</text>
+    <text x="560" y="270" font-size="48" fill="var(--dim)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[image]</text>
+    <rect x="400" y="380" width="320" height="80" rx="0 0 6 6" fill="var(--bg)" stroke="var(--teal)" stroke-width="1.5"/>
+    <text x="420" y="402" font-size="13" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">"{Quote or caption}"</text>
+    <text x="420" y="424" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{The pain peaks; tension builds}</text>
+  </g>
+
+  <g id="panel-3">
+    <rect x="740" y="140" width="320" height="240" rx="6" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="2"/>
+    <rect x="740" y="140" width="320" height="32" rx="6" fill="var(--accent)"/>
+    <text x="900" y="161" font-size="12" font-weight="700" fill="var(--bg)" letter-spacing="1" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">PANEL 3 — SOLUTION ENTERS</text>
+    <text x="900" y="270" font-size="48" fill="var(--accent)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[image]</text>
+    <rect x="740" y="380" width="320" height="80" rx="0 0 6 6" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="760" y="402" font-size="13" font-weight="700" fill="var(--accent)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Our product / service appears}</text>
+    <text x="760" y="424" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{What changes for the persona}</text>
+  </g>
+
+  <g id="panel-4">
+    <rect x="1080" y="140" width="320" height="240" rx="6" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="2"/>
+    <rect x="1080" y="140" width="320" height="32" rx="6" fill="var(--teal)"/>
+    <text x="1240" y="161" font-size="12" font-weight="700" fill="var(--bg)" letter-spacing="1" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">PANEL 4 — RESOLUTION</text>
+    <text x="1240" y="270" font-size="48" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[image]</text>
+    <rect x="1080" y="380" width="320" height="80" rx="0 0 6 6" fill="var(--bg)" stroke="var(--teal)" stroke-width="2"/>
+    <text x="1100" y="402" font-size="13" font-weight="700" fill="var(--teal)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Outcome / payoff}</text>
+    <text x="1100" y="424" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{The persona's life is better because...}</text>
+    <text x="1100" y="442" font-size="9" font-style="italic" fill="var(--teal)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.5" font-weight="700">VALUE: {what was unlocked}</text>
+  </g>
+
+  <g id="footer">
+    <rect x="60" y="500" width="1340" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="522" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">HOW TO READ</text>
+    <text x="80" y="544" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Four-panel narrative arc: setup → conflict → solution enters → resolution. Replace [image] placeholders with real sketches/illustrations in Figma.</text>
+    <text x="80" y="562" font-size="10" font-style="italic" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Use for executive pitches, vision videos, and demo prep — humanizes the data behind a problem and makes the value moment concrete.</text>
+  </g>
+</svg>

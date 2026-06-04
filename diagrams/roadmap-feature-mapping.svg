@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE (skeleton): Feature Mapping (Release Train)
+  Source: roadmap-update skill / Slides 15, 18, 19, 20 of canonical product roadmap deck.
+  Purpose: Major features per release plotted along a time axis.
+  Layout:
+    - x-axis along bottom: year markers + Today indicator
+    - version-release "stops" scattered along time (Gen 1 / 3.0, 3.5 bridge, Gen 2 / 4.0, v5.x)
+    - at each stop: a small bullet card with major features for that release
+    - cards staggered above/below to avoid overlap, anchored to release dates via leader lines
+  Required Figma fonts: JetBrains Mono (700) for headlines/labels, Inter (400, 700) for body.
+  Canvas: 1400 × 800.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>Feature Mapping — Release Train Template</title>
+  <desc>Major features per version release, plotted along a time axis with version stops.</desc>
+
+  <g id="background">
+    <rect x="0" y="0" width="1400" height="800" fill="var(--bg)"/>
+  </g>
+
+  <g id="header">
+    <text x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">FEATURE MAPPING — {AREA}</text>
+    <text x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Area} = SPS · Composer · Runtime · Replay. Features grouped by version release along time axis.</text>
+  </g>
+
+  <!-- =========================================================
+       TIME AXIS along bottom — year markers + Today
+       ========================================================= -->
+  <g id="time-axis">
+    <line x1="100" y1="640" x2="1340" y2="640" stroke="var(--ink)" stroke-width="2"/>
+    <polygon points="1340,640 1328,634 1328,646" fill="var(--ink)"/>
+
+    <!-- year tick marks -->
+    <line x1="220" y1="635" x2="220" y2="650" stroke="var(--ink)" stroke-width="2"/>
+    <line x1="540" y1="635" x2="540" y2="650" stroke="var(--ink)" stroke-width="2"/>
+    <line x1="860" y1="635" x2="860" y2="650" stroke="var(--ink)" stroke-width="2"/>
+    <line x1="1180" y1="635" x2="1180" y2="650" stroke="var(--ink)" stroke-width="2"/>
+
+    <text x="220" y="675" font-size="14" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.0">2026</text>
+    <text x="540" y="675" font-size="14" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.0">2027</text>
+    <text x="860" y="675" font-size="14" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.0">2028</text>
+    <text x="1180" y="675" font-size="14" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.0">2029</text>
+  </g>
+
+  <!-- TODAY marker -->
+  <g id="today-marker">
+    <line x1="320" y1="120" x2="320" y2="640" stroke="var(--emphasis)" stroke-width="2" stroke-dasharray="6,3"/>
+    <circle cx="320" cy="640" r="6" fill="var(--emphasis)"/>
+    <text x="320" y="115" font-size="11" font-weight="700" fill="var(--emphasis)" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">TODAY</text>
+  </g>
+
+  <!-- =========================================================
+       RELEASE STOP 1 — Gen 1 / 3.0 SW (early 2026, ABOVE axis)
+       ========================================================= -->
+  <g id="release-1">
+    <!-- stop marker on axis -->
+    <circle cx="260" cy="640" r="8" fill="var(--teal)" stroke="var(--bg)" stroke-width="2"/>
+    <!-- leader line up to card -->
+    <line x1="260" y1="632" x2="260" y2="500" stroke="var(--teal)" stroke-width="1.5"/>
+    <!-- feature card -->
+    <rect x="120" y="170" width="280" height="330" rx="4" fill="var(--card)" stroke="var(--teal)" stroke-width="1.5"/>
+    <rect x="120" y="170" width="280" height="44" rx="4" fill="var(--teal)"/>
+    <text x="135" y="195" font-size="13" font-weight="700" fill="var(--bg)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">GEN 1 (FALCON)</text>
+    <text x="135" y="208" font-size="10" fill="#9AC0D8" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">3.0 SW · Q2 2026</text>
+
+    <g font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" fill="var(--ink)">
+      <circle cx="138" cy="238" r="2.5" fill="var(--teal)"/><text x="148" y="241">{Feature A — core capability}</text>
+      <circle cx="138" cy="262" r="2.5" fill="var(--teal)"/><text x="148" y="265">{Feature B}</text>
+      <circle cx="138" cy="286" r="2.5" fill="var(--teal)"/><text x="148" y="289">{Feature C}</text>
+      <circle cx="138" cy="310" r="2.5" fill="var(--teal)"/><text x="148" y="313">{Feature D}</text>
+      <circle cx="138" cy="334" r="2.5" fill="var(--teal)"/><text x="148" y="337">{Feature E}</text>
+      <circle cx="138" cy="358" r="2.5" fill="var(--teal)"/><text x="148" y="361">{Feature F}</text>
+      <circle cx="138" cy="382" r="2.5" fill="var(--teal)"/><text x="148" y="385">{Feature G}</text>
+      <circle cx="138" cy="406" r="2.5" fill="var(--teal)"/><text x="148" y="409">{Feature H}</text>
+    </g>
+  </g>
+
+  <!-- =========================================================
+       RELEASE STOP 2 — 3.5 SW bridge (mid 2027, BELOW header)
+       ========================================================= -->
+  <g id="release-2">
+    <circle cx="580" cy="640" r="8" fill="var(--warm)" stroke="var(--bg)" stroke-width="2"/>
+    <line x1="580" y1="632" x2="580" y2="440" stroke="var(--warm)" stroke-width="1.5"/>
+    <rect x="450" y="170" width="260" height="270" rx="4" fill="var(--card)" stroke="var(--warm)" stroke-width="1.5"/>
+    <rect x="450" y="170" width="260" height="44" rx="4" fill="var(--warm)"/>
+    <text x="465" y="195" font-size="13" font-weight="700" fill="var(--bg)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">3.5 SW</text>
+    <text x="465" y="208" font-size="10" fill="#D8C29A" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">Bridge · Q2 2027</text>
+
+    <g font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" fill="var(--ink)">
+      <circle cx="468" cy="238" r="2.5" fill="var(--warm)"/><text x="478" y="241">{Feature I — deferred from Gen 1}</text>
+      <circle cx="468" cy="262" r="2.5" fill="var(--warm)"/><text x="478" y="265">{Feature J}</text>
+      <circle cx="468" cy="286" r="2.5" fill="var(--warm)"/><text x="478" y="289">{Feature K}</text>
+      <circle cx="468" cy="310" r="2.5" fill="var(--warm)"/><text x="478" y="313">{Feature L}</text>
+      <circle cx="468" cy="334" r="2.5" fill="var(--warm)"/><text x="478" y="337">{Feature M}</text>
+    </g>
+  </g>
+
+  <!-- =========================================================
+       RELEASE STOP 3 — Gen 2 / 4.0 SW (mid 2028)
+       ========================================================= -->
+  <g id="release-3">
+    <circle cx="900" cy="640" r="8" fill="var(--teal)" stroke="var(--bg)" stroke-width="2"/>
+    <line x1="900" y1="632" x2="900" y2="500" stroke="var(--teal)" stroke-width="1.5"/>
+    <rect x="760" y="170" width="280" height="330" rx="4" fill="var(--card)" stroke="var(--teal)" stroke-width="1.5"/>
+    <rect x="760" y="170" width="280" height="44" rx="4" fill="var(--teal)"/>
+    <text x="775" y="195" font-size="13" font-weight="700" fill="var(--bg)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">GEN 2 (GOSHAWK)</text>
+    <text x="775" y="208" font-size="10" fill="#9AC0D8" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">4.0 SW · Q2 2028</text>
+
+    <g font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" fill="var(--ink)">
+      <circle cx="778" cy="238" r="2.5" fill="var(--teal)"/><text x="788" y="241">{Feature N — new capability}</text>
+      <circle cx="778" cy="262" r="2.5" fill="var(--teal)"/><text x="788" y="265">{Feature O}</text>
+      <circle cx="778" cy="286" r="2.5" fill="var(--teal)"/><text x="788" y="289">{Feature P}</text>
+      <circle cx="778" cy="310" r="2.5" fill="var(--teal)"/><text x="788" y="313">{Feature Q}</text>
+      <circle cx="778" cy="334" r="2.5" fill="var(--teal)"/><text x="788" y="337">{Feature R}</text>
+      <circle cx="778" cy="358" r="2.5" fill="var(--teal)"/><text x="788" y="361">{Feature S}</text>
+      <circle cx="778" cy="382" r="2.5" fill="var(--teal)"/><text x="788" y="385">{Feature T}</text>
+      <circle cx="778" cy="406" r="2.5" fill="var(--teal)"/><text x="788" y="409">{Feature U}</text>
+    </g>
+  </g>
+
+  <!-- =========================================================
+       RELEASE STOP 4 — v5.x (early 2029, dashed / conditional)
+       ========================================================= -->
+  <g id="release-4">
+    <circle cx="1240" cy="640" r="8" fill="var(--bg)" stroke="var(--accent)" stroke-width="2" stroke-dasharray="2,2"/>
+    <line x1="1240" y1="632" x2="1240" y2="440" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <rect x="1100" y="170" width="240" height="270" rx="4" fill="var(--card)" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <rect x="1100" y="170" width="240" height="44" rx="4" fill="var(--accent)"/>
+    <text x="1115" y="195" font-size="13" font-weight="700" fill="var(--bg)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">SENTINEL v5.x</text>
+    <text x="1115" y="208" font-size="10" fill="#B0B6C0" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">Concept · Q1 2029</text>
+
+    <g font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" fill="var(--accent)">
+      <circle cx="1118" cy="238" r="2.5" fill="var(--accent)"/><text x="1128" y="241">{Feature V — directional}</text>
+      <circle cx="1118" cy="262" r="2.5" fill="var(--accent)"/><text x="1128" y="265">{Feature W}</text>
+      <circle cx="1118" cy="286" r="2.5" fill="var(--accent)"/><text x="1128" y="289">{Feature X}</text>
+      <circle cx="1118" cy="310" r="2.5" fill="var(--accent)"/><text x="1128" y="313">{Feature Y}</text>
+    </g>
+  </g>
+
+  <!-- =========================================================
+       LEGEND
+       ========================================================= -->
+  <g id="legend">
+    <rect x="60" y="720" width="1280" height="64" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="740" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">LEGEND</text>
+    <g font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" fill="var(--body)">
+      <circle cx="170" cy="757" r="6" fill="var(--teal)" stroke="var(--bg)" stroke-width="2"/>
+      <text x="185" y="761">Generation release (Gen 1 / Gen 2)</text>
+      <circle cx="460" cy="757" r="6" fill="var(--warm)" stroke="var(--bg)" stroke-width="2"/>
+      <text x="475" y="761">Bridge / interim release</text>
+      <circle cx="680" cy="757" r="6" fill="var(--bg)" stroke="var(--accent)" stroke-width="2" stroke-dasharray="2,2"/>
+      <text x="695" y="761">Concept / not committed</text>
+      <line x1="900" y1="751" x2="900" y2="763" stroke="var(--emphasis)" stroke-width="2" stroke-dasharray="3,2"/>
+      <text x="915" y="761">Today marker</text>
+      <text x="1050" y="761" font-style="italic" fill="var(--secondary)">Stop position on axis = release date.</text>
+    </g>
+  </g>
+</svg>

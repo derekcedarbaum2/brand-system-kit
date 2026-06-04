@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE (skeleton): PRD Index
+  Source: roadmap-update skill / Slide 21 of canonical product roadmap deck.
+  Purpose: Living register of every PRD with status and contact owner.
+  Layout: two side-by-side tables, each 3 columns — PRD name | Status | Contact.
+  Required Figma fonts: JetBrains Mono (700) for headlines/labels, Inter (400, 700) for body.
+  Canvas: 1400 × 800.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>PRD Index — Template</title>
+  <desc>Two side-by-side tables listing every PRD with status and contact owner.</desc>
+
+  <g id="background">
+    <rect x="0" y="0" width="1400" height="800" fill="var(--bg)"/>
+  </g>
+
+  <g id="header">
+    <text x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">PRD INDEX</text>
+    <text x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Living register. As of {date}.</text>
+  </g>
+
+  <!-- LEFT TABLE -->
+  <g id="left-table">
+    <!-- header row -->
+    <rect x="60" y="120" width="640" height="36" fill="var(--ink)"/>
+    <text x="76" y="143" font-size="11" font-weight="700" fill="var(--bg)" letter-spacing="1.2" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">PRD</text>
+    <text x="396" y="143" font-size="11" font-weight="700" fill="var(--bg)" letter-spacing="1.2" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">STATUS</text>
+    <text x="540" y="143" font-size="11" font-weight="700" fill="var(--bg)" letter-spacing="1.2" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">CONTACT</text>
+
+    <!-- row template ×8 -->
+    <g font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" fill="var(--ink)">
+      <rect x="60" y="156" width="640" height="36" fill="var(--bg)" stroke="var(--border)"/>
+      <text x="76" y="179">{PRD name 1}</text>
+      <g transform="translate(396,168)"><rect width="120" height="18" rx="9" fill="var(--card-accent)" stroke="var(--teal)"/><text x="60" y="13" font-size="10" font-weight="700" fill="var(--teal)" text-anchor="middle">In Review</text></g>
+      <text x="540" y="179" fill="var(--accent)">{Contact role}</text>
+
+      <rect x="60" y="192" width="640" height="36" fill="var(--card)" stroke="var(--border)"/>
+      <text x="76" y="215">{PRD name 2}</text>
+      <g transform="translate(396,204)"><rect width="120" height="18" rx="9" fill="var(--card-accent)" stroke="var(--teal)"/><text x="60" y="13" font-size="10" font-weight="700" fill="var(--teal)" text-anchor="middle">In Review</text></g>
+      <text x="540" y="215" fill="var(--accent)">{Contact role}</text>
+
+      <rect x="60" y="228" width="640" height="36" fill="var(--bg)" stroke="var(--border)"/>
+      <text x="76" y="251">{PRD name 3}</text>
+      <g transform="translate(396,240)"><rect width="120" height="18" rx="9" fill="var(--card)" stroke="var(--warm)"/><text x="60" y="13" font-size="10" font-weight="700" fill="var(--warm)" text-anchor="middle">Revisiting</text></g>
+      <text x="540" y="251" fill="var(--accent)">{Contact role}</text>
+
+      <rect x="60" y="264" width="640" height="36" fill="var(--card)" stroke="var(--border)"/>
+      <text x="76" y="287">{PRD name 4}</text>
+      <g transform="translate(396,276)"><rect width="120" height="18" rx="9" fill="#F3F3F3" stroke="var(--accent)"/><text x="60" y="13" font-size="10" font-weight="700" fill="var(--accent)" text-anchor="middle">Discovery</text></g>
+      <text x="540" y="287" fill="var(--accent)">{Contact role}</text>
+
+      <rect x="60" y="300" width="640" height="36" fill="var(--bg)" stroke="var(--border)"/>
+      <text x="76" y="323">{PRD name 5}</text>
+      <g transform="translate(396,312)"><rect width="120" height="18" rx="9" fill="var(--card-accent)" stroke="var(--teal)"/><text x="60" y="13" font-size="10" font-weight="700" fill="var(--teal)" text-anchor="middle">In Review</text></g>
+      <text x="540" y="323" fill="var(--accent)">{Contact role}</text>
+
+      <rect x="60" y="336" width="640" height="36" fill="var(--card)" stroke="var(--border)"/>
+      <text x="76" y="359">{PRD name 6}</text>
+      <g transform="translate(396,348)"><rect width="120" height="18" rx="9" fill="#F3F3F3" stroke="var(--accent)"/><text x="60" y="13" font-size="10" font-weight="700" fill="var(--accent)" text-anchor="middle">Discovery</text></g>
+      <text x="540" y="359" fill="var(--accent)">{Contact role}</text>
+
+      <rect x="60" y="372" width="640" height="36" fill="var(--bg)" stroke="var(--border)"/>
+      <text x="76" y="395">{PRD name 7}</text>
+      <g transform="translate(396,384)"><rect width="120" height="18" rx="9" fill="var(--card-accent)" stroke="var(--teal)"/><text x="60" y="13" font-size="10" font-weight="700" fill="var(--teal)" text-anchor="middle">In Review</text></g>
+      <text x="540" y="395" fill="var(--accent)">{Contact role}</text>
+
+      <rect x="60" y="408" width="640" height="36" fill="var(--card)" stroke="var(--border)"/>
+      <text x="76" y="431">{PRD name 8}</text>
+      <g transform="translate(396,420)"><rect width="120" height="18" rx="9" fill="#ECECEC" stroke="var(--dim)"/><text x="60" y="13" font-size="10" font-weight="700" fill="var(--secondary)" text-anchor="middle">Backlog</text></g>
+      <text x="540" y="431" fill="var(--accent)">{Contact role}</text>
+    </g>
+  </g>
+
+  <!-- RIGHT TABLE -->
+  <g id="right-table">
+    <rect x="720" y="120" width="620" height="36" fill="var(--ink)"/>
+    <text x="736" y="143" font-size="11" font-weight="700" fill="var(--bg)" letter-spacing="1.2" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">PRD</text>
+    <text x="1046" y="143" font-size="11" font-weight="700" fill="var(--bg)" letter-spacing="1.2" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">STATUS</text>
+    <text x="1190" y="143" font-size="11" font-weight="700" fill="var(--bg)" letter-spacing="1.2" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">CONTACT</text>
+
+    <g font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" fill="var(--ink)">
+      <rect x="720" y="156" width="620" height="36" fill="var(--bg)" stroke="var(--border)"/>
+      <text x="736" y="179">{PRD name 9}</text>
+      <g transform="translate(1046,168)"><rect width="120" height="18" rx="9" fill="var(--card-accent)" stroke="var(--teal)"/><text x="60" y="13" font-size="10" font-weight="700" fill="var(--teal)" text-anchor="middle">In Review</text></g>
+      <text x="1190" y="179" fill="var(--accent)">{Contact role}</text>
+
+      <rect x="720" y="192" width="620" height="36" fill="var(--card)" stroke="var(--border)"/>
+      <text x="736" y="215">{PRD name 10}</text>
+      <g transform="translate(1046,204)"><rect width="120" height="18" rx="9" fill="#F3F3F3" stroke="var(--accent)"/><text x="60" y="13" font-size="10" font-weight="700" fill="var(--accent)" text-anchor="middle">Discovery</text></g>
+      <text x="1190" y="215" fill="var(--accent)">{Contact role}</text>
+
+      <rect x="720" y="228" width="620" height="36" fill="var(--bg)" stroke="var(--border)"/>
+      <text x="736" y="251">{PRD name 11}</text>
+      <g transform="translate(1046,240)"><rect width="120" height="18" rx="9" fill="var(--card-accent)" stroke="var(--teal)"/><text x="60" y="13" font-size="10" font-weight="700" fill="var(--teal)" text-anchor="middle">In Review</text></g>
+      <text x="1190" y="251" fill="var(--accent)">{Contact role}</text>
+
+      <rect x="720" y="264" width="620" height="36" fill="var(--card)" stroke="var(--border)"/>
+      <text x="736" y="287">{PRD name 12}</text>
+      <g transform="translate(1046,276)"><rect width="120" height="18" rx="9" fill="var(--card)" stroke="var(--warm)"/><text x="60" y="13" font-size="10" font-weight="700" fill="var(--warm)" text-anchor="middle">Revisiting</text></g>
+      <text x="1190" y="287" fill="var(--accent)">{Contact role}</text>
+
+      <rect x="720" y="300" width="620" height="36" fill="var(--bg)" stroke="var(--border)"/>
+      <text x="736" y="323">{PRD name 13}</text>
+      <g transform="translate(1046,312)"><rect width="120" height="18" rx="9" fill="var(--card-accent)" stroke="var(--teal)"/><text x="60" y="13" font-size="10" font-weight="700" fill="var(--teal)" text-anchor="middle">In Review</text></g>
+      <text x="1190" y="323" fill="var(--accent)">{Contact role}</text>
+
+      <rect x="720" y="336" width="620" height="36" fill="var(--card)" stroke="var(--border)"/>
+      <text x="736" y="359">{PRD name 14}</text>
+      <g transform="translate(1046,348)"><rect width="120" height="18" rx="9" fill="#ECECEC" stroke="var(--dim)"/><text x="60" y="13" font-size="10" font-weight="700" fill="var(--secondary)" text-anchor="middle">Backlog</text></g>
+      <text x="1190" y="359" fill="var(--accent)">{Contact role}</text>
+
+      <rect x="720" y="372" width="620" height="36" fill="var(--bg)" stroke="var(--border)"/>
+      <text x="736" y="395">{PRD name 15}</text>
+      <g transform="translate(1046,384)"><rect width="120" height="18" rx="9" fill="#F3F3F3" stroke="var(--accent)"/><text x="60" y="13" font-size="10" font-weight="700" fill="var(--accent)" text-anchor="middle">Discovery</text></g>
+      <text x="1190" y="395" fill="var(--accent)">{Contact role}</text>
+
+      <rect x="720" y="408" width="620" height="36" fill="var(--card)" stroke="var(--border)"/>
+      <text x="736" y="431">{PRD name 16}</text>
+      <g transform="translate(1046,420)"><rect width="120" height="18" rx="9" fill="#E6F0E8" stroke="var(--positive)"/><text x="60" y="13" font-size="10" font-weight="700" fill="var(--positive)" text-anchor="middle">Done</text></g>
+      <text x="1190" y="431" fill="var(--accent)">{Contact role}</text>
+    </g>
+  </g>
+
+  <!-- LEGEND -->
+  <g id="legend">
+    <rect x="60" y="680" width="1280" height="100" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="700" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">STATUS LEGEND</text>
+    <g font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="11" fill="var(--body)">
+      <g transform="translate(80,712)"><rect width="80" height="18" rx="9" fill="#ECECEC" stroke="var(--dim)"/><text x="40" y="13" font-size="10" font-weight="700" fill="var(--secondary)" text-anchor="middle">Backlog</text></g>
+      <text x="170" y="725">not started</text>
+      <g transform="translate(280,712)"><rect width="80" height="18" rx="9" fill="#F3F3F3" stroke="var(--accent)"/><text x="40" y="13" font-size="10" font-weight="700" fill="var(--accent)" text-anchor="middle">Discovery</text></g>
+      <text x="370" y="725">initial draft</text>
+      <g transform="translate(470,712)"><rect width="80" height="18" rx="9" fill="var(--card-accent)" stroke="var(--teal)"/><text x="40" y="13" font-size="10" font-weight="700" fill="var(--teal)" text-anchor="middle">In Review</text></g>
+      <text x="560" y="725">circulating</text>
+      <g transform="translate(660,712)"><rect width="80" height="18" rx="9" fill="var(--card)" stroke="var(--warm)"/><text x="40" y="13" font-size="10" font-weight="700" fill="var(--warm)" text-anchor="middle">Revisiting</text></g>
+      <text x="750" y="725">scope change</text>
+      <g transform="translate(860,712)"><rect width="80" height="18" rx="9" fill="#E6F0E8" stroke="var(--positive)"/><text x="40" y="13" font-size="10" font-weight="700" fill="var(--positive)" text-anchor="middle">Done</text></g>
+      <text x="950" y="725">approved / shipped</text>
+    </g>
+    <text x="80" y="755" font-size="10" font-style="italic" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Note: PRD name must match exactly when updating via roadmap-update skill changeset.</text>
+  </g>
+</svg>

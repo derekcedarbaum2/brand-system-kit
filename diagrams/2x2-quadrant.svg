@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE: 2×2 Quadrant Framework
+  Required Figma fonts: JetBrains Mono (700) for headlines/labels, Inter (400, 700) for body.
+  Use for: stakeholder map (influence × interest), impact/effort prioritization, BCG matrix (share × growth),
+  SWOT analysis (positive × internal/external), Eisenhower (urgent × important), Kano (satisfaction × performance),
+  risk matrix (impact × likelihood), build/buy/partner, ICE/RICE (impact × confidence).
+  Default canvas: 1000 × 1000 (square). Replace axis labels and quadrant names per use case.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>{Topic} — 2×2 Quadrant</title>
+  <desc>Generic 2×2 framework with parameterized axes. Use for stakeholder, impact/effort, BCG, SWOT, Eisenhower, Kano, risk, etc.</desc>
+
+  <g id="background">
+    <rect x="0" y="0" width="1000" height="1000" fill="var(--bg)"/>
+  </g>
+
+  <g id="header">
+    <text id="title" x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">{TOPIC} 2×2</text>
+    <text id="subtitle" x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Subtitle — e.g., "Stakeholder map" or "RICE prioritization"}</text>
+  </g>
+
+  <g id="axis-y-label">
+    <text x="60" y="500" font-size="13" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" transform="rotate(-90 60 500)" text-anchor="middle">{Y AXIS LABEL — E.G., INFLUENCE}</text>
+    <text x="120" y="160" font-size="9" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">HIGH</text>
+    <text x="120" y="850" font-size="9" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">LOW</text>
+  </g>
+
+  <g id="quadrants">
+    <rect x="140" y="140" width="400" height="360" rx="4" fill="var(--card)" stroke="var(--border)" stroke-width="1.5"/>
+    <text x="160" y="170" font-size="11" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">Q1 — TOP-LEFT</text>
+    <text x="340" y="200" font-size="14" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Q1 quadrant name}</text>
+    <text x="340" y="220" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">e.g., "Keep Satisfied" / "Quick Wins" / "Cash Cows"</text>
+
+    <circle cx="220" cy="280" r="22" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="220" y="285" font-size="11" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">A</text>
+    <text x="220" y="320" font-size="9" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{item A}</text>
+
+    <circle cx="380" cy="380" r="22" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="380" y="385" font-size="11" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">B</text>
+    <text x="380" y="420" font-size="9" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{item B}</text>
+
+    <rect x="540" y="140" width="400" height="360" rx="4" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="560" y="170" font-size="11" font-weight="700" fill="var(--accent)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">Q2 — TOP-RIGHT (PRIMARY)</text>
+    <text x="740" y="200" font-size="14" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Q2 quadrant name}</text>
+    <text x="740" y="220" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">e.g., "Manage Closely" / "Major Projects" / "Stars"</text>
+
+    <circle cx="650" cy="290" r="26" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="650" y="296" font-size="12" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">C</text>
+    <text x="650" y="332" font-size="10" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Top-priority item}</text>
+
+    <circle cx="820" cy="400" r="22" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="820" y="405" font-size="11" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">D</text>
+    <text x="820" y="440" font-size="9" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{item D}</text>
+
+    <rect x="140" y="500" width="400" height="360" rx="4" fill="var(--card)" stroke="var(--dim)" stroke-width="1.5"/>
+    <text x="160" y="530" font-size="11" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">Q3 — BOTTOM-LEFT</text>
+    <text x="340" y="560" font-size="14" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Q3 quadrant name}</text>
+    <text x="340" y="580" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">e.g., "Monitor" / "Time Sinks" / "Dogs"</text>
+
+    <circle cx="240" cy="700" r="22" fill="var(--card)" stroke="var(--dim)" stroke-width="1.5"/>
+    <text x="240" y="705" font-size="11" font-weight="700" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">E</text>
+    <text x="240" y="740" font-size="9" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{item E}</text>
+
+    <rect x="540" y="500" width="400" height="360" rx="4" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="1.5"/>
+    <text x="560" y="530" font-size="11" font-weight="700" fill="var(--teal)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">Q4 — BOTTOM-RIGHT</text>
+    <text x="740" y="560" font-size="14" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Q4 quadrant name}</text>
+    <text x="740" y="580" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">e.g., "Keep Informed" / "Fill-ins" / "Question Marks"</text>
+
+    <circle cx="700" cy="680" r="22" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="1.5"/>
+    <text x="700" y="685" font-size="11" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">F</text>
+    <text x="700" y="720" font-size="9" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{item F}</text>
+  </g>
+
+  <g id="axes">
+    <line x1="540" y1="140" x2="540" y2="860" stroke="var(--ink)" stroke-width="2"/>
+    <line x1="140" y1="500" x2="940" y2="500" stroke="var(--ink)" stroke-width="2"/>
+  </g>
+
+  <g id="axis-x-label">
+    <text x="540" y="900" font-size="13" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle">{X AXIS LABEL — E.G., INTEREST}</text>
+    <text x="160" y="880" font-size="9" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">LOW</text>
+    <text x="900" y="880" font-size="9" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">HIGH</text>
+  </g>
+
+  <g id="footer">
+    <rect x="60" y="930" width="880" height="50" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="952" font-size="10" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">USE CASES</text>
+    <text x="80" y="970" font-size="10" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Stakeholder (influence × interest) • Impact/Effort • BCG (growth × share) • SWOT • Eisenhower (urgency × importance) • Kano • Risk (impact × likelihood) • Build/Buy/Partner • RICE</text>
+  </g>
+</svg>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE (skeleton): User Journey Map
+  Required Figma fonts: JetBrains Mono (700) for headlines/labels, Inter (400, 700) for body.
+  Use to map a user's experience across phases: actions, thoughts, emotions, touchpoints, opportunities.
+  Default canvas: 1400 × 900. Add/remove phase columns by adjusting widths.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>{Persona / User Type} — Journey Map</title>
+  <desc>User journey across N phases. Rows: actions, thoughts, emotions, touchpoints, pain points, opportunities.</desc>
+
+  <g id="background">
+    <rect x="0" y="0" width="1400" height="900" fill="var(--bg)"/>
+  </g>
+
+  <g id="header">
+    <text id="title" x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">{PERSONA NAME} — JOURNEY MAP</text>
+    <text id="subtitle" x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Scenario context — e.g., "First-time use of {Product} at launch"}</text>
+  </g>
+
+  <g id="phase-headers">
+    <rect x="60" y="120" width="320" height="40" rx="4" fill="var(--teal)"/>
+    <text x="220" y="146" font-size="13" font-weight="700" fill="var(--bg)" letter-spacing="2" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">{PHASE 1}</text>
+    <rect x="380" y="120" width="320" height="40" rx="4" fill="var(--teal)"/>
+    <text x="540" y="146" font-size="13" font-weight="700" fill="var(--bg)" letter-spacing="2" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">{PHASE 2}</text>
+    <rect x="700" y="120" width="320" height="40" rx="4" fill="var(--teal)"/>
+    <text x="860" y="146" font-size="13" font-weight="700" fill="var(--bg)" letter-spacing="2" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">{PHASE 3}</text>
+    <rect x="1020" y="120" width="320" height="40" rx="4" fill="var(--teal)"/>
+    <text x="1180" y="146" font-size="13" font-weight="700" fill="var(--bg)" letter-spacing="2" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">{PHASE 4}</text>
+  </g>
+
+  <g id="row-actions">
+    <text x="60" y="190" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">ACTIONS</text>
+    <rect x="60" y="200" width="320" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="76" y="220" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• {Action 1}</text>
+    <text x="76" y="238" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• {Action 2}</text>
+    <text x="76" y="256" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• {Action 3}</text>
+    <rect x="380" y="200" width="320" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="396" y="220" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• {Action}</text>
+    <rect x="700" y="200" width="320" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="716" y="220" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• {Action}</text>
+    <rect x="1020" y="200" width="320" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="1036" y="220" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• {Action}</text>
+  </g>
+
+  <g id="row-thoughts">
+    <text x="60" y="310" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">THOUGHTS / QUOTES</text>
+    <rect x="60" y="320" width="320" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="76" y="340" font-size="11" font-style="italic" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">"{Direct quote or paraphrase}"</text>
+    <rect x="380" y="320" width="320" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="396" y="340" font-size="11" font-style="italic" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">"{Quote}"</text>
+    <rect x="700" y="320" width="320" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="716" y="340" font-size="11" font-style="italic" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">"{Quote}"</text>
+    <rect x="1020" y="320" width="320" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="1036" y="340" font-size="11" font-style="italic" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">"{Quote}"</text>
+  </g>
+
+  <g id="row-emotion-curve">
+    <text x="60" y="430" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">EMOTION CURVE</text>
+    <rect x="60" y="440" width="1280" height="120" rx="4" fill="var(--bg)" stroke="var(--border)"/>
+    <line x1="60" y1="500" x2="1340" y2="500" stroke="var(--border)" stroke-dasharray="3,3"/>
+    <!-- Sparkline through phase midpoints; replace y-coords to reflect sentiment -->
+    <polyline points="220,470 540,540 860,460 1180,490" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+    <circle cx="220" cy="470" r="6" fill="var(--accent)"/>
+    <circle cx="540" cy="540" r="6" fill="var(--accent)"/>
+    <circle cx="860" cy="460" r="6" fill="var(--accent)"/>
+    <circle cx="1180" cy="490" r="6" fill="var(--accent)"/>
+    <text x="76" y="460" font-size="9" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">happy</text>
+    <text x="76" y="510" font-size="9" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">neutral</text>
+    <text x="76" y="555" font-size="9" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">frustrated</text>
+  </g>
+
+  <g id="row-pain-points">
+    <text x="60" y="600" font-size="10" font-weight="700" fill="var(--accent)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">PAIN POINTS</text>
+    <rect x="60" y="610" width="1280" height="80" rx="4" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="76" y="632" font-size="11" font-weight="700" fill="var(--accent)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Phase 1 pain}: {description}</text>
+    <text x="396" y="632" font-size="11" font-weight="700" fill="var(--accent)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Phase 2 pain}: {description}</text>
+    <text x="716" y="632" font-size="11" font-weight="700" fill="var(--accent)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Phase 3 pain}: {description}</text>
+    <text x="1036" y="632" font-size="11" font-weight="700" fill="var(--accent)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Phase 4 pain}: {description}</text>
+  </g>
+
+  <g id="row-opportunities">
+    <text x="60" y="720" font-size="10" font-weight="700" fill="var(--teal)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">OPPORTUNITIES</text>
+    <rect x="60" y="730" width="1280" height="80" rx="4" fill="var(--bg)" stroke="var(--teal)" stroke-width="1.5"/>
+    <text x="76" y="752" font-size="11" font-weight="700" fill="var(--teal)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Phase 1 opp}: {description}</text>
+    <text x="396" y="752" font-size="11" font-weight="700" fill="var(--teal)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Phase 2 opp}: {description}</text>
+    <text x="716" y="752" font-size="11" font-weight="700" fill="var(--teal)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Phase 3 opp}: {description}</text>
+    <text x="1036" y="752" font-size="11" font-weight="700" fill="var(--teal)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Phase 4 opp}: {description}</text>
+  </g>
+
+  <g id="footer">
+    <rect x="60" y="830" width="1280" height="50" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="852" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">HOW TO READ</text>
+    <text x="80" y="870" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Persona moves left → right through phases. Red curve dips = friction; bottom row shows where we can intervene to lift the curve.</text>
+  </g>
+</svg>

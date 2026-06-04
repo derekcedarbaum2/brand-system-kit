@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE (skeleton): Software Architecture (generic)
+  Required Figma fonts: JetBrains Mono (700) for headlines/labels, Inter (400, 700) for body.
+  Use when C4 formality is overkill — generic boxes-and-arrows for architecture sketches.
+  Default canvas: 1400 × 900. Group components into outlined regions for layers/tiers.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>{System Name} — Architecture Sketch</title>
+  <desc>Boxes-and-arrows architecture diagram with grouped layers and labeled connections.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--body)"/>
+    </marker>
+  </defs>
+
+  <g id="background">
+    <rect x="0" y="0" width="1400" height="900" fill="var(--bg)"/>
+  </g>
+
+  <g id="header">
+    <text id="title" x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">{SYSTEM NAME} ARCHITECTURE</text>
+    <text id="subtitle" x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Source anchor / version}</text>
+  </g>
+
+  <g id="layer-frontend">
+    <rect x="60" y="130" width="1280" height="160" rx="6" fill="var(--card)" stroke="var(--teal)" stroke-width="1.5" stroke-dasharray="6,3"/>
+    <text x="80" y="150" font-size="11" font-weight="700" fill="var(--teal)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">FRONTEND / UI LAYER</text>
+    <g id="component-frontend-1">
+      <rect x="100" y="170" width="280" height="100" rx="6" fill="var(--bg)" stroke="var(--body)" stroke-width="1.5"/>
+      <text x="240" y="200" font-size="14" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Component A}</text>
+      <text x="240" y="220" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Tech / role}</text>
+      <text x="240" y="244" font-size="10" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Brief description}</text>
+    </g>
+    <g id="component-frontend-2">
+      <rect x="420" y="170" width="280" height="100" rx="6" fill="var(--bg)" stroke="var(--body)" stroke-width="1.5"/>
+      <text x="560" y="200" font-size="14" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Component B}</text>
+      <text x="560" y="220" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Tech / role}</text>
+    </g>
+    <g id="component-frontend-3">
+      <rect x="740" y="170" width="280" height="100" rx="6" fill="var(--bg)" stroke="var(--body)" stroke-width="1.5"/>
+      <text x="880" y="200" font-size="14" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Component C}</text>
+      <text x="880" y="220" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Tech / role}</text>
+    </g>
+    <g id="component-frontend-4">
+      <rect x="1060" y="170" width="280" height="100" rx="6" fill="var(--bg)" stroke="var(--body)" stroke-width="1.5"/>
+      <text x="1200" y="200" font-size="14" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Component D}</text>
+      <text x="1200" y="220" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Tech / role}</text>
+    </g>
+  </g>
+
+  <g id="layer-services">
+    <rect x="60" y="320" width="1280" height="160" rx="6" fill="var(--card)" stroke="var(--teal)" stroke-width="1.5" stroke-dasharray="6,3"/>
+    <text x="80" y="340" font-size="11" font-weight="700" fill="var(--teal)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">BACKEND / SERVICES LAYER</text>
+    <g id="component-service-1">
+      <rect x="100" y="360" width="380" height="100" rx="6" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/>
+      <text x="290" y="390" font-size="14" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Core service}</text>
+      <text x="290" y="410" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[primary system component]</text>
+      <text x="290" y="434" font-size="10" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Description}</text>
+    </g>
+    <g id="component-service-2">
+      <rect x="520" y="360" width="380" height="100" rx="6" fill="var(--bg)" stroke="var(--body)" stroke-width="1.5"/>
+      <text x="710" y="390" font-size="14" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Service B}</text>
+      <text x="710" y="410" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Tech / role}</text>
+    </g>
+    <g id="component-service-3">
+      <rect x="940" y="360" width="380" height="100" rx="6" fill="var(--bg)" stroke="var(--body)" stroke-width="1.5"/>
+      <text x="1130" y="390" font-size="14" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Service C}</text>
+      <text x="1130" y="410" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Tech / role}</text>
+    </g>
+  </g>
+
+  <g id="layer-data">
+    <rect x="60" y="510" width="1280" height="160" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="6,3"/>
+    <text x="80" y="530" font-size="11" font-weight="700" fill="var(--accent)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">DATA LAYER</text>
+    <g id="component-data-1">
+      <rect x="200" y="550" width="320" height="100" rx="6" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/>
+      <text x="360" y="580" font-size="14" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Primary database}</text>
+      <text x="360" y="600" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[Tech: e.g., Postgres]</text>
+      <text x="360" y="624" font-size="10" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{What's stored}</text>
+    </g>
+    <g id="component-data-2">
+      <rect x="560" y="550" width="320" height="100" rx="6" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/>
+      <text x="720" y="580" font-size="14" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Cache / queue}</text>
+      <text x="720" y="600" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[Tech]</text>
+    </g>
+    <g id="component-data-3">
+      <rect x="920" y="550" width="320" height="100" rx="6" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/>
+      <text x="1080" y="580" font-size="14" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Export file format}</text>
+      <text x="1080" y="600" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[Tech: e.g., SQLite]</text>
+    </g>
+  </g>
+
+  <g id="connections" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+    <line x1="240" y1="270" x2="290" y2="360" stroke="var(--body)" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="270" y="320" font-size="9" fill="var(--body)">[HTTP / IPC]</text>
+    <line x1="560" y1="270" x2="710" y2="360" stroke="var(--body)" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="290" y1="460" x2="360" y2="550" stroke="var(--body)" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="305" y="510" font-size="9" fill="var(--body)">[reads/writes]</text>
+    <line x1="710" y1="460" x2="720" y2="550" stroke="var(--body)" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="1130" y1="460" x2="1080" y2="550" stroke="var(--body)" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="1085" y="510" font-size="9" fill="var(--body)">[exports]</text>
+  </g>
+
+  <g id="legend">
+    <rect x="60" y="700" width="1280" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="720" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">HOW TO READ</text>
+    <text x="80" y="740" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Top-down: Frontend → Services → Data. Brand Red borders mark primary / under-design components.</text>
+    <text x="80" y="758" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Tech choices in [brackets]; arrow labels describe interaction type ("reads", "publishes events", "exports").</text>
+  </g>
+</svg>

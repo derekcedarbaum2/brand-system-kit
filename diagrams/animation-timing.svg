@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE: Animation Timing Diagram
+  Required fonts: JetBrains Mono (500-700), Inter (400-700). {{COMPANY}} brand.
+  Time axis horizontal; properties stacked vertically; bezier curves indicate easing.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>{Component} — Animation Timing</title>
+  <desc>Motion specification: time axis horizontal, animated properties stacked vertically, easing curves visualized.</desc>
+
+  <g id="background"><rect x="0" y="0" width="1400" height="900" fill="var(--bg)"/></g>
+
+  <g id="header">
+    <text x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">{COMPONENT} — ANIMATION TIMING</text>
+    <text x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Total duration: {N}ms. Easing: {ease-out / cubic-bezier(0.4, 0, 0.2, 1)}.</text>
+  </g>
+
+  <g id="time-axis">
+    <line x1="280" y1="780" x2="1340" y2="780" stroke="var(--ink)" stroke-width="1.5"/>
+    <text x="280" y="804" font-size="11" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">0ms</text>
+    <line x1="280" y1="775" x2="280" y2="785" stroke="var(--ink)"/>
+    <text x="545" y="804" font-size="11" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">100ms</text>
+    <line x1="545" y1="775" x2="545" y2="785" stroke="var(--ink)"/>
+    <text x="810" y="804" font-size="11" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">200ms</text>
+    <line x1="810" y1="775" x2="810" y2="785" stroke="var(--ink)"/>
+    <text x="1075" y="804" font-size="11" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">300ms</text>
+    <line x1="1075" y1="775" x2="1075" y2="785" stroke="var(--ink)"/>
+    <text x="1340" y="804" font-size="11" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" text-anchor="end" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">400ms</text>
+    <line x1="1340" y1="775" x2="1340" y2="785" stroke="var(--ink)"/>
+  </g>
+
+  <g id="property-opacity">
+    <text x="60" y="156" font-size="13" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">opacity</text>
+    <text x="60" y="174" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">0 → 1</text>
+    <rect x="280" y="140" width="1060" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="290" y="158" font-size="9" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">100%</text>
+    <text x="290" y="216" font-size="9" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">0%</text>
+    <path d="M 280 215 C 380 215, 480 145, 810 145 L 1340 145" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+    <circle cx="280" cy="215" r="4" fill="var(--accent)"/>
+    <circle cx="810" cy="145" r="4" fill="var(--accent)"/>
+    <text x="820" y="135" font-size="10" font-weight="700" fill="var(--accent)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.5">200ms · cubic-bezier(0.4, 0, 0.2, 1)</text>
+  </g>
+
+  <g id="property-translate-y">
+    <text x="60" y="276" font-size="13" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">translateY</text>
+    <text x="60" y="294" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">+24px → 0</text>
+    <rect x="280" y="260" width="1060" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="290" y="278" font-size="9" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">0px</text>
+    <text x="290" y="336" font-size="9" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">+24</text>
+    <path d="M 280 335 C 380 335, 460 270, 810 268 L 1340 268" fill="none" stroke="var(--teal)" stroke-width="2.5"/>
+    <circle cx="280" cy="335" r="4" fill="var(--teal)"/>
+    <circle cx="810" cy="268" r="4" fill="var(--teal)"/>
+    <text x="820" y="258" font-size="10" font-weight="700" fill="var(--teal)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.5">200ms · ease-out</text>
+  </g>
+
+  <g id="property-scale">
+    <text x="60" y="396" font-size="13" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">scale</text>
+    <text x="60" y="414" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">0.96 → 1.0</text>
+    <rect x="280" y="380" width="1060" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="290" y="398" font-size="9" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">1.0</text>
+    <text x="290" y="456" font-size="9" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">0.96</text>
+    <path d="M 280 455 C 380 455, 460 388, 810 388 L 1340 388" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+    <circle cx="280" cy="455" r="4" fill="var(--accent)"/>
+    <circle cx="810" cy="388" r="4" fill="var(--accent)"/>
+    <text x="820" y="378" font-size="10" font-weight="700" fill="var(--accent)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.5">200ms · ease-out</text>
+  </g>
+
+  <g id="property-blur">
+    <text x="60" y="516" font-size="13" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">blur</text>
+    <text x="60" y="534" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">8px → 0</text>
+    <rect x="280" y="500" width="1060" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <path d="M 280 575 L 545 540 L 810 510 L 1075 508 L 1340 508" fill="none" stroke="var(--secondary)" stroke-width="2.5"/>
+    <circle cx="280" cy="575" r="4" fill="var(--secondary)"/>
+    <circle cx="1075" cy="508" r="4" fill="var(--secondary)"/>
+    <text x="290" y="498" font-size="10" font-weight="700" fill="var(--secondary)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.5">300ms · linear (delayed start at 0)</text>
+  </g>
+
+  <g id="staggered-children">
+    <text x="60" y="636" font-size="13" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">children stagger</text>
+    <text x="60" y="654" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">40ms apart</text>
+    <rect x="280" y="620" width="1060" height="100" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <rect x="280" y="640" width="200" height="20" rx="2" fill="var(--accent)"/>
+    <text x="490" y="654" font-size="10" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Child 1 (0ms)</text>
+    <rect x="385" y="664" width="200" height="20" rx="2" fill="var(--accent)" opacity="0.85"/>
+    <text x="595" y="678" font-size="10" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Child 2 (40ms)</text>
+    <rect x="490" y="688" width="200" height="20" rx="2" fill="var(--accent)" opacity="0.7"/>
+    <text x="700" y="702" font-size="10" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Child 3 (80ms)</text>
+  </g>
+
+  <g id="footer">
+    <rect x="60" y="820" width="1280" height="60" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="842" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">HOW TO READ</text>
+    <text x="80" y="862" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Each row = one animated property. Curve shape = easing function. Solid dot = keyframe. Use to spec motion to engineering and to coordinate choreography across stagger groups.</text>
+  </g>
+</svg>

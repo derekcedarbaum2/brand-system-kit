@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE: Persona Card
+  Required fonts: JetBrains Mono (500-700), Inter (400-700). {{COMPANY}} brand.
+  One-pager persona overview: photo placeholder, demographics, goals, frustrations, behaviors, quote.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>{Persona Name} — Persona Card</title>
+  <desc>Persona one-pager: identity, goals, frustrations, behaviors, key quote.</desc>
+
+  <g id="background"><rect x="0" y="0" width="1200" height="800" fill="var(--bg)"/></g>
+
+  <g id="header">
+    <text x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">PERSONA — {NAME}</text>
+    <text x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Tagline / role + scenario context}</text>
+  </g>
+
+  <g id="identity-block">
+    <rect x="60" y="120" width="320" height="500" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="2"/>
+    <circle cx="220" cy="240" r="80" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="220" y="248" font-size="36" fill="var(--accent)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">👤</text>
+    <text x="220" y="350" font-size="20" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Name}</text>
+    <text x="220" y="372" font-size="11" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Role / title}</text>
+    <text x="80" y="416" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">DEMOGRAPHICS</text>
+    <text x="80" y="436" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Age: {30-40}</text>
+    <text x="80" y="454" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Location: {region}</text>
+    <text x="80" y="472" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Tenure: {years}</text>
+    <text x="80" y="500" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">CONTEXT</text>
+    <text x="80" y="520" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Daily life / work setting}</text>
+    <text x="80" y="540" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Tools used today}</text>
+    <text x="80" y="580" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">TECH SAVVY</text>
+    <rect x="80" y="590" width="240" height="14" rx="2" fill="var(--border)"/>
+    <rect x="80" y="590" width="160" height="14" rx="2" fill="var(--accent)"/>
+  </g>
+
+  <g id="goals-block">
+    <rect x="400" y="120" width="380" height="240" rx="6" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="2"/>
+    <text x="420" y="146" font-size="12" font-weight="700" fill="var(--teal)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">GOALS</text>
+    <text x="420" y="180" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• {Primary goal — what they want to achieve}</text>
+    <text x="420" y="208" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• {Secondary goal}</text>
+    <text x="420" y="236" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• {Tertiary goal}</text>
+    <text x="420" y="264" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• {Goal 4}</text>
+  </g>
+
+  <g id="frustrations-block">
+    <rect x="800" y="120" width="340" height="240" rx="6" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="820" y="146" font-size="12" font-weight="700" fill="var(--accent)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">FRUSTRATIONS</text>
+    <text x="820" y="180" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• {Pain point 1}</text>
+    <text x="820" y="208" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• {Pain point 2}</text>
+    <text x="820" y="236" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• {Pain point 3}</text>
+    <text x="820" y="264" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• {Pain point 4}</text>
+  </g>
+
+  <g id="behaviors-block">
+    <rect x="400" y="380" width="740" height="160" rx="6" fill="var(--card)" stroke="var(--dim)" stroke-width="1.5"/>
+    <text x="420" y="406" font-size="12" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">BEHAVIORS &amp; HABITS</text>
+    <text x="420" y="436" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• {Daily routine / how they currently solve the problem}</text>
+    <text x="420" y="460" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• {Tool preferences / decision-making style}</text>
+    <text x="420" y="484" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• {Information sources / who they trust}</text>
+    <text x="420" y="508" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• {Adoption tendencies}</text>
+  </g>
+
+  <g id="quote-block">
+    <rect x="400" y="560" width="740" height="120" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="420" y="586" font-size="12" font-weight="700" fill="var(--accent)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">DEFINING QUOTE</text>
+    <text x="420" y="618" font-size="16" font-style="italic" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">"{The one quote that captures who this persona is</text>
+    <text x="420" y="640" font-size="16" font-style="italic" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">and what they care about most.}"</text>
+    <text x="420" y="664" font-size="10" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">— from {interview / source}</text>
+  </g>
+
+  <g id="footer">
+    <rect x="60" y="700" width="1080" height="60" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="720" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">REPRESENTS</text>
+    <text x="80" y="740" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Real users this persona stands in for — based on N interviews / N% of user base}</text>
+  </g>
+</svg>

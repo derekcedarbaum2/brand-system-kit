@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE: Network Topology / Cloud Deployment
+  Required fonts: JetBrains Mono (500-700), Inter (400-700). {{COMPANY}} brand.
+  Subnets/zones as outlined regions; nodes inside; connections labeled with protocol.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>{System} — Network Topology</title>
+  <desc>Network / cloud deployment topology. Zones (public, private, vault) as outlined regions; services as labeled boxes; connections show protocols.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--body)"/>
+    </marker>
+  </defs>
+
+  <g id="background"><rect x="0" y="0" width="1400" height="900" fill="var(--bg)"/></g>
+
+  <g id="header">
+    <text x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">{SYSTEM} NETWORK TOPOLOGY</text>
+    <text x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Zones, services, protocols. Brand Red = primary system. Teal = supporting infra.</text>
+  </g>
+
+  <g id="zone-internet">
+    <rect x="60" y="140" width="280" height="180" rx="6" fill="var(--card)" stroke="var(--dim)" stroke-width="1.5" stroke-dasharray="6,3"/>
+    <text x="80" y="164" font-size="11" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">INTERNET / EXTERNAL</text>
+    <rect x="100" y="190" width="200" height="50" rx="4" fill="var(--bg)" stroke="var(--dim)"/>
+    <text x="200" y="220" font-size="12" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{End user / client}</text>
+    <rect x="100" y="250" width="200" height="50" rx="4" fill="var(--bg)" stroke="var(--dim)"/>
+    <text x="200" y="280" font-size="12" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Third-party API}</text>
+  </g>
+
+  <g id="zone-public">
+    <rect x="400" y="140" width="320" height="320" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="420" y="164" font-size="11" font-weight="700" fill="var(--accent)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">PUBLIC SUBNET / DMZ</text>
+    <rect x="440" y="190" width="240" height="60" rx="4" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="560" y="216" font-size="13" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Load balancer / WAF}</text>
+    <text x="560" y="234" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[ALB / NLB / Cloudflare]</text>
+    <rect x="440" y="280" width="240" height="60" rx="4" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="560" y="306" font-size="13" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{API gateway}</text>
+    <rect x="440" y="370" width="240" height="60" rx="4" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="560" y="396" font-size="13" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Web frontend}</text>
+  </g>
+
+  <g id="zone-private">
+    <rect x="780" y="140" width="320" height="500" rx="6" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="800" y="164" font-size="11" font-weight="700" fill="var(--accent)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">PRIVATE SUBNET / APP TIER</text>
+    <rect x="820" y="190" width="240" height="60" rx="4" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="940" y="216" font-size="13" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{App service A}</text>
+    <text x="940" y="234" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[runtime + auto-scale]</text>
+    <rect x="820" y="280" width="240" height="60" rx="4" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="940" y="306" font-size="13" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{App service B}</text>
+    <rect x="820" y="370" width="240" height="60" rx="4" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="940" y="396" font-size="13" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Worker / background job}</text>
+    <rect x="820" y="460" width="240" height="60" rx="4" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="940" y="486" font-size="13" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Cache / queue}</text>
+    <text x="940" y="504" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[Redis / SQS]</text>
+  </g>
+
+  <g id="zone-data">
+    <rect x="1160" y="140" width="220" height="500" rx="6" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="2"/>
+    <text x="1180" y="164" font-size="11" font-weight="700" fill="var(--teal)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">DATA TIER</text>
+    <rect x="1200" y="190" width="160" height="60" rx="4" fill="var(--bg)" stroke="var(--teal)" stroke-width="1.5"/>
+    <text x="1280" y="216" font-size="12" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Primary DB}</text>
+    <text x="1280" y="234" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[Postgres]</text>
+    <rect x="1200" y="280" width="160" height="60" rx="4" fill="var(--bg)" stroke="var(--teal)" stroke-width="1.5"/>
+    <text x="1280" y="306" font-size="12" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Replica}</text>
+    <rect x="1200" y="370" width="160" height="60" rx="4" fill="var(--bg)" stroke="var(--teal)" stroke-width="1.5"/>
+    <text x="1280" y="396" font-size="12" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Object store}</text>
+    <text x="1280" y="414" font-size="10" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[S3]</text>
+  </g>
+
+  <g id="connections" stroke="var(--body)" stroke-width="1.5">
+    <line x1="340" y1="220" x2="440" y2="220" marker-end="url(#arrow)"/>
+    <text x="385" y="212" font-size="9" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[HTTPS]</text>
+    <line x1="680" y1="220" x2="820" y2="220" marker-end="url(#arrow)"/>
+    <text x="750" y="212" font-size="9" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[mTLS]</text>
+    <line x1="680" y1="310" x2="820" y2="310" marker-end="url(#arrow)"/>
+    <line x1="1060" y1="220" x2="1200" y2="220" marker-end="url(#arrow)"/>
+    <text x="1130" y="212" font-size="9" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[psql]</text>
+    <line x1="1060" y1="400" x2="1200" y2="400" marker-end="url(#arrow)"/>
+    <text x="1130" y="392" font-size="9" fill="var(--body)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">[S3 API]</text>
+  </g>
+
+  <g id="footer">
+    <rect x="60" y="700" width="1280" height="120" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="724" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">SECURITY GROUPS / FIREWALLS</text>
+    <text x="80" y="744" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• Public ↔ Internet: HTTPS only (port 443); WAF rules; rate limiting</text>
+    <text x="80" y="764" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• Private ↔ Public: mTLS; service-to-service auth; private VPC only</text>
+    <text x="80" y="784" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">• Data ↔ Private: encrypted at rest + in transit; IAM-scoped access; audit logged</text>
+    <text x="80" y="804" font-size="10" font-style="italic" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">For air-gapped / vault deployments (e.g., JMPS): single VPC, no public subnet — adapt template by removing Internet zone.</text>
+  </g>
+</svg>

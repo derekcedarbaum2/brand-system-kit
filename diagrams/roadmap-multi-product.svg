@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE (skeleton): Multi-Product Roadmap
+  Required Figma fonts: JetBrains Mono (700) for headlines/labels, Inter (400, 700) for body.
+  Use to show parallel product timelines with explicit dependencies and convergence points.
+  Default canvas: 1400 × 900. Each product gets its own swim lane.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>{Portfolio} — Multi-Product Roadmap</title>
+  <desc>Parallel product timelines with dependency arrows and convergence points marked by vertical join bars.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/>
+    </marker>
+  </defs>
+
+  <g id="background">
+    <rect x="0" y="0" width="1400" height="900" fill="var(--bg)"/>
+  </g>
+
+  <g id="header">
+    <text id="title" x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">{PORTFOLIO} MULTI-PRODUCT ROADMAP</text>
+    <text id="subtitle" x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">As of {date}. Red dependency arrows = hard requirements between products.</text>
+  </g>
+
+  <g id="time-axis">
+    <line x1="280" y1="140" x2="1340" y2="140" stroke="var(--body)" stroke-width="1.5"/>
+    <text x="412" y="130" font-size="13" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8" text-anchor="middle">Q1</text>
+    <text x="677" y="130" font-size="13" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8" text-anchor="middle">Q2</text>
+    <text x="942" y="130" font-size="13" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8" text-anchor="middle">Q3</text>
+    <text x="1207" y="130" font-size="13" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8" text-anchor="middle">Q4</text>
+    <line x1="280" y1="135" x2="280" y2="145" stroke="var(--body)" stroke-width="1.5"/>
+    <line x1="545" y1="135" x2="545" y2="145" stroke="var(--body)" stroke-width="1.5"/>
+    <line x1="810" y1="135" x2="810" y2="145" stroke="var(--body)" stroke-width="1.5"/>
+    <line x1="1075" y1="135" x2="1075" y2="145" stroke="var(--body)" stroke-width="1.5"/>
+    <line x1="1340" y1="135" x2="1340" y2="145" stroke="var(--body)" stroke-width="1.5"/>
+  </g>
+
+  <g id="convergence-bar">
+    <line x1="942" y1="160" x2="942" y2="640" stroke="var(--accent)" stroke-width="2.5"/>
+    <rect x="900" y="640" width="84" height="22" rx="3" fill="var(--accent)"/>
+    <text x="942" y="655" font-size="11" font-weight="700" fill="var(--bg)" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.5">CONVERGE</text>
+  </g>
+
+  <g id="product-1-headline">
+    <text x="60" y="200" font-size="12" font-weight="700" fill="var(--accent)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Product 1 — headline}</text>
+    <text x="60" y="216" font-size="9" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">primary delivery</text>
+    <rect x="280" y="180" width="1060" height="50" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <rect x="290" y="190" width="640" height="30" rx="4" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="610" y="210" font-size="11" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Product 1 V1 build}</text>
+    <polygon points="930,205 945,193 960,205 945,217" fill="var(--accent)"/>
+    <text x="945" y="183" font-size="9" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">V1 ship</text>
+  </g>
+
+  <g id="product-2">
+    <text x="60" y="280" font-size="12" font-weight="700" fill="var(--teal)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Product 2}</text>
+    <text x="60" y="296" font-size="9" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">secondary</text>
+    <rect x="280" y="260" width="1060" height="50" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <rect x="380" y="270" width="540" height="30" rx="4" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="1.5"/>
+    <text x="650" y="290" font-size="11" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Product 2 readiness}</text>
+  </g>
+
+  <g id="product-3">
+    <text x="60" y="360" font-size="12" font-weight="700" fill="var(--teal)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Product 3}</text>
+    <text x="60" y="376" font-size="9" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">secondary</text>
+    <rect x="280" y="340" width="1060" height="50" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <rect x="500" y="350" width="420" height="30" rx="4" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="1.5"/>
+    <text x="710" y="370" font-size="11" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Product 3 readiness}</text>
+  </g>
+
+  <g id="dependencies">
+    <path d="M 920 380 L 920 245" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+    <text x="940" y="320" font-size="9" fill="var(--accent)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{dep label}</text>
+    <path d="M 920 300 L 920 245" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  </g>
+
+  <g id="legend">
+    <rect x="60" y="780" width="1280" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="800" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">LEGEND</text>
+    <rect x="80" y="812" width="40" height="12" rx="2" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="130" y="822" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Headline product</text>
+    <rect x="280" y="812" width="40" height="12" rx="2" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="1.5"/>
+    <text x="330" y="822" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Secondary product</text>
+    <line x1="500" y1="818" x2="540" y2="818" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+    <text x="550" y="822" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Hard dependency</text>
+    <line x1="740" y1="812" x2="740" y2="824" stroke="var(--accent)" stroke-width="2.5"/>
+    <text x="755" y="822" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Convergence (joint launch)</text>
+  </g>
+</svg>

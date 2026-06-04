@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE: Story Map (Jeff Patton style)
+  Required fonts: JetBrains Mono (500-700), Inter (400-700). {{COMPANY}} brand.
+  Top row = backbone (user activities, left to right). Below each activity = user tasks.
+  Horizontal slices below = release groupings (MVP / V1 / V2).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>{Product} — Story Map</title>
+  <desc>Jeff Patton story map: backbone activities across the top, user tasks below each activity, sliced into release rows.</desc>
+
+  <g id="background"><rect x="0" y="0" width="1400" height="1000" fill="var(--bg)"/></g>
+
+  <g id="header">
+    <text x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">{PRODUCT} STORY MAP</text>
+    <text x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Jeff Patton format: user activities across the top, tasks below, release slices in rows</text>
+  </g>
+
+  <g id="backbone-label">
+    <text x="60" y="146" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">BACKBONE — USER ACTIVITIES</text>
+  </g>
+
+  <g id="backbone">
+    <rect x="80" y="160" width="280" height="60" rx="6" fill="var(--teal)"/>
+    <text x="220" y="186" font-size="13" font-weight="700" fill="var(--bg)" letter-spacing="1" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">{ACTIVITY 1}</text>
+    <text x="220" y="206" font-size="10" fill="var(--bg)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">e.g., "Discover product"</text>
+    <rect x="380" y="160" width="280" height="60" rx="6" fill="var(--teal)"/>
+    <text x="520" y="186" font-size="13" font-weight="700" fill="var(--bg)" letter-spacing="1" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">{ACTIVITY 2}</text>
+    <text x="520" y="206" font-size="10" fill="var(--bg)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">e.g., "Sign up"</text>
+    <rect x="680" y="160" width="280" height="60" rx="6" fill="var(--teal)"/>
+    <text x="820" y="186" font-size="13" font-weight="700" fill="var(--bg)" letter-spacing="1" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">{ACTIVITY 3}</text>
+    <text x="820" y="206" font-size="10" fill="var(--bg)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">e.g., "Use product"</text>
+    <rect x="980" y="160" width="280" height="60" rx="6" fill="var(--teal)"/>
+    <text x="1120" y="186" font-size="13" font-weight="700" fill="var(--bg)" letter-spacing="1" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">{ACTIVITY 4}</text>
+    <text x="1120" y="206" font-size="10" fill="var(--bg)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">e.g., "Get value"</text>
+  </g>
+
+  <g id="tasks-label">
+    <text x="60" y="256" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">USER TASKS</text>
+  </g>
+
+  <g id="tasks-row">
+    <rect x="80" y="270" width="130" height="60" rx="4" fill="var(--card)" stroke="var(--dim)"/>
+    <text x="145" y="294" font-size="10" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Task 1a}</text>
+    <text x="145" y="312" font-size="9" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{detail}</text>
+    <rect x="220" y="270" width="130" height="60" rx="4" fill="var(--card)" stroke="var(--dim)"/>
+    <text x="285" y="294" font-size="10" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Task 1b}</text>
+    <rect x="380" y="270" width="130" height="60" rx="4" fill="var(--card)" stroke="var(--dim)"/>
+    <text x="445" y="294" font-size="10" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Task 2a}</text>
+    <rect x="520" y="270" width="130" height="60" rx="4" fill="var(--card)" stroke="var(--dim)"/>
+    <text x="585" y="294" font-size="10" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Task 2b}</text>
+    <rect x="680" y="270" width="130" height="60" rx="4" fill="var(--card)" stroke="var(--dim)"/>
+    <text x="745" y="294" font-size="10" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Task 3a}</text>
+    <rect x="820" y="270" width="130" height="60" rx="4" fill="var(--card)" stroke="var(--dim)"/>
+    <text x="885" y="294" font-size="10" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Task 3b}</text>
+    <rect x="980" y="270" width="130" height="60" rx="4" fill="var(--card)" stroke="var(--dim)"/>
+    <text x="1045" y="294" font-size="10" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Task 4a}</text>
+    <rect x="1120" y="270" width="130" height="60" rx="4" fill="var(--card)" stroke="var(--dim)"/>
+    <text x="1185" y="294" font-size="10" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Task 4b}</text>
+  </g>
+
+  <g id="release-mvp">
+    <text x="60" y="386" font-size="10" font-weight="700" fill="var(--accent)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">MVP</text>
+    <rect x="80" y="370" width="1180" height="120" rx="4" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="1.5"/>
+    <rect x="100" y="390" width="160" height="40" rx="4" fill="var(--bg)" stroke="var(--accent)"/>
+    <text x="180" y="414" font-size="10" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{story for task 1a}</text>
+    <rect x="100" y="440" width="160" height="40" rx="4" fill="var(--bg)" stroke="var(--accent)"/>
+    <text x="180" y="464" font-size="10" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{story for task 1a}</text>
+    <rect x="400" y="390" width="160" height="40" rx="4" fill="var(--bg)" stroke="var(--accent)"/>
+    <text x="480" y="414" font-size="10" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{story for task 2a}</text>
+    <rect x="700" y="390" width="160" height="40" rx="4" fill="var(--bg)" stroke="var(--accent)"/>
+    <text x="780" y="414" font-size="10" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{story for task 3a}</text>
+    <rect x="1000" y="390" width="160" height="40" rx="4" fill="var(--bg)" stroke="var(--accent)"/>
+    <text x="1080" y="414" font-size="10" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{story for task 4a}</text>
+  </g>
+
+  <g id="release-v1">
+    <text x="60" y="546" font-size="10" font-weight="700" fill="var(--teal)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">V1</text>
+    <rect x="80" y="530" width="1180" height="120" rx="4" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="1.5"/>
+    <rect x="240" y="550" width="160" height="40" rx="4" fill="var(--bg)" stroke="var(--teal)"/>
+    <text x="320" y="574" font-size="10" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{story for task 1b}</text>
+    <rect x="540" y="550" width="160" height="40" rx="4" fill="var(--bg)" stroke="var(--teal)"/>
+    <text x="620" y="574" font-size="10" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{story for task 2b}</text>
+    <rect x="840" y="550" width="160" height="40" rx="4" fill="var(--bg)" stroke="var(--teal)"/>
+    <text x="920" y="574" font-size="10" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{story for task 3b}</text>
+  </g>
+
+  <g id="release-v2">
+    <text x="60" y="706" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">V2</text>
+    <rect x="80" y="690" width="1180" height="120" rx="4" fill="var(--card)" stroke="var(--dim)" stroke-width="1.5"/>
+    <rect x="100" y="710" width="160" height="40" rx="4" fill="var(--bg)" stroke="var(--dim)"/>
+    <text x="180" y="734" font-size="10" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{stretch story}</text>
+    <rect x="1140" y="710" width="160" height="40" rx="4" fill="var(--bg)" stroke="var(--dim)"/>
+    <text x="1220" y="734" font-size="10" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{stretch story}</text>
+  </g>
+
+  <g id="footer">
+    <rect x="60" y="900" width="1280" height="60" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="920" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">HOW TO READ</text>
+    <text x="80" y="940" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Top backbone is the user's activity sequence (left → right). Tasks under each activity are decomposition. Stories below are sliced into releases (MVP first, then V1, then stretch).</text>
+  </g>
+</svg>

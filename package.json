@@ -1,0 +1,16 @@
+{
+  "name": "brand-system-kit",
+  "version": "0.1.0",
+  "description": "An executable brand system: DTCG token source-of-truth, a lint gate, a WCAG checker, a visual-critique loop, and a Claude Code skill that scaffolds your own brand.",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "node tooling/build-tokens.mjs profiles/northwind/tokens.json profiles/northwind/brand.css --md profiles/northwind/color-system.md",
+    "contrast": "node tooling/contrast-check.mjs profiles/northwind",
+    "lint": "node tooling/lint.mjs profiles/northwind/sample.html profiles/northwind",
+    "qa": "node tooling/brand-qa.mjs profiles/northwind/sample.html profiles/northwind --render"
+  },
+  "keywords": ["design-tokens", "dtcg", "brand", "design-system", "wcag", "claude-code", "linter"],
+  "files": ["tooling", "profiles", "skill", "README.md", "LICENSE"]
+}

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE: Funnel
+  Required fonts: JetBrains Mono (500-700), Inter (400-700). {{COMPANY}} brand.
+  Stacked trapezoids narrowing top → bottom; conversion percentages labeled.
+  Use for: acquisition / activation / retention / revenue / referral; sales pipeline; user dropoff analysis.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>{Funnel Topic} — Funnel</title>
+  <desc>Conversion funnel with stages narrowing top to bottom; percentages and counts per stage.</desc>
+
+  <g id="background"><rect x="0" y="0" width="1200" height="900" fill="var(--bg)"/></g>
+
+  <g id="header">
+    <text x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">{TOPIC} FUNNEL</text>
+    <text x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{e.g., "Acquisition → activation, March 2026"}</text>
+  </g>
+
+  <g id="stage-1">
+    <polygon points="200,140 1000,140 940,220 260,220" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="600" y="170" font-size="14" font-weight="700" fill="var(--accent)" letter-spacing="1" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">STAGE 1 — {AWARENESS / VISITORS}</text>
+    <text x="600" y="194" font-size="13" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{count} — 100%</text>
+    <text x="1040" y="180" font-size="11" font-weight="700" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{description / source}</text>
+  </g>
+
+  <g id="dropoff-1">
+    <text x="100" y="246" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">DROP-OFF: {-XX%}</text>
+  </g>
+
+  <g id="stage-2">
+    <polygon points="260,260 940,260 880,340 320,340" fill="var(--card-accent)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="600" y="290" font-size="14" font-weight="700" fill="var(--accent)" letter-spacing="1" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">STAGE 2 — {INTEREST / SIGNUP}</text>
+    <text x="600" y="314" font-size="13" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{count} — {XX%}</text>
+    <text x="980" y="300" font-size="11" font-weight="700" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{description}</text>
+  </g>
+
+  <g id="dropoff-2">
+    <text x="100" y="366" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">DROP-OFF: {-XX%}</text>
+  </g>
+
+  <g id="stage-3">
+    <polygon points="320,380 880,380 820,460 380,460" fill="var(--card)" stroke="var(--accent)" stroke-width="2"/>
+    <text x="600" y="410" font-size="14" font-weight="700" fill="var(--accent)" letter-spacing="1" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">STAGE 3 — {ACTIVATION}</text>
+    <text x="600" y="434" font-size="13" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{count} — {XX%}</text>
+    <text x="920" y="420" font-size="11" font-weight="700" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{description}</text>
+  </g>
+
+  <g id="dropoff-3">
+    <text x="100" y="486" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">DROP-OFF: {-XX%}</text>
+  </g>
+
+  <g id="stage-4">
+    <polygon points="380,500 820,500 760,580 440,580" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="2"/>
+    <text x="600" y="530" font-size="14" font-weight="700" fill="var(--teal)" letter-spacing="1" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">STAGE 4 — {RETENTION}</text>
+    <text x="600" y="554" font-size="13" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{count} — {XX%}</text>
+    <text x="860" y="540" font-size="11" font-weight="700" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{description}</text>
+  </g>
+
+  <g id="dropoff-4">
+    <text x="100" y="606" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">DROP-OFF: {-XX%}</text>
+  </g>
+
+  <g id="stage-5">
+    <polygon points="440,620 760,620 700,700 500,700" fill="var(--card-accent)" stroke="var(--teal)" stroke-width="2.5"/>
+    <text x="600" y="650" font-size="14" font-weight="700" fill="var(--teal)" letter-spacing="1" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">STAGE 5 — {REVENUE}</text>
+    <text x="600" y="674" font-size="13" font-weight="700" fill="var(--ink)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{count} — {XX%}</text>
+    <text x="800" y="660" font-size="11" font-weight="700" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{description}</text>
+  </g>
+
+  <g id="footer">
+    <rect x="60" y="780" width="1080" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="800" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">HOW TO READ</text>
+    <text x="80" y="820" font-size="11" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Each stage shows count + percentage of the previous stage. Drop-off labels reveal where users are lost.</text>
+    <text x="80" y="840" font-size="10" font-style="italic" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Common variants: AARRR (acquisition / activation / retention / referral / revenue), sales pipeline, signup-to-onboard, content marketing.</text>
+  </g>
+</svg>

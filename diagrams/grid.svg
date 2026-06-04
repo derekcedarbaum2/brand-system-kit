@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE: Generic Matrix / Grid
+  Required Figma fonts: JetBrains Mono (700) for headlines/labels, Inter (400, 700) for body.
+  Use for: RACI matrix, state/variant matrix, feature parity matrix, capability heat map, risk matrix,
+  edge case matrix, tech debt heat map, coverage map, FMEA, accessibility audit grid.
+  Default canvas: 1400 × 900. Adjust row/col counts by duplicating row groups.
+  Cell fill conventions:
+    - Heat map (low/med/high): green #eaf0f5 / yellow #f7f8fa / red #cfe0e2 with darker borders
+    - Status (✓/✗/—): bold checkmark, X, or em-dash
+    - RACI: letter R/A/C/I in red/teal/gray/light-gray
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>{Topic} — Matrix</title>
+  <desc>Generic matrix / grid for any rows × columns mapping. Use for RACI, state matrix, capability heat map, risk matrix, etc.</desc>
+
+  <g id="background">
+    <rect x="0" y="0" width="1400" height="900" fill="var(--bg)"/>
+  </g>
+
+  <g id="header">
+    <text id="title" x="60" y="56" font-size="26" font-weight="700" fill="var(--ink)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="0.8">{TOPIC} MATRIX</text>
+    <text id="subtitle" x="60" y="82" font-size="13" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Subtitle — e.g., "Component × State coverage" or "RACI for Q3 launch"}</text>
+  </g>
+
+  <g id="row-axis-label">
+    <text x="60" y="160" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">{ROW AXIS LABEL — E.G., COMPONENT}</text>
+  </g>
+
+  <g id="column-headers">
+    <rect x="280" y="180" width="180" height="50" rx="4" fill="var(--teal)"/>
+    <text x="370" y="212" font-size="11" font-weight="700" fill="var(--bg)" letter-spacing="1.5" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">{COLUMN 1}</text>
+    <rect x="470" y="180" width="180" height="50" rx="4" fill="var(--teal)"/>
+    <text x="560" y="212" font-size="11" font-weight="700" fill="var(--bg)" letter-spacing="1.5" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">{COLUMN 2}</text>
+    <rect x="660" y="180" width="180" height="50" rx="4" fill="var(--teal)"/>
+    <text x="750" y="212" font-size="11" font-weight="700" fill="var(--bg)" letter-spacing="1.5" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">{COLUMN 3}</text>
+    <rect x="850" y="180" width="180" height="50" rx="4" fill="var(--teal)"/>
+    <text x="940" y="212" font-size="11" font-weight="700" fill="var(--bg)" letter-spacing="1.5" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">{COLUMN 4}</text>
+    <rect x="1040" y="180" width="180" height="50" rx="4" fill="var(--teal)"/>
+    <text x="1130" y="212" font-size="11" font-weight="700" fill="var(--bg)" letter-spacing="1.5" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">{COLUMN 5}</text>
+  </g>
+
+  <g id="row-1">
+    <rect x="60" y="240" width="220" height="60" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="276" font-size="13" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Row 1 label}</text>
+    <rect x="280" y="240" width="180" height="60" rx="4" fill="var(--card-accent)" stroke="var(--teal)"/>
+    <text x="370" y="278" font-size="14" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{cell}</text>
+    <rect x="470" y="240" width="180" height="60" rx="4" fill="var(--card)" stroke="var(--accent)"/>
+    <text x="560" y="278" font-size="14" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{cell}</text>
+    <rect x="660" y="240" width="180" height="60" rx="4" fill="var(--accent-light)" stroke="var(--accent)"/>
+    <text x="750" y="278" font-size="14" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{cell}</text>
+    <rect x="850" y="240" width="180" height="60" rx="4" fill="var(--card)" stroke="var(--dim)"/>
+    <text x="940" y="278" font-size="14" font-weight="700" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">—</text>
+    <rect x="1040" y="240" width="180" height="60" rx="4" fill="var(--card-accent)" stroke="var(--teal)"/>
+    <text x="1130" y="278" font-size="14" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{cell}</text>
+  </g>
+
+  <g id="row-2">
+    <rect x="60" y="310" width="220" height="60" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="346" font-size="13" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Row 2 label}</text>
+    <rect x="280" y="310" width="180" height="60" rx="4" fill="var(--card-accent)" stroke="var(--teal)"/>
+    <text x="370" y="348" font-size="14" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{cell}</text>
+    <rect x="470" y="310" width="180" height="60" rx="4" fill="var(--card-accent)" stroke="var(--teal)"/>
+    <text x="560" y="348" font-size="14" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{cell}</text>
+    <rect x="660" y="310" width="180" height="60" rx="4" fill="var(--card)" stroke="var(--accent)"/>
+    <text x="750" y="348" font-size="14" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{cell}</text>
+    <rect x="850" y="310" width="180" height="60" rx="4" fill="var(--card)" stroke="var(--accent)"/>
+    <text x="940" y="348" font-size="14" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{cell}</text>
+    <rect x="1040" y="310" width="180" height="60" rx="4" fill="var(--card)" stroke="var(--dim)"/>
+    <text x="1130" y="348" font-size="14" font-weight="700" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">—</text>
+  </g>
+
+  <g id="row-3">
+    <rect x="60" y="380" width="220" height="60" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="416" font-size="13" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Row 3 label}</text>
+    <rect x="280" y="380" width="180" height="60" rx="4" fill="var(--accent-light)" stroke="var(--accent)"/>
+    <text x="370" y="418" font-size="14" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{cell}</text>
+    <rect x="470" y="380" width="180" height="60" rx="4" fill="var(--card)" stroke="var(--accent)"/>
+    <text x="560" y="418" font-size="14" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{cell}</text>
+    <rect x="660" y="380" width="180" height="60" rx="4" fill="var(--card-accent)" stroke="var(--teal)"/>
+    <text x="750" y="418" font-size="14" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{cell}</text>
+    <rect x="850" y="380" width="180" height="60" rx="4" fill="var(--card-accent)" stroke="var(--teal)"/>
+    <text x="940" y="418" font-size="14" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{cell}</text>
+    <rect x="1040" y="380" width="180" height="60" rx="4" fill="var(--card)" stroke="var(--accent)"/>
+    <text x="1130" y="418" font-size="14" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{cell}</text>
+  </g>
+
+  <g id="row-4">
+    <rect x="60" y="450" width="220" height="60" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="486" font-size="13" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Row 4 label}</text>
+    <rect x="280" y="450" width="180" height="60" rx="4" fill="var(--card-accent)" stroke="var(--teal)"/>
+    <text x="370" y="488" font-size="14" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{cell}</text>
+    <rect x="470" y="450" width="180" height="60" rx="4" fill="var(--card-accent)" stroke="var(--teal)"/>
+    <text x="560" y="488" font-size="14" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{cell}</text>
+    <rect x="660" y="450" width="180" height="60" rx="4" fill="var(--card-accent)" stroke="var(--teal)"/>
+    <text x="750" y="488" font-size="14" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{cell}</text>
+    <rect x="850" y="450" width="180" height="60" rx="4" fill="var(--card)" stroke="var(--accent)"/>
+    <text x="940" y="488" font-size="14" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{cell}</text>
+    <rect x="1040" y="450" width="180" height="60" rx="4" fill="var(--card-accent)" stroke="var(--teal)"/>
+    <text x="1130" y="488" font-size="14" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{cell}</text>
+  </g>
+
+  <g id="row-5">
+    <rect x="60" y="520" width="220" height="60" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="556" font-size="13" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Row 5 label}</text>
+    <rect x="280" y="520" width="180" height="60" rx="4" fill="var(--card)" stroke="var(--dim)"/>
+    <text x="370" y="558" font-size="14" font-weight="700" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">—</text>
+    <rect x="470" y="520" width="180" height="60" rx="4" fill="var(--accent-light)" stroke="var(--accent)"/>
+    <text x="560" y="558" font-size="14" font-weight="700" fill="var(--accent)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{cell}</text>
+    <rect x="660" y="520" width="180" height="60" rx="4" fill="var(--card-accent)" stroke="var(--teal)"/>
+    <text x="750" y="558" font-size="14" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{cell}</text>
+    <rect x="850" y="520" width="180" height="60" rx="4" fill="var(--card-accent)" stroke="var(--teal)"/>
+    <text x="940" y="558" font-size="14" font-weight="700" fill="var(--teal)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{cell}</text>
+    <rect x="1040" y="520" width="180" height="60" rx="4" fill="var(--card)" stroke="var(--dim)"/>
+    <text x="1130" y="558" font-size="14" font-weight="700" fill="var(--secondary)" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">—</text>
+  </g>
+
+  <g id="legend">
+    <rect x="60" y="780" width="1280" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="800" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">CELL CONVENTIONS (CHOOSE ONE PER DIAGRAM)</text>
+    <rect x="80" y="812" width="20" height="14" rx="2" fill="var(--card-accent)" stroke="var(--teal)"/>
+    <text x="108" y="824" font-size="10" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Pass / High / Done / Green</text>
+    <rect x="280" y="812" width="20" height="14" rx="2" fill="var(--card)" stroke="var(--accent)"/>
+    <text x="308" y="824" font-size="10" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Partial / Med / At risk / Yellow</text>
+    <rect x="490" y="812" width="20" height="14" rx="2" fill="var(--accent-light)" stroke="var(--accent)"/>
+    <text x="518" y="824" font-size="10" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Fail / Low / Blocked / Red</text>
+    <rect x="710" y="812" width="20" height="14" rx="2" fill="var(--card)" stroke="var(--dim)"/>
+    <text x="738" y="824" font-size="10" fill="var(--body)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">N/A / Not started</text>
+    <text x="80" y="850" font-size="9" font-style="italic" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">For RACI: replace heat colors with R (red) / A (Brand Red darker) / C (teal) / I (gray) letter cells.</text>
+  </g>
+</svg>

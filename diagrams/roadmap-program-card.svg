@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TEMPLATE (skeleton): Program Info Card
+  Source: roadmap-update skill / Slides 40–43 of canonical product roadmap deck.
+  Purpose: One slide per program — scope, demos, outcomes, risks.
+  Layout: title bar + two side-by-side bio cards (left = high-level, right = outcomes & risks).
+  Required Figma fonts: JetBrains Mono (700) for headlines/labels, Inter (400, 700) for body.
+  Canvas: 1400 × 800.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800">
+<style>:root{
+  --ink: #161a19;
+  --body: #353b3a;
+  --secondary: #5c6463;
+  --dim: #6e7574;
+  --accent: #1f6e7a;
+  --accent-light: #cfe0e2;
+  --accent-2: #3e5c8a;
+  --teal: #2a7d8a;
+  --warm: #8a6d1f;
+  --positive: #2e7d4f;
+  --emphasis: #9a2d2d;
+  --bg: #fbfaf7;
+  --card: #f0eee8;
+  --card-accent: #e6eef0;
+  --border: #e3e0d8;
+}</style>
+  <title>Program Info Card — Template</title>
+  <desc>Per-program slide: vehicle class, customer, demos, outcomes, risks.</desc>
+
+  <g id="background">
+    <rect x="0" y="0" width="1400" height="800" fill="var(--bg)"/>
+  </g>
+
+  <g id="header">
+    <rect x="60" y="40" width="1280" height="60" fill="var(--ink)"/>
+    <text x="80" y="80" font-size="24" font-weight="700" fill="var(--bg)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2">PROJECT {NAME}</text>
+    <text x="1320" y="80" font-size="12" font-weight="700" fill="#9AA0A8" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="end" letter-spacing="1.0">PROGRAM CARD</text>
+  </g>
+
+  <!-- LEFT CARD: high-level -->
+  <g id="card-left">
+    <rect x="60" y="130" width="620" height="540" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="160" font-size="11" font-weight="700" fill="var(--teal)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">HIGH-LEVEL</text>
+
+    <!-- vehicle class -->
+    <text x="80" y="200" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.2" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">VEHICLE CLASS</text>
+    <text x="80" y="222" font-size="14" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Heavy-Lift Platform}</text>
+
+    <!-- customer -->
+    <text x="80" y="260" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.2" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">CUSTOMER</text>
+    <text x="80" y="282" font-size="14" font-weight="700" fill="var(--ink)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Customer Aurora}</text>
+
+    <!-- demos -->
+    <text x="80" y="324" font-size="10" font-weight="700" fill="var(--secondary)" letter-spacing="1.2" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">DEMOS</text>
+    <g font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="var(--ink)">
+      <circle cx="88" cy="350" r="3" fill="var(--teal)"/>
+      <text x="102" y="354">{3× Site Assessment (Jun–Nov 2026)}</text>
+      <circle cx="88" cy="376" r="3" fill="var(--teal)"/>
+      <text x="102" y="380">{1× Site Demo (May 27)}</text>
+      <circle cx="88" cy="402" r="3" fill="var(--teal)"/>
+      <text x="102" y="406">{2× Capability Demo (Q3 2026)}</text>
+      <circle cx="88" cy="428" r="3" fill="var(--teal)"/>
+      <text x="102" y="432">{1× Joint Exercise (Q4 2026)}</text>
+    </g>
+  </g>
+
+  <!-- RIGHT CARD: outcomes & risks -->
+  <g id="card-right">
+    <rect x="720" y="130" width="620" height="540" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="740" y="160" font-size="11" font-weight="700" fill="var(--teal)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">KEY OUTCOMES &amp; RISKS</text>
+
+    <!-- outcomes -->
+    <text x="740" y="200" font-size="10" font-weight="700" fill="var(--positive)" letter-spacing="1.2" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">OUTCOMES</text>
+    <g font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="var(--ink)">
+      <rect x="740" y="212" width="3" height="20" fill="var(--positive)"/>
+      <text x="754" y="227">{Customer Aurora fleet adoption decision}</text>
+      <rect x="740" y="240" width="3" height="20" fill="var(--positive)"/>
+      <text x="754" y="255">{Gen-1 hardware validated against ops profile}</text>
+      <rect x="740" y="268" width="3" height="20" fill="var(--positive)"/>
+      <text x="754" y="283">{Insight Cloud integration proven end-to-end}</text>
+      <rect x="740" y="296" width="3" height="20" fill="var(--positive)"/>
+      <text x="754" y="311">{Pricing validated at first commercial tier}</text>
+    </g>
+
+    <!-- risks -->
+    <text x="740" y="370" font-size="10" font-weight="700" fill="var(--emphasis)" letter-spacing="1.2" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">RISKS</text>
+    <g font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" fill="var(--ink)">
+      <rect x="740" y="382" width="3" height="20" fill="var(--emphasis)"/>
+      <text x="754" y="397">{Vehicle availability dependent on partner timeline}</text>
+      <rect x="740" y="410" width="3" height="20" fill="var(--emphasis)"/>
+      <text x="754" y="425">{Range envelope unverified above 40 kg payload}</text>
+      <rect x="740" y="438" width="3" height="20" fill="var(--emphasis)"/>
+      <text x="754" y="453">{Customer Aurora budget cycle moves Q1 → Q3}</text>
+      <rect x="740" y="466" width="3" height="20" fill="var(--emphasis)"/>
+      <text x="754" y="481">{ITAR review timeline for export variant}</text>
+    </g>
+  </g>
+
+  <!-- FOOTER -->
+  <g id="footer">
+    <rect x="60" y="700" width="1280" height="80" rx="4" fill="var(--card)" stroke="var(--border)"/>
+    <text x="80" y="722" font-size="11" font-weight="700" fill="var(--ink)" letter-spacing="1.5" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace">PROGRAM NOTES</text>
+    <text x="80" y="746" font-size="11" fill="var(--accent)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">{Free-form callouts — partner pivots, dependencies, executive context.}</text>
+    <text x="80" y="766" font-size="10" font-style="italic" fill="var(--secondary)" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">Note: demo date changes log a `was: &lt;old&gt;` annotation in the roadmap-update skill changelog.</text>
+  </g>
+</svg>

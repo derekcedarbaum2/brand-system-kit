@@ -53,6 +53,7 @@ brand-system-kit/
     color-system.md  tokens-screen.md  tokens-print.md  tokens-email.md
     voice-and-tone.md  anti-patterns.md  lint-rules.md  imagery.md
     data-viz.md  slide-layouts.md  accessibility.md  medium-guide.md  README.md
+    print-layout.md        #   HTML→PDF mechanics: full-bleed bg, sheet pagination, no-split cards
   tooling/                 # the executable system (zero-dep Node ≥18)
     build-tokens.mjs       #   tokens.json → CSS :root block + Markdown palette table
     contrast-check.mjs     #   WCAG 2.1 AA, computed from tokens.json (mode-aware)

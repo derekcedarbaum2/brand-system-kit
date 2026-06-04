@@ -23,6 +23,7 @@ Read `identity.md` first — it carries the meta-thesis (*match the visual regis
 | `lint-rules.md` | The MUST/SHOULD rules `lint.mjs` enforces |
 | `medium-guide.md` | Which guide to read for which output type |
 | `tokens-screen.md` · `tokens-print.md` · `tokens-email.md` | Per-medium token usage notes |
+| `print-layout.md` | HTML→PDF mechanics (headless Chrome): full-bleed background, sheet pagination, tinted panels vs. white, no-split cards, landscape decks |
 
 ## How it fits with the rest of the kit
 

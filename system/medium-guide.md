@@ -6,11 +6,11 @@ Quick reference: for a given output, which guides to read. Values always come fr
 
 | Task | Read |
 |---|---|
-| Presentation / deck | `identity.md` → `tokens-screen.md` → `typography.md` + `components.md` + `slide-layouts.md` → `motion.md` |
-| One-pager / sales PDF | `identity.md` → `tokens-print.md` → `typography.md` + `components.md` |
-| Meeting summary PDF | `tokens-print.md` → `typography.md` + `voice-and-tone.md` |
-| PRD / strategy brief / long-form memo | `tokens-print.md` → `voice-and-tone.md` — full-width prose, no boxed body |
-| Proposal / SOW | start from your own proposal template → `tokens-print.md` + `voice-and-tone.md` |
+| Presentation / deck | `identity.md` → `tokens-screen.md` → `typography.md` + `components.md` + `slide-layouts.md` → `motion.md`; if exporting to PDF → `print-layout.md` (landscape 16:9) |
+| One-pager / sales PDF | `identity.md` → `tokens-print.md` → `typography.md` + `components.md` + `print-layout.md` |
+| Meeting summary PDF | `tokens-print.md` → `typography.md` + `voice-and-tone.md` + `print-layout.md` |
+| PRD / strategy brief / long-form memo | `tokens-print.md` + `print-layout.md` → `voice-and-tone.md` — full-width prose, no boxed body |
+| Proposal / SOW | start from your own proposal template → `tokens-print.md` + `print-layout.md` + `voice-and-tone.md` |
 | Website / dark-bg HTML | `identity.md` → `tokens-screen.md` |
 | HTML email | `tokens-email.md` |
 | Social post | `voice-and-tone.md` |

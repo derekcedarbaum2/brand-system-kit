@@ -1,6 +1,6 @@
 # AGENTS.md — install & operate this kit
 
-Instructions for an AI coding agent (Claude Code, etc.) to install and run **Brand System Kit** for a user. Follow these steps literally.
+Instructions for any AI coding agent — **Codex, Cursor, Claude Code, Aider, and others** — to install and run **Brand System Kit** for a user. Follow these steps literally; the `node` commands below are safe to run to verify your work. The tooling is plain Node (no agent-specific dependency); the one Claude-specific piece (`skill/brand-init/`) is just a wrapper around the tool-neutral interview in `docs/brand-interview.md`, which any agent can follow directly.
 
 ## What this is
 An executable brand system: a DTCG token source-of-truth, generators, a lint gate, a WCAG contrast checker, an HTML→PNG render step, an SVG tokenizer, 37 diagram templates, and a `/brand-init` skill that scaffolds a new brand. Zero runtime dependencies (Node ≥18 stdlib only). Chrome/Chromium is needed only for `render.mjs`.
@@ -32,7 +32,9 @@ node tooling/lint.mjs examples/bad.html profiles/northwind   # exit 1 (intended 
 
 ## Create a brand for the user
 
-**Preferred:** run the `/brand-init` skill (interviews the user → scaffolds a profile). If skills aren't available, do it by hand:
+**Interview the user, then scaffold.** The full method — a one-question-at-a-time decision tree from audience down to every token, plus the build/verify steps — is in **[`docs/brand-interview.md`](docs/brand-interview.md)**. It's tool-agnostic; follow it directly (Codex, Cursor, etc.). In Claude Code it's also available as the `/brand-init` skill, which just wraps that same file.
+
+If you're scaffolding without the interview, the short version:
 
 1. Copy the demo profile: `cp -R profiles/northwind profiles/<brand-slug>`
 2. Edit `profiles/<brand-slug>/tokens.json` — set the `color`, `fontFamily`, and `lint` blocks (DTCG format; mirror Northwind's structure). Derive the register from the audience: technical/skeptical-of-polish → restraint (dark, no brand color); non-technical exec → warmth (light, serif, one accent). See `system/identity.md` for the meta-thesis.

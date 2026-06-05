@@ -15,7 +15,7 @@ What's inside:
 - **An accessibility gate.** Every palette is checked against WCAG AA contrast — computed, not eyeballed.
 - **A render step.** It turns any artifact into an image so you (or an AI agent) can judge what a rule can't: does this actually *look* right?
 
-Zero dependencies — plain Node ≥18. A Claude Code skill scaffolds a brand from a six-question interview.
+Zero dependencies — plain Node ≥18. Any agent (Codex, Cursor, Claude Code) can scaffold a new brand by running the built-in interview in [`docs/brand-interview.md`](docs/brand-interview.md); Claude Code also gets it as a `/brand-init` skill.
 
 It ships with two working brands — **Northwind** and **Graphite** — so the whole pipeline runs the moment you clone it. They're opposites on purpose (the [one idea](#the-one-idea) below), which is the fastest way to see what the kit does. Replace them with yours.
 
@@ -41,6 +41,8 @@ One diagram, re-skinned to each brand by swapping the token profile — nothing 
 
 ## The one idea
 
+*The single principle the whole kit is built on — why two brands, and why they look nothing alike.*
+
 > **Match the visual register to the buyer's trust model.**
 
 One philosophy, two registers, because two buyers grant trust for opposite reasons:
@@ -55,6 +57,8 @@ Restraint and warmth aren't opposite philosophies — they're the same disciplin
 ---
 
 ## Architecture: generic core + profiles
+
+*Where everything lives. Four parts: the prose framework (`system/`), the executable tooling (`tooling/`), the brands (`profiles/`), and the diagram templates (`diagrams/`).*
 
 ```
 brand-system-kit/
@@ -77,7 +81,8 @@ brand-system-kit/
       tokens.json          #   the single source of truth
       brand.css  color-system.md  sample.html   # all generated/derived
   diagrams/                # 37 token-driven SVG templates (re-skin to any profile)
-  skill/brand-init/        # Claude Code skill: interview → scaffold a new profile
+  docs/brand-interview.md  # tool-agnostic interview an agent runs to scaffold a brand
+  skill/brand-init/        # Claude Code wrapper around docs/brand-interview.md
   examples/bad.html        # an artifact full of violations, to see the linter bite
 ```
 
@@ -88,6 +93,8 @@ Each brand is a **profile** = one `tokens.json`. The tooling is brand-agnostic; 
 ---
 
 ## Quickstart
+
+*See the whole pipeline work in 30 seconds. Clone the repo and run these four commands from its root against the bundled demo brand — no install. You should get three passes and one deliberate failure (the linter catching a bad file).*
 
 ```bash
 # 1. Check the demo palette is accessible (it is)
@@ -109,10 +116,10 @@ node tooling/lint.mjs examples/bad.html profiles/northwind   # exits 1
 
 ## Make your own
 
-Two ways:
+*How to turn this into **your** brand — let an agent interview you, or copy the demo and edit by hand.*
 
-- **With Claude Code:** drop `skill/brand-init/` into `~/.claude/skills/` and run `/brand-init`. It interviews you (audience → register → palette → fonts → name), writes a valid `tokens.json`, iterates until it passes WCAG AA, generates the CSS, and renders a sample.
-- **By hand:** copy `profiles/northwind/` to `profiles/<your-brand>/`, edit `tokens.json`, re-run steps 1–3 above.
+- **With any agent (Codex, Cursor, Claude Code):** have it follow [`docs/brand-interview.md`](docs/brand-interview.md). It asks about your audience, derives the register, then writes a WCAG-passing `tokens.json`, generates the CSS, and renders a sample. In Claude Code, just run `/brand-init`.
+- **By hand:** copy `profiles/northwind/` to `profiles/<your-brand>/`, edit `tokens.json`, and re-run the Quickstart commands against your new profile.
 
 Then wire `brand-qa.mjs` into whatever produces your artifacts (a docs build, a deck generator, a CI step) so nothing ships ungated.
 

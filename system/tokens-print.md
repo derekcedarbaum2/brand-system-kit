@@ -4,7 +4,7 @@ CSS variables for print/PDF surfaces. Three distinct modes — pick one per docu
 
 | Mode | Use for |
 |---|---|
-| **Dark Mode** | One-pagers, capability sheets, sales leave-behinds, prospect collateral |
+| **Dark Mode** | One-pagers, capability sheets, external handouts |
 | **Light Mode** | Meeting summaries, scannable internal deliverables, formal client reports |
 | **Document Mode** | PRDs, hypothesis briefs, strategy briefs, long-form memos, research synthesis |
 
@@ -29,7 +29,7 @@ html, body {
 
 ---
 
-## Dark Mode — one-pagers & sales collateral
+## Dark Mode — one-pagers & outward-facing collateral
 
 ### Variables
 
@@ -163,7 +163,7 @@ body {
 
 ## Document Mode — PRDs, strategy briefs, long-form
 
-**The shift from Light Mode.** Meeting summaries are scannable. PRDs and strategy briefs are **read linearly**, usually end-to-end. That changes the design rules.
+**How Document Mode differs from Light Mode.** Meeting summaries are scannable. PRDs and strategy briefs are **read linearly**, usually end-to-end. That changes the design rules.
 
 ### Variables
 

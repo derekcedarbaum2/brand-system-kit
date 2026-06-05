@@ -33,7 +33,7 @@ Recommended defaults in parentheses.
 6. **Secondary accent `--accent-2`** (warmth → a complementary hue for data-viz / alt callouts; restraint → a dimmer shade of the primary — restraint uses no second brand color).
 7. **Emphasis `--emphasis`** (a single reserved figure color, usually a muted red/oxblood; one per section, never decorative; tested on a light document background regardless of register).
 8. **Neutrals** (derive, confirm as a set) — `text-primary` (near-black/near-white, never pure), `text-body`, `text-secondary`, `text-dim`, `border`, `bg-card`, `bg-dark` + `text-on-dark`. Propose the full ramp; ask only to nudge.
-9. **Typography** — headline family (serif = "firm/advisor"; neo-grotesque sans = "product/tech" — serif is the strongest "not an app" signal), body (an Inter-class sans), labels (a monospace).
+9. **Typography** — headline family (serif = "firm/advisor"; neo-grotesque sans = "product/tech" — a serif headline reads as established/editorial rather than a software product), body (an Inter-class sans), labels (a monospace).
 10. **lint guardrails** — `max-accents` (warmth 2, restraint 1), `forbidden-bg`/`forbidden-text` (warm brands forbid pure `#FFFFFF`/`#000000`), and `foreign-names` (the user's *other* brand names, so one brand's copy never leaks into another's artifact).
 
 If an answer is already implied by an earlier one, state your assumption and skip the question.

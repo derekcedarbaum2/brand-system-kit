@@ -144,4 +144,4 @@ When the same content needs to fit different space budgets:
 - **Never less than 9px body text on print.** Below that it's unreadable.
 - **Never less than 0.55in margins on print** (unless it's an internal reference sheet).
 - **Always leave a footer.** Even on internal docs — it anchors the page.
-- **Whitespace is content.** The instinct to fill every inch with info signals anxiety, not confidence. A half-empty page with a single stat line that hits is stronger than a full page of middling evidence.
+- **Whitespace is content.** Filling every inch usually means too much content and not enough editing. A half-empty page with a single stat line that hits is stronger than a full page of middling evidence.

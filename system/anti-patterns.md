@@ -22,7 +22,7 @@ Specific brand mistakes with descriptions and fixes. If you're about to do one o
 
 **What's wrong:** "Significant cost reduction," "fast implementation," "robust solution." These are filler.
 
-**Fix:** Concrete numbers or honest admission. "Cuts review time from 3 days to 4 hours." Or: "We'll measure this in engagement week 1 and baseline against it."
+**Fix:** Concrete numbers or honest admission. "Cuts review time from 3 days to 4 hours." Or: "We'll measure this in week 1 and baseline against it."
 
 ### 4. Superlatives
 
@@ -116,7 +116,7 @@ Specific brand mistakes with descriptions and fixes. If you're about to do one o
 
 **What's wrong:** A deck with 50 slides isn't a deck, it's a document. Every vendor makes this mistake.
 
-**Fix:** Cap at 15 slides for a discovery deck, 20 for a leave-behind. If you have more content, it belongs in a one-pager or PDF.
+**Fix:** Cap a presentation around 15 slides; if you have more, it belongs in a document or PDF.
 
 ### 19. Logo on every slide
 
@@ -132,7 +132,7 @@ Specific brand mistakes with descriptions and fixes. If you're about to do one o
 
 **What's wrong:** A paragraph of analysis wrapped in a `.card` container. Document mode specifically bans this.
 
-**Fix:** Delete the container. The paragraph is the argument. If it needs a border to feel important, it's not actually important.
+**Fix:** Delete the container. The paragraph is the argument. A border doesn't make a paragraph important; the argument does.
 
 ### 21. Narrow reading column in a PRD
 

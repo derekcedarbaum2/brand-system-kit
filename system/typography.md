@@ -1,6 +1,6 @@
 # Typography
 
-**Two fonts. That's it.**
+**Two font families.**
 
 - **Inter** (Google Fonts CDN) — headlines, body, UI
 - **JetBrains Mono** (Google Fonts CDN) — labels, section tags, source citations, mono UI

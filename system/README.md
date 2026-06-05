@@ -1,4 +1,4 @@
-# system/ — the brand framework (the "why")
+# system/ — the brand framework (the reasoning)
 
 The prose half of the kit: the thinking a brand system encodes, written to be venture-neutral. The *values* (palettes, fonts, positioning) live in each `profiles/<name>/tokens.json`; these guides describe the **roles, rules, and reasoning** the tooling enforces.
 

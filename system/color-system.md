@@ -24,8 +24,8 @@ Color is defined by **role**, not by raw hex. Each profile's `tokens.json` binds
 
 The roles don't change between brands — the **values** do, and that choice is the register (see `identity.md`):
 
-- **Restraint** (e.g. the `graphite` demo): near-black `--bg`, a single neutral/silvery `--accent`, no second brand color. The palette gets out of the way.
-- **Warmth** (e.g. the `northwind` demo): light `--bg`, an editorial `--accent` + `--accent-2`. The palette has a point of view.
+- **Restraint** (e.g. the `graphite` demo): near-black `--bg`, a single neutral/silvery `--accent`, no second brand color. The palette stays neutral and recedes.
+- **Warmth** (e.g. the `northwind` demo): light `--bg`, an editorial `--accent` + `--accent-2`. The palette carries an accent and reads as deliberate.
 
 Both are valid. The kit takes no position on *which* — only that the values are consistent, enforced, and accessible.
 

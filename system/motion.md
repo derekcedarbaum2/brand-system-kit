@@ -1,6 +1,6 @@
 # Motion
 
-Animation is restrained by default. Like color, motion is a crutch — when used broadly, it cheapens the work. When used with intention, it directs attention.
+Animation is restrained by default. Like color, motion is easy to overuse; when it's everywhere, it cheapens the work. When used with intention, it directs attention.
 
 ## Default posture
 
@@ -118,4 +118,4 @@ Before adding an animation, ask: **does this help the reader understand somethin
 - If yes: add it, keep it short, keep it subtle.
 - If no: cut it.
 
-Motion that exists to "feel dynamic" is motion that exists to distract.
+Motion added just to feel dynamic only distracts.

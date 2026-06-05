@@ -6,22 +6,22 @@
 
 **A brand system you can run, not just read.**
 
-Most brand guidelines are a PDF nobody opens and nothing enforces. So colors drift. The wrong blue ships. A deck looks off and no one can say why. This kit makes the rules executable: you define a brand once, in one file, and the tooling keeps every output on-brand — or fails the build.
+Most brand guidelines are a PDF nobody opens and nothing enforces, so colors drift, the wrong blue ships, and a deck looks off without anyone able to say why. This kit makes the rules executable: define a brand once, in one file, and the tooling keeps every output on-brand or fails the build.
 
 What's inside:
 
 - **One source of truth.** Every color and font lives in a single `tokens.json`. The CSS and the docs are generated from it, so they can't drift apart.
 - **A linter that blocks off-brand output.** Banned words, off-palette colors, gradients, and one brand's name leaking into another's artifact all fail the check.
 - **An accessibility gate.** Every palette is checked against WCAG AA contrast — computed, not eyeballed.
-- **A render step.** It turns any artifact into an image so you (or an AI agent) can judge what a rule can't: does this actually *look* right?
+- **A render step.** It turns any artifact into an image so you (or an AI agent) can judge what a rule can't catch: whether it actually looks right.
 
 Zero dependencies — plain Node ≥18. Any agent (Codex, Cursor, Claude Code) can scaffold a new brand by running the built-in interview in [`docs/brand-interview.md`](docs/brand-interview.md); Claude Code also gets it as a `/brand-init` skill.
 
-It ships with two working brands — **Northwind** and **Graphite** — so the whole pipeline runs the moment you clone it. They're opposites on purpose (the [one idea](#the-one-idea) below), which is the fastest way to see what the kit does. Replace them with yours.
+It ships with two working brands — **Northwind** and **Graphite** — so the whole pipeline runs the moment you clone it. They're deliberately different (see [the one idea](#the-one-idea) below), which makes it easy to see what the kit does. Replace them with yours.
 
 ## Preview
 
-Same kit, two registers. Left: Northwind (warmth — light, serif, editorial accent). Right: Graphite (restraint — near-black, no brand color, mono labels).
+The same kit shown in two registers. Left: Northwind (warmth — light, serif, editorial accent). Right: Graphite (restraint — near-black, no brand color, mono labels).
 
 | Northwind (warmth) | Graphite (restraint) |
 |---|---|
@@ -33,7 +33,7 @@ One diagram, re-skinned to each brand by swapping the token profile — nothing 
 |---|---|
 | ![Persona, Northwind](docs/diagram-northwind.png) | ![Persona, Graphite](docs/diagram-graphite.png) |
 
-> This is the *bones*, not a brand. There's no "right" palette here — the kit is the machine that makes any brand consistent and enforceable.
+> This is the structure, not a finished brand. There's no "right" palette here; the kit is what keeps whatever brand you define consistent and enforced.
 
 > **Using an AI agent to set this up?** Point it at [`AGENTS.md`](AGENTS.md) — step-by-step install, verification, and "scaffold a brand" instructions written to be followed literally.
 
@@ -41,7 +41,7 @@ One diagram, re-skinned to each brand by swapping the token profile — nothing 
 
 ## The one idea
 
-*The single principle the whole kit is built on — why two brands, and why they look nothing alike.*
+*Why the kit ships two demo brands, and why they look nothing alike.*
 
 > **Match the visual register to the buyer's trust model.**
 
@@ -52,7 +52,7 @@ One philosophy, two registers, because two buyers grant trust for opposite reaso
 | **Restraint** | Technical operator | Polish, hype, salesmanship | Near-black, no brand color, mono labels — "we're not selling you" |
 | **Warmth** | Non-technical exec | Hackers, vendors, "AI" hand-waving | Light, serif headlines, one editorial accent — "advisor, not vendor" |
 
-Restraint and warmth aren't opposite philosophies — they're the same discipline (argument first, evidence over decoration, hierarchy through restraint) aimed at different fears. If you sell to more than one kind of buyer, you need more than one register — which is why the kit is multi-profile.
+Restraint and warmth come from the same discipline — argument first, evidence over decoration, hierarchy through restraint — applied to audiences that distrust different things. If you serve more than one kind of audience, you need more than one register, which is why the kit is multi-profile.
 
 ---
 
@@ -62,7 +62,7 @@ Restraint and warmth aren't opposite philosophies — they're the same disciplin
 
 ```
 brand-system-kit/
-  system/                  # the bones — the brand-system guides (generic)
+  system/                  # the brand-system guides (generic, prose)
     identity.md            #   philosophy + the meta-thesis (register ↔ trust model)
     typography.md  components.md  spacing.md  motion.md
     color-system.md  tokens-screen.md  tokens-print.md  tokens-email.md
@@ -86,7 +86,7 @@ brand-system-kit/
   examples/bad.html        # an artifact full of violations, to see the linter bite
 ```
 
-`system/` is the prose framework (read these to understand the *why*); `tooling/` enforces it; `profiles/` are the brands; `diagrams/` are ready-to-skin templates.
+`system/` is the prose framework (read these for the reasoning); `tooling/` enforces it; `profiles/` are the brands; `diagrams/` are ready-to-skin templates.
 
 Each brand is a **profile** = one `tokens.json`. The tooling is brand-agnostic; it never hard-codes a palette.
 

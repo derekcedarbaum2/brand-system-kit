@@ -2,11 +2,11 @@
 
 This is the **generic** identity for the whole system. It carries the design philosophy every brand inherits. Brand-specific identity (names, taglines, wordmarks, positioning, palette) lives in a profile — e.g. `profiles/northwind/` or `profiles/graphite/` — never here.
 
-## What this brand is
+## What this is
 
-Not a brand identity system. An **argument delivery system**.
+The kit is built around one job: making the content do the work. Layout, color, and type serve the argument on the page; none of it is there just to decorate.
 
-Every design choice exists to make the content do the work. No decoration, no distraction, no filler. This is the through-line across every brand — the *register* changes per audience (see the meta-thesis below), but the discipline never does.
+That discipline holds across every brand. Only the *register* changes with the audience (see the meta-thesis below).
 
 ## The meta-thesis
 
@@ -19,7 +19,7 @@ The system has one philosophy and two registers, because two different buyers gr
 | **Restraint** | Technical operator who distrusts polish | Near-black, no color, mono labels — "we don't need to charm you" | the `graphite` demo |
 | **Warmth** | Non-technical exec who distrusts hype/vendors | Warm-light, serif headlines, editorial accent — "advisor, not vendor" | the `northwind` demo |
 
-Both are the same argument-delivery discipline. Restraint and warmth are not opposite *philosophies* — they're the same philosophy pointed at different fears. The two demo profiles (`graphite`, `northwind`) are worked examples of each.
+Restraint and warmth share one discipline; they differ only in what the audience distrusts. The two demo profiles (`graphite`, `northwind`) show each.
 
 ## Design philosophy (universal)
 
@@ -27,15 +27,15 @@ Both are the same argument-delivery discipline. Restraint and warmth are not opp
 
 **Hierarchy through restraint.** Two-to-three type families and three brightness/weight levels do all the work. If you need more, the content isn't structured right.
 
-**Evidence over assertion.** Stat blocks, source citations, before/after, dollarized outcomes. Every layout pushes toward "show, don't tell." Decoration is a tell that the argument is weak.
+**Evidence over assertion.** Stat blocks, source citations, before/after, concrete figures. Every layout pushes toward "show, don't tell." If a layout leans on decoration, the argument underneath is usually thin.
 
 **Confidence through quiet.** No gradients. No animation beyond a fade. No superlatives. Hierarchy through weight and whitespace.
 
 **Stand-alone by default.** Every surface works without a presenter narrating it.
 
-## The one rule
+## The core test
 
-> If it requires the presenter to explain it, the content isn't working hard enough. Every surface should communicate its point without narration.
+> If a surface needs someone to explain it, the content isn't working hard enough. Every page should make its point without narration.
 
 ## Universal constants (brand-agnostic)
 

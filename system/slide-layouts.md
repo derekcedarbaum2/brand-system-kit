@@ -24,7 +24,7 @@ Opening slide. Centered logo on deep black. Minimal.
 
 **Customization:**
 - Logo only is the default — clean and confident
-- For leave-behinds and forwarded decks, add a context line below the logo: `<p style="font-size:0.5em; color:var(--text-dim); margin-top:12px;">Client Name — Topic — Month Year</p>`. This ensures someone opening the file without context knows what they're looking at.
+- For decks that get forwarded, add a context line below the logo: `<p style="font-size:0.5em; color:var(--text-dim); margin-top:12px;">Client Name — Topic — Month Year</p>`. This ensures someone opening the file without context knows what they're looking at.
 - Optionally add a tagline below the logo as a `.label`
 - The cover uses `--bg` (deepest black), not `--bg-card`
 
@@ -207,7 +207,7 @@ Horizontal process steps — the "how it works" layout.
 </section>
 ```
 
-**When to use:** Engagement models, project phases, onboarding flows.
+**When to use:** Process models, project phases, onboarding flows.
 
 **Rules:**
 - 2-4 stages per row
@@ -274,7 +274,7 @@ Stacked prompt cards for Q&A or discovery slides.
 </section>
 ```
 
-**When to use:** Discovery meetings, leave-behind discussion prompts, stakeholder alignment.
+**When to use:** Discovery meetings, discussion prompts, getting a group aligned.
 
 **Rules:**
 - 3-5 question cards max
@@ -388,7 +388,7 @@ Horizontal milestone progression.
 </section>
 ```
 
-**When to use:** Engagement timelines, implementation roadmaps, project milestones.
+**When to use:** Project timelines, implementation roadmaps, project milestones.
 
 **Rules:**
 - Add `.active` to current/completed milestones
@@ -424,7 +424,7 @@ Grid of stat blocks for ROI/impact slides.
 </section>
 ```
 
-**When to use:** ROI slides, impact summaries, KPI overviews. This is the money slide — the one that gets the deal.
+**When to use:** ROI slides, impact summaries, KPI overviews. This is usually the highest-stakes slide.
 
 **Rules:**
 - 2-4 metrics
@@ -488,9 +488,9 @@ Layouts can be combined on a single slide. Common combinations:
 
 - **Headlines are assertions, not descriptions.** Write "Your team spends 40% of its time on manual assembly" not "Time Analysis." The headline should be the slide's argument. If your headline could be a tab label in a spreadsheet, rewrite it.
 - **Every slide answers "so what?"** If you can't articulate why this slide moves the audience closer to a decision, cut it.
-- **Use concrete numbers from the prospect's world.** "You process 12,000 invoices/month" hits harder than "significant volume." Abstract percentages without context are meaningless.
+- **Use concrete numbers from the audience's world.** "You process 12,000 invoices/month" hits harder than "significant volume." Abstract percentages without context are meaningless.
 - **When describing AI: say what the system does, not what it is.** Never write "leverage AI" or "AI-powered solution." Write "reads incoming invoices, extracts line items, and flags mismatches against the PO." Plain English, specific actions.
-- **Write for a smart person who doesn't know AI but knows their business cold.** They'll catch bullshit jargon instantly. They won't be impressed by "machine learning" — they'll be impressed by "cuts review time from 3 days to 4 hours."
+- **Write for a smart person who doesn't know AI but knows their business cold.** They will catch empty jargon instantly. They won't be impressed by "machine learning" — they'll be impressed by "cuts review time from 3 days to 4 hours."
 - **Headlines:** Mixed case (NOT uppercase), conversational, often use line breaks (`<br>`) for pacing
 - **Bullets:** Lead with bold key terms, use em-dashes for structure
 - **Pull quotes:** Narrative tone, bold the single key phrase
@@ -503,11 +503,11 @@ Layouts can be combined on a single slide. Common combinations:
 These are the failure modes that make vendor decks look like everyone else's. If you catch yourself generating any of these, rewrite.
 
 - **"Leverage AI to transform your business"** — or any variation. This is the phrase that makes executives stop reading. Say what the system does instead.
-- **Blue gradient hero slides** — We are not a SaaS company. No gradients, no hero images, no "the future of AI" imagery.
+- **Blue gradient hero slides** — Avoid the SaaS-landing-page look. No gradients, no hero images, no "the future of AI" imagery.
 - **Bullet slides with no hierarchy** — A slide with 8 bullets of equal weight is a document, not a presentation. Use cards, stat blocks, or pull quotes instead.
 - **Generic process diagrams** — "Discovery → Design → Build → Deploy" is every vendor's slide. Our stages have specific timelines, specific outputs, and an outcome line that says what the client gets.
-- **Slides that require narration to make sense** — If you remove the presenter, the slide should still communicate its point. The leave-behind test: would this make sense at 11pm when the VP opens it on their laptop?
-- **Jargon headers** — "AI-Powered Workflow Optimization" is a header that says nothing. "Your invoices get processed in 4 hours instead of 3 days" is a header that closes deals.
+- **Slides that require narration to make sense** — If you remove the presenter, the slide should still communicate its point. The standalone test: would this make sense to someone opening the file later with no context?
+- **Jargon headers** — "AI-Powered Workflow Optimization" is a header that says nothing. "Your invoices get processed in 4 hours instead of 3 days" is a header that actually says something.
 - **Slides without a "so what"** — If the slide presents information without an insight box, pull quote, or assertive headline that tells the audience what it means, the slide is incomplete.
 
 ---
@@ -518,7 +518,7 @@ Recommended slide sequences for common presentation scenarios. These are startin
 
 ### First Meeting / Discovery
 
-The goal is to establish credibility, frame the problem, and open a conversation. Don't sell — diagnose.
+The goal is to establish credibility, frame the problem, and open a conversation. Lead with the problem, not a pitch.
 
 1. **Cover**
 2. **Pull Quote** (thesis — the one sentence that frames why you're here)
@@ -527,7 +527,7 @@ The goal is to establish credibility, frame the problem, and open a conversation
 5. **Question Cards** (turn it into a conversation)
 6. **CTA** (specific next step — not "let's stay in touch")
 
-### Leave-Behind / Follow-Up
+### Standalone / Forwarded
 
 The deck that gets forwarded to the person who wasn't in the room. Needs to stand on its own without you narrating.
 
@@ -541,14 +541,14 @@ The deck that gets forwarded to the person who wasn't in the room. Needs to stan
 
 ### ROI / Business Case
 
-The deck that gets the budget approved. Every slide should make the financial case tighter.
+The deck that makes the business case. Every slide should make the financial case tighter.
 
 1. **Cover**
 2. **Before/After** (current state pain, quantified)
 3. **Metric Dashboard** (the headline numbers)
 4. **Data Table** (detailed breakdown — where the savings come from)
 5. **Timeline** (implementation plan — when they see results)
-6. **Testimonial** (someone else who did this and won)
+6. **Testimonial** (someone who did this and got results)
 7. **CTA** (the ask)
 
 ### Technical Deep-Dive

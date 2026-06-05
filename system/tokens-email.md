@@ -90,7 +90,7 @@ Always include full URL — relative URLs break.
 - Don't use flexbox or CSS grid
 - Don't set `border-radius` on anything Outlook will render — it ignores it (acceptable degradation)
 - Don't use background images (most clients block them)
-- Don't embed tracking pixels in outreach emails to enterprise prospects — many email systems flag them
+- Don't embed tracking pixels — many email systems flag them
 
 ## Minimum viable email
 

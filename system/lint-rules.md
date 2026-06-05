@@ -20,7 +20,7 @@ node tooling/brand-qa.mjs <artifact>.html profiles/<name> --render   # contrast 
 ## SHOULD — human / visual checks (run with `--render`, then look)
 
 - Headlines are assertions, not labels ("Onboarding got faster" — not "Onboarding Analysis").
-- The artifact reads in the brand's **register** (restraint vs. warmth — see `identity.md`). A script can't judge "advisor vs. vendor"; you must.
+- The artifact reads in the brand's **register** (restraint vs. warmth — see `identity.md`). A script can't judge the register; you must.
 - `--emphasis` used at most once per section, on one decisive figure.
 - Every text/large color pairing passes WCAG AA — verify with `tooling/contrast-check.mjs` (it's computed; see `accessibility.md`).
 - Real semantic HTML (`<h1>`, `<a>`, `<button>`), alt text on images, a visible focus state, no meaning conveyed by color alone.

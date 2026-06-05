@@ -52,7 +52,7 @@ If you're scaffolding without the interview, the short version:
 ```bash
 node tooling/brand-qa.mjs <artifact.html> profiles/<brand-slug> --render
 ```
-Exit 0 = ship. Exit 1 = fix the reported MUST violations first. With `--render`, also open the produced `.qa.png` and judge the register visually (advisor vs. vendor) — the one check a script can't make.
+Exit 0 = ship. Exit 1 = fix the reported MUST violations first. With `--render`, also open the produced `.qa.png` and judge the register visually — the one check a script can't make.
 
 ## Map of the repo
 - `system/` — the prose framework (read `system/identity.md` first: the meta-thesis).

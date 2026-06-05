@@ -6,7 +6,7 @@ The **universal** writing voice across all surfaces — presentations, one-pager
 
 ## Core voice
 
-**One sentence:** We talk like builders who've done the work, not consultants who've read about it.
+**One sentence:** Write like someone who has done the work and is describing it plainly.
 
 **Three words:** Direct. Concrete. Grounded.
 
@@ -56,7 +56,7 @@ We don't need superlatives. Stating what we've done plainly IS the flex.
 
 **Oversold:** "Our world-class team of AI experts delivers transformative results for leading enterprises."
 
-**Understated:** "We rebuilt our own team's workflows before telling anyone else to do it. Work that took days collapsed into hours. It spread because the results were obvious."
+**Understated:** "We ran this on our own work first. Tasks that took days dropped to hours, and it spread because the results were obvious."
 
 ---
 
@@ -73,7 +73,7 @@ We don't need superlatives. Stating what we've done plainly IS the flex.
 
 ### One-pagers (print PDF, 8.5×11)
 
-**Tone:** Dense, authoritative, scannable. The leave-behind that gets forwarded.
+**Tone:** Dense, authoritative, scannable. The document that gets forwarded and read without you.
 
 - Tagline must create urgency in 2 seconds
 - Stats must be real numbers — never "High Performance"
@@ -129,7 +129,7 @@ We don't need superlatives. Stating what we've done plainly IS the flex.
 | What AI does | "reads", "writes", "matches", "flags", "extracts" | "leverages", "harnesses", "utilizes" |
 | Our process | "sit with your team", "watch the work", "build the tool" | "stakeholder alignment", "digital transformation", "change management" |
 | Results | "collapsed from days to hours", "cut from X to Y" | "significant improvement", "enhanced efficiency" |
-| Working with us | "engagement", "project", "the work" | "partnership", "journey", "strategic initiative" |
+| Working with us | "project", "the work" | "partnership", "journey", "strategic initiative" |
 | Why it works | "because we've done it ourselves first" | "because of our proprietary methodology" |
 
 ## Words we never use
@@ -167,10 +167,10 @@ When writing in the principal's first-person voice (social posts, essays, direct
 
 ---
 
-## The leave-behind test
+## The standalone test
 
-Every piece of content must pass this test:
+Every piece of content should pass this test:
 
-> If the person who received this opened it at 11pm on their laptop, alone, with no context from the meeting or conversation — would they understand what the venture does, why it matters to them, and what to do next?
+> If someone opened this later, alone, with no context from a meeting or conversation, would they understand what the brand does, why it matters to them, and what to do next?
 
 If yes, ship it. If no, the content needs to work harder.

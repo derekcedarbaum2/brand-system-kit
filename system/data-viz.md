@@ -4,7 +4,7 @@ Charts, graphs, and structured data treatments. The brand is color-restrained â€
 
 ## Core principle
 
-> A chart is an argument. If the argument is about one number changing over time, don't put five lines on the chart to make it look important. Put the one line. Emphasize what matters.
+> Each chart should make one point. If the argument is about one number changing over time, don't put five lines on the chart to make it look important. Put the one line. Emphasize what matters.
 
 ## Color sequence (ordered)
 

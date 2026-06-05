@@ -1,20 +1,17 @@
 # Imagery
 
-**The default answer is: don't.**
+This kit's default stance leans hard against decorative imagery. It's an opinion, not a law — adjust it for your brand. But the default is worth understanding before you override it: most brand imagery is filler that competes with the content, and going without it usually reads as confidence rather than as a missing asset.
 
-{{COMPANY}} is a text-and-structure brand. The absence of imagery IS the brand. Every other vendor has hero shots, abstract gradients, and stock photos of diverse professionals pointing at screens. We don't.
+Before adding an image, ask whether the content needs it or whether you're filling space.
 
-If you're reaching for an image, ask first: does the content need it, or am I filling space?
+(If your brand genuinely depends on photography — a product brand, say — loosen these rules deliberately and document why in your profile.)
 
 ---
 
-## When imagery is allowed
-
-Rare cases where an image earns its place:
+## When an image is worth including
 
 ### 1. Screenshots of working software
-
-**Allowed.** Showing the tool actually doing the work is proof. Use real screenshots (with PII blurred or replaced). Never mock-up a UI that doesn't exist.
+Showing the product doing the work is evidence. Use real screenshots (PII blurred or replaced); don't mock up a UI that doesn't exist.
 
 Treatment:
 - 1px border in `--border`
@@ -23,60 +20,54 @@ Treatment:
 - No "laptop frame" — just the screen
 
 ### 2. Architecture / flow diagrams
-
-**Allowed** if they clarify something text can't. Use draw.io MCP to generate — keep to the brand palette:
+Fine when they clarify something text can't. Use the kit's [diagrams](../diagrams/index.md) or any diagram tool, and keep to the brand palette:
 - Background: transparent or `--bg`
 - Lines / borders: `--accent` / `--border`
 - Text: `--text-body` / `--text-secondary`
 - No other colors
 
 ### 3. Charts and data viz
-
-See `data-viz.md` — those are technically images, but they're arguments, not decoration.
+See `data-viz.md`. These are technically images, but they carry an argument rather than decorate.
 
 ### 4. The logo
-
-A logo (if the brand has one) belongs in the header/footer at small scale — not as a hero element. Keep clear space around it and never recolor it.
+A logo (if the brand has one) belongs in the header or footer at small scale, not as a hero element. Keep clear space around it and never recolor it.
 
 ### 5. Portraits for bios
-
-Reluctantly allowed. If used:
+Allowed if you need them. If used:
 - Standard headshot, plain background
 - Black-and-white or desaturated
-- Same size / crop across team
-- Circular or square — not irregular cutouts
+- Same size and crop across the team
+- Circular or square, not irregular cutouts
 
 ---
 
-## What's banned
+## What the default rules out
 
-- **Stock photos.** No "diverse team around laptop," no "handshake," no "rocket launching," no "woman looking thoughtfully out window."
-- **Hero gradients.** No blue-to-purple, no any-to-any. The brand is near-black. Gradients signal SaaS generic.
-- **Abstract AI imagery.** No neural network visualizations, no "digital brain" shots, no circuits-and-light aesthetics.
-- **Decorative icons.** No lightbulbs for "ideas," no gears for "process," no rockets for "growth." Text is sufficient.
-- **Illustration.** No custom illustrations, no cartoon characters, no "friendly robot" mascots.
-- **Patterns / textures.** No noise overlays, no dot grids as backgrounds, no subtle textures.
-- **Photographic backgrounds.** No images behind text, period.
-
----
-
-## If imagery sneaks in against these rules
-
-Kill it. Ask whether the content is strong enough to stand without the image. If yes, ship without. If no, the content needs to be stronger — not the image bigger.
-
-The brand's confidence comes from the refusal to decorate.
+- **Stock photos** — the "diverse team around a laptop," the handshake, the rocket, the person gazing out a window.
+- **Hero gradients** — blue-to-purple or any-to-any. The default surface is a flat color; gradients read as generic SaaS.
+- **Abstract AI imagery** — neural-network visualizations, "digital brain" shots, circuits-and-light.
+- **Decorative icons** — lightbulbs for "ideas," gears for "process," rockets for "growth." Text carries it.
+- **Illustration** — custom illustrations, cartoon characters, mascots.
+- **Patterns / textures** — noise overlays, dot grids, subtle background textures.
+- **Photographic backgrounds** — no images behind text.
 
 ---
 
-## Imagery and social / marketing
+## If an image slips in against the default
 
-Social posts are text-first. When an image IS posted (rare):
+Ask whether the content stands without it. If it does, ship without. If it doesn't, strengthen the content rather than enlarge the image.
 
-- Screenshots of the tool or working output
-- Data charts made in the brand palette
+---
+
+## Imagery in social / marketing
+
+Social posts are text-first. When an image is posted (rarely):
+
+- Screenshots of the product or its output
+- Data charts in the brand palette
 - One well-chosen quote rendered as a text card in brand tokens
 
-Never:
-- Generic AI imagery from stock sites
-- AI-generated illustrations (ironic given the work)
-- Templated social graphics with overlaid text and brand logo (that's every other vendor's playbook)
+Avoid:
+- Generic imagery from stock sites
+- AI-generated illustrations
+- Templated social graphics with overlaid text and a logo

@@ -489,8 +489,8 @@ Layouts can be combined on a single slide. Common combinations:
 - **Headlines are assertions, not descriptions.** Write "Your team spends 40% of its time on manual assembly" not "Time Analysis." The headline should be the slide's argument. If your headline could be a tab label in a spreadsheet, rewrite it.
 - **Every slide answers "so what?"** If you can't articulate why this slide moves the audience closer to a decision, cut it.
 - **Use concrete numbers from the audience's world.** "You process 12,000 invoices/month" hits harder than "significant volume." Abstract percentages without context are meaningless.
-- **When describing AI: say what the system does, not what it is.** Never write "leverage AI" or "AI-powered solution." Write "reads incoming invoices, extracts line items, and flags mismatches against the PO." Plain English, specific actions.
-- **Write for a smart person who doesn't know AI but knows their business cold.** They will catch empty jargon instantly. They won't be impressed by "machine learning" — they'll be impressed by "cuts review time from 3 days to 4 hours."
+- **Describe what the product does, not what it is.** Never write "leverage [buzzword]" or "[X]-powered solution." Write "imports your spreadsheets and flags the rows that don't reconcile." Plain English, specific actions.
+- **Write for a smart person who doesn't know your jargon but knows their business cold.** They will catch empty jargon instantly. They won't be impressed by buzzwords — they'll be impressed by "cuts review time from 3 days to 4 hours."
 - **Headlines:** Mixed case (NOT uppercase), conversational, often use line breaks (`<br>`) for pacing
 - **Bullets:** Lead with bold key terms, use em-dashes for structure
 - **Pull quotes:** Narrative tone, bold the single key phrase
@@ -502,12 +502,12 @@ Layouts can be combined on a single slide. Common combinations:
 
 These are the failure modes that make vendor decks look like everyone else's. If you catch yourself generating any of these, rewrite.
 
-- **"Leverage AI to transform your business"** — or any variation. This is the phrase that makes executives stop reading. Say what the system does instead.
+- **"Leverage our platform to transform your business"** — or any variation. This is the phrase that makes executives stop reading. Say what the product does instead.
 - **Blue gradient hero slides** — Avoid the SaaS-landing-page look. No gradients, no hero images, no "the future of AI" imagery.
 - **Bullet slides with no hierarchy** — A slide with 8 bullets of equal weight is a document, not a presentation. Use cards, stat blocks, or pull quotes instead.
 - **Generic process diagrams** — "Discovery → Design → Build → Deploy" is every vendor's slide. Our stages have specific timelines, specific outputs, and an outcome line that says what the client gets.
 - **Slides that require narration to make sense** — If you remove the presenter, the slide should still communicate its point. The standalone test: would this make sense to someone opening the file later with no context?
-- **Jargon headers** — "AI-Powered Workflow Optimization" is a header that says nothing. "Your invoices get processed in 4 hours instead of 3 days" is a header that actually says something.
+- **Jargon headers** — "Next-Generation Workflow Optimization" is a header that says nothing. "Reports that took a day now take ten minutes" is a header that actually says something.
 - **Slides without a "so what"** — If the slide presents information without an insight box, pull quote, or assertive headline that tells the audience what it means, the slide is incomplete.
 
 ---

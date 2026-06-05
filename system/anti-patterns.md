@@ -6,17 +6,17 @@ Specific brand mistakes with descriptions and fixes. If you're about to do one o
 
 ## Voice anti-patterns
 
-### 1. "Leverage AI to transform your business"
+### 1. "Empower your business with our next-generation platform"
 
-**What's wrong:** Every vendor opens with this. The phrase communicates nothing except "we don't have a specific thing to say."
+**What's wrong:** Every vendor opens with a line like this. It communicates nothing except "we don't have a specific thing to say."
 
-**Fix:** Say what the system does. "Reads incoming invoices, extracts line items, and flags mismatches against the PO."
+**Fix:** Say what the product does. "Imports your spreadsheets and flags the rows that don't reconcile."
 
 ### 2. Starting with "We"
 
-**What's wrong:** "We build AI tools for..." leads with us, not the reader's problem.
+**What's wrong:** "We build tools for..." leads with you, not the reader's problem.
 
-**Fix:** Reverse the order. "Your team spends 40% of its time on manual assembly. We build the tool that does it."
+**Fix:** Reverse the order. "Your team spends 40% of its time on manual data entry. This does it for them."
 
 ### 3. Vague adjectives instead of numbers
 
@@ -28,7 +28,7 @@ Specific brand mistakes with descriptions and fixes. If you're about to do one o
 
 **What's wrong:** "World-class team," "industry-leading," "best-in-class." If they were true, you wouldn't have to say them.
 
-**Fix:** State what you've done. "We rebuilt our own team's workflows before telling anyone else to do it, and the results were obvious."
+**Fix:** State what you've done. "We cut our own build from 25 minutes to 8 before recommending it to anyone."
 
 ### 5. Banned words
 
@@ -47,6 +47,25 @@ Specific brand mistakes with descriptions and fixes. If you're about to do one o
 **What's wrong:** "It is important to note that...", "The fact of the matter is...", "As we all know..."
 
 **Fix:** Start with the claim. Delete the setup.
+
+---
+
+## Writing that sounds like AI
+
+Generated text has tells. They show up in brand copy, READMEs, and decks, and they read as machine-written. Each one comes from reaching for rhythm, contrast, or grandeur instead of saying the specific thing. Concrete fixes:
+
+| ❌ Sounds like AI | ✅ Plain |
+|---|---|
+| "It's not a brand guide. It's a system." (the "not X — it's Y" antithesis) | "It's a system for keeping a brand consistent." |
+| "This isn't just a linter — it's a philosophy." | "This is a linter." |
+| "Does it scale? Absolutely." (rhetorical question, then answer) | "It handles up to 10,000 records." |
+| "Fast. Simple. Done." (three fragments for rhythm) | "It's fast, and there's nothing to configure." |
+| "At its core, the tool simply works." (filler: at its core / simply / fundamentally / essentially) | "The tool imports your data and validates it." |
+| "We don't just build software — we craft experiences." | "We build software." |
+| "Unlock the full potential of your team." | "Your team stops re-keying data by hand." |
+| An em-dash for drama in every other sentence | One claim, ended with a period. |
+
+**The test:** if a sentence feels punchy but you can't point to a concrete claim inside it, rewrite it until you can.
 
 ---
 
@@ -84,9 +103,9 @@ Specific brand mistakes with descriptions and fixes. If you're about to do one o
 
 ### 13. Jargon headers
 
-**What's wrong:** "AI-Powered Workflow Optimization" is a header that says nothing.
+**What's wrong:** "Next-Generation Workflow Optimization" is a header that says nothing.
 
-**Fix:** Headers are assertions. "Your invoices get processed in 4 hours instead of 3 days."
+**Fix:** Headers are assertions. "Reports that took a day now take ten minutes."
 
 ### 14. Gradient text
 

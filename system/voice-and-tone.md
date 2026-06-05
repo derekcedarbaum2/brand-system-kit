@@ -16,14 +16,14 @@ The **universal** writing voice across all surfaces — presentations, one-pager
 
 ### 1. Say what the system does, not what it is
 
-Never write "AI-powered solution" or "leverage artificial intelligence." Write what happens: "reads incoming invoices, extracts line items, and flags mismatches against the PO."
+Never write "next-generation solution" or "leverage cutting-edge technology." Write what happens: "imports your spreadsheets and flags the rows that don't reconcile."
 
-The audience doesn't care that it's AI. They care that it works.
+The audience doesn't care how it's built. They care that it works.
 
 | Don't write | Write instead |
 |---|---|
-| "AI-powered workflow optimization" | "Cuts review time from 3 days to 4 hours" |
-| "Leverage machine learning to transform operations" | "The system reads your invoices and matches them to POs automatically" |
+| "Next-gen workflow optimization" | "Cuts review time from 3 days to 4 hours" |
+| "Leverage cutting-edge technology to transform operations" | "It reads your spreadsheets and reconciles them automatically" |
 | "Intelligent automation platform" | "A tool that does the data assembly your team does by hand" |
 | "Next-generation AI solution" | "A working prototype using your actual data" |
 
@@ -31,7 +31,7 @@ The audience doesn't care that it's AI. They care that it works.
 
 The audience's attention span is earned by showing you understand their world. Lead with their pain, not our features.
 
-**Wrong order:** "We build AI tools that automate workflows. Your team currently spends hours on manual assembly."
+**Wrong order:** "We build tools that automate workflows. Your team currently spends hours on manual assembly."
 
 **Right order:** "Your team spends 40% of its time on manual assembly. We build the tool that does it."
 
@@ -54,7 +54,7 @@ Every document — every slide, every one-pager, every meeting summary — shoul
 
 We don't need superlatives. Stating what we've done plainly IS the flex.
 
-**Oversold:** "Our world-class team of AI experts delivers transformative results for leading enterprises."
+**Oversold:** "Our world-class team of experts delivers transformative results for leading enterprises."
 
 **Understated:** "We ran this on our own work first. Tasks that took days dropped to hours, and it spread because the results were obvious."
 
@@ -126,7 +126,7 @@ We don't need superlatives. Stating what we've done plainly IS the flex.
 | Concept | Our language | Not this |
 |---|---|---|
 | What we build | "tools", "systems", "working software" | "solutions", "platforms", "products" |
-| What AI does | "reads", "writes", "matches", "flags", "extracts" | "leverages", "harnesses", "utilizes" |
+| What the product does | "reads", "writes", "matches", "flags", "extracts" | "leverages", "harnesses", "utilizes" |
 | Our process | "sit with your team", "watch the work", "build the tool" | "stakeholder alignment", "digital transformation", "change management" |
 | Results | "collapsed from days to hours", "cut from X to Y" | "significant improvement", "enhanced efficiency" |
 | Working with us | "project", "the work" | "partnership", "journey", "strategic initiative" |

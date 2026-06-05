@@ -4,9 +4,20 @@
 &nbsp;![Node ≥18](https://img.shields.io/badge/node-%E2%89%A518-3E5C8A)
 &nbsp;![License: MIT](https://img.shields.io/badge/license-MIT-1F6E7A)
 
-An **executable** brand system. Most brand guidelines are a PDF nobody enforces. This is the opposite: a token source-of-truth, a lint gate that blocks off-brand output, a WCAG checker, and a visual-critique loop — all zero-dependency Node, plus a Claude Code skill that interviews you and scaffolds your own brand in minutes.
+**A brand system you can run, not just read.**
 
-It ships with two demo brands — **Northwind** (warmth register) and **Graphite** (restraint register) — so the whole pipeline runs the moment you clone it, and you see both halves of the thesis. Replace them with yours.
+Most brand guidelines are a PDF nobody opens and nothing enforces. So colors drift. The wrong blue ships. A deck looks off and no one can say why. This kit makes the rules executable: you define a brand once, in one file, and the tooling keeps every output on-brand — or fails the build.
+
+What's inside:
+
+- **One source of truth.** Every color and font lives in a single `tokens.json`. The CSS and the docs are generated from it, so they can't drift apart.
+- **A linter that blocks off-brand output.** Banned words, off-palette colors, gradients, and one brand's name leaking into another's artifact all fail the check.
+- **An accessibility gate.** Every palette is checked against WCAG AA contrast — computed, not eyeballed.
+- **A render step.** It turns any artifact into an image so you (or an AI agent) can judge what a rule can't: does this actually *look* right?
+
+Zero dependencies — plain Node ≥18. A Claude Code skill scaffolds a brand from a six-question interview.
+
+It ships with two working brands — **Northwind** and **Graphite** — so the whole pipeline runs the moment you clone it. They're opposites on purpose (the [one idea](#the-one-idea) below), which is the fastest way to see what the kit does. Replace them with yours.
 
 ## Preview
 
@@ -72,7 +83,7 @@ brand-system-kit/
 
 `system/` is the prose framework (read these to understand the *why*); `tooling/` enforces it; `profiles/` are the brands; `diagrams/` are ready-to-skin templates.
 
-Each brand is a **profile** = one `tokens.json`. The tooling is venture-agnostic; it never hard-codes a palette.
+Each brand is a **profile** = one `tokens.json`. The tooling is brand-agnostic; it never hard-codes a palette.
 
 ---
 

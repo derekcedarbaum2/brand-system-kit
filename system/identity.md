@@ -6,7 +6,7 @@ This is the **generic** identity for the whole system. It carries the design phi
 
 Not a brand identity system. An **argument delivery system**.
 
-Every design choice exists to make the content do the work. No decoration, no distraction, no bullshit. This is the through-line across every venture — the *register* changes per audience (see the meta-thesis below), but the discipline never does.
+Every design choice exists to make the content do the work. No decoration, no distraction, no filler. This is the through-line across every brand — the *register* changes per audience (see the meta-thesis below), but the discipline never does.
 
 ## The meta-thesis
 
@@ -37,7 +37,7 @@ Both are the same argument-delivery discipline. Restraint and warmth are not opp
 
 > If it requires the presenter to explain it, the content isn't working hard enough. Every surface should communicate its point without narration.
 
-## Universal constants (venture-agnostic)
+## Universal constants (brand-agnostic)
 
 | Element | Value |
 |---|---|
@@ -45,4 +45,4 @@ Both are the same argument-delivery discipline. Restraint and warmth are not opp
 | Emphasis discipline | One decisive figure per section, maximum |
 | Forbidden everywhere | Gradients, stock photos, decorative icons, AI-shimmer, color-as-hierarchy-crutch |
 
-**Per-venture constants** (headline font, palette, accent, company name, tagline, URL, wordmark) live in each profile's `identity.md` + `tokens.json`. See `README.md` for the profile map.
+**Per-brand constants** (headline font, palette, accent, company name, tagline, URL, wordmark) live in each profile's `tokens.json`. See `README.md` for the profile map.

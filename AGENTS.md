@@ -3,7 +3,7 @@
 Instructions for any AI coding agent — **Codex, Cursor, Claude Code, Aider, and others** — to install and run **Brand System Kit** for a user. Follow these steps literally; the `node` commands below are safe to run to verify your work. The tooling is plain Node (no agent-specific dependency); the one Claude-specific piece (`skill/brand-init/`) is just a wrapper around the tool-neutral interview in `docs/brand-interview.md`, which any agent can follow directly.
 
 ## What this is
-An executable brand system: a DTCG token source-of-truth, generators, a lint gate, a WCAG contrast checker, an HTML→PNG render step, an SVG tokenizer, 37 diagram templates, and a `/brand-init` skill that scaffolds a new brand. Zero runtime dependencies (Node ≥18 stdlib only). Chrome/Chromium is needed only for `render.mjs`.
+An executable style system for business documents: a DTCG token source-of-truth, generators, a lint gate, a WCAG contrast checker, an HTML→PNG render step, an SVG tokenizer, 37 diagram templates, ready-to-fill document templates, and a `/brand-init` skill that scaffolds a new style. Zero runtime dependencies (Node ≥18 stdlib only). Chrome/Chromium is needed only for `render.mjs`.
 
 ## Install
 

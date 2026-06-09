@@ -1,7 +1,7 @@
 {
   "name": "brand-system-kit",
   "version": "0.1.0",
-  "description": "An executable brand system: DTCG token source-of-truth, a lint gate, a WCAG checker, a visual-critique loop, and a Claude Code skill that scaffolds your own brand.",
+  "description": "An executable style system for business documents: DTCG token source-of-truth, a lint gate, a WCAG checker, document templates, a visual-critique loop, and a Claude Code skill that scaffolds your own style.",
   "type": "module",
   "license": "MIT",
   "engines": { "node": ">=18" },

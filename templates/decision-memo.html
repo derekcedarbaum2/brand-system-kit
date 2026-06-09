@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{Decision}}: Memo</title>
+<!-- Point this at your style. Change the href below to your profile's brand.css. -->
+<link rel="stylesheet" href="../profiles/northwind/brand.css">
+</head>
+<body>
+  <header class="doc-header">
+    <div class="wordmark">{{COMPANY}}</div>
+    <div class="accent-bar"></div>
+    <div class="label">DECISION MEMO</div>
+    <h1>{{The decision, phrased as a choice}}</h1>
+    <div class="meta">To: {{decider}} &nbsp; From: {{name}} &nbsp; Date: {{YYYY-MM-DD}} &nbsp; Decision needed by: {{YYYY-MM-DD}}</div>
+  </header>
+
+  <main class="doc-body">
+    <div class="callout">
+      <div class="label">RECOMMENDATION</div>
+      <p style="margin:0;">{{The one option you recommend, in a sentence, and the single strongest reason. Put it first so a busy reader can approve without reading further.}}</p>
+    </div>
+
+    <h2>Background</h2>
+    <p>{{The minimum context the decider needs: what prompted this, what's at stake, and the constraint that forces a choice now.}}</p>
+
+    <h2>Options considered</h2>
+    <table>
+      <thead><tr><th>Option</th><th>Pros</th><th>Cons</th><th>Cost</th></tr></thead>
+      <tbody>
+        <tr><td>{{A (recommended)}}</td><td>{{...}}</td><td>{{...}}</td><td>{{$ / time}}</td></tr>
+        <tr><td>{{B}}</td><td>{{...}}</td><td>{{...}}</td><td>{{...}}</td></tr>
+        <tr><td>{{C / status quo}}</td><td>{{...}}</td><td>{{...}}</td><td>{{...}}</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Why this one</h2>
+    <p>{{The reasoning that ties the recommendation to the goal. Name the tradeoff you are accepting, so the decider sees you chose with eyes open.}}</p>
+
+    <h2>Risks and how we handle them</h2>
+    <ul>
+      <li>{{The main risk of the recommended option, and the mitigation.}}</li>
+    </ul>
+
+    <h2>If approved</h2>
+    <ul>
+      <li>{{First action, owner, date.}}</li>
+      <li>{{...}}</li>
+    </ul>
+  </main>
+
+  <footer class="doc-footer"><div>{{COMPANY}} &middot; {{CONFIDENTIAL}}</div><div>PAGE 1 / N</div></footer>
+</body>
+</html>

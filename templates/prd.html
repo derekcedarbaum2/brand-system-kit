@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{Product}}: PRD</title>
+<!-- Point this at your style. Change the href below to your profile's brand.css. -->
+<link rel="stylesheet" href="../profiles/northwind/brand.css">
+</head>
+<body>
+  <header class="doc-header">
+    <div class="wordmark">{{COMPANY}}</div>
+    <div class="accent-bar"></div>
+    <div class="label">PRODUCT REQUIREMENTS</div>
+    <h1>{{Product or feature name}}</h1>
+    <div class="meta">Owner: {{name}} &nbsp; Status: {{Draft / In review / Approved}} &nbsp; Updated: {{YYYY-MM-DD}}</div>
+  </header>
+
+  <main class="doc-body">
+    <h2>Summary</h2>
+    <p>{{One paragraph: what this is, who it's for, and why now. State the decision you want from the reader in the first two sentences.}}</p>
+
+    <h2>Problem</h2>
+    <p>{{The user or business problem, in concrete terms. What happens today, and what it costs.}}</p>
+    <div class="stat-row">
+      <div class="stat-card"><div class="num emphasis">{{42%}}</div><div class="lbl">{{the headline number}}</div></div>
+      <div class="stat-card"><div class="num">{{3.2 days}}</div><div class="lbl">{{a supporting metric}}</div></div>
+      <div class="stat-card"><div class="num">{{$0}}</div><div class="lbl">{{cost or baseline}}</div></div>
+    </div>
+
+    <h2>Goals and non-goals</h2>
+    <h3>Goals</h3>
+    <ul>
+      <li>{{What success looks like, stated as an outcome you can measure.}}</li>
+      <li>{{A second goal.}}</li>
+    </ul>
+    <h3>Non-goals</h3>
+    <ul>
+      <li>{{What this explicitly does not cover, so scope stays honest.}}</li>
+    </ul>
+
+    <h2>Requirements</h2>
+    <table>
+      <thead><tr><th>ID</th><th>Requirement</th><th>Priority</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>R1</td><td>{{The system does X when Y.}}</td><td>Must</td><td>{{constraint or dependency}}</td></tr>
+        <tr><td>R2</td><td>{{...}}</td><td>Should</td><td>{{...}}</td></tr>
+        <tr><td>R3</td><td>{{...}}</td><td>Could</td><td>{{...}}</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Milestones</h2>
+    <table>
+      <thead><tr><th>Milestone</th><th>Target</th><th>Exit criteria</th></tr></thead>
+      <tbody>
+        <tr><td>{{Prototype}}</td><td>{{Q_ 20__}}</td><td>{{what proves it's done}}</td></tr>
+        <tr><td>{{Beta}}</td><td>{{Q_ 20__}}</td><td>{{...}}</td></tr>
+        <tr><td>{{GA}}</td><td>{{Q_ 20__}}</td><td>{{...}}</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="label">OPEN QUESTIONS</div>
+      <p style="margin:0;">{{The decisions still unresolved, and who owns each. Name them; don't bury them.}}</p>
+    </div>
+  </main>
+
+  <footer class="doc-footer"><div>{{COMPANY}} &middot; {{CONFIDENTIAL}}</div><div>PAGE 1 / N</div></footer>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{Program}}: Status, {{period}}</title>
+<!-- Point this at your style. Change the href below to your profile's brand.css. -->
+<link rel="stylesheet" href="../profiles/northwind/brand.css">
+</head>
+<body>
+  <header class="doc-header">
+    <div class="wordmark">{{COMPANY}}</div>
+    <div class="accent-bar"></div>
+    <div class="label">STATUS REPORT &middot; {{WEEK OF / MONTH}}</div>
+    <h1>{{Program or team name}}</h1>
+    <div class="meta">Reported by: {{name}} &nbsp; Period: {{date range}} &nbsp; Overall: {{Green / Yellow / Red}}</div>
+  </header>
+
+  <main class="doc-body">
+    <div class="callout">
+      <div class="label">BOTTOM LINE</div>
+      <p style="margin:0;">{{Two sentences. Where things stand, and the one thing you need a reader to act on. Most people read only this.}}</p>
+    </div>
+
+    <h2>Health by area</h2>
+    <table>
+      <thead><tr><th>Area</th><th>Status</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td>{{Scope}}</td><td>{{Green}}</td><td>{{...}}</td></tr>
+        <tr><td>{{Schedule}}</td><td>{{Yellow}}</td><td>{{what's slipping and why}}</td></tr>
+        <tr><td>{{Budget / resources}}</td><td>{{Green}}</td><td>{{...}}</td></tr>
+        <tr><td>{{Risks}}</td><td>{{Red}}</td><td>{{the live risk}}</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Key metrics</h2>
+    <div class="stat-row">
+      <div class="stat-card"><div class="num">{{value}}</div><div class="lbl">{{metric}}</div></div>
+      <div class="stat-card"><div class="num emphasis">{{value}}</div><div class="lbl">{{the one that matters}}</div></div>
+      <div class="stat-card"><div class="num">{{value}}</div><div class="lbl">{{metric}}</div></div>
+    </div>
+
+    <h2>Progress this period</h2>
+    <ul>
+      <li>{{Shipped or closed: the concrete thing, not the activity.}}</li>
+      <li>{{...}}</li>
+    </ul>
+
+    <h2>Risks and blockers</h2>
+    <table class="decision">
+      <thead><tr><th>Risk / blocker</th><th>Impact</th><th>Owner</th><th>Need from leadership</th></tr></thead>
+      <tbody>
+        <tr><td>{{...}}</td><td>{{...}}</td><td>{{name}}</td><td>{{decision or resource}}</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Next period</h2>
+    <ul>
+      <li>{{The commitment, with a date.}}</li>
+      <li>{{...}}</li>
+    </ul>
+  </main>
+
+  <footer class="doc-footer"><div>{{COMPANY}} &middot; {{CONFIDENTIAL}}</div><div>PAGE 1 / N</div></footer>
+</body>
+</html>

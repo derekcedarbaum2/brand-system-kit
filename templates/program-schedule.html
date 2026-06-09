@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{Program}}: Schedule</title>
+<!-- Point this at your style. Change the href below to your profile's brand.css. -->
+<link rel="stylesheet" href="../profiles/northwind/brand.css">
+</head>
+<body>
+  <header class="doc-header">
+    <div class="wordmark">{{COMPANY}}</div>
+    <div class="accent-bar"></div>
+    <div class="label">PROGRAM SCHEDULE</div>
+    <h1>{{Program name}}</h1>
+    <div class="meta">Lead: {{name}} &nbsp; As of: {{YYYY-MM-DD}} &nbsp; Next review: {{YYYY-MM-DD}}</div>
+  </header>
+
+  <main class="doc-body">
+    <h2>At a glance</h2>
+    <div class="stat-row">
+      <div class="stat-card"><div class="num">{{Phase 2 of 4}}</div><div class="lbl">Current phase</div></div>
+      <div class="stat-card"><div class="num emphasis">{{On track}}</div><div class="lbl">Schedule health</div></div>
+      <div class="stat-card"><div class="num">{{Q_ 20__}}</div><div class="lbl">Next milestone</div></div>
+    </div>
+
+    <h2>Phases</h2>
+    <table>
+      <thead><tr><th>Phase</th><th>Window</th><th>Goal</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>1. {{Discovery}}</td><td>{{Q_ 20__}}</td><td>{{...}}</td><td>{{Complete}}</td></tr>
+        <tr><td>2. {{Build}}</td><td>{{Q_ 20__}}</td><td>{{...}}</td><td>{{In progress}}</td></tr>
+        <tr><td>3. {{Pilot}}</td><td>{{Q_ 20__}}</td><td>{{...}}</td><td>{{Planned}}</td></tr>
+        <tr><td>4. {{Rollout}}</td><td>{{Q_ 20__}}</td><td>{{...}}</td><td>{{Planned}}</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Milestones</h2>
+    <table>
+      <thead><tr><th>Milestone</th><th>Target</th><th>Owner</th><th>Gate / exit criteria</th></tr></thead>
+      <tbody>
+        <tr><td>{{...}}</td><td>{{YYYY-MM-DD}}</td><td>{{name}}</td><td>{{what proves it's done}}</td></tr>
+        <tr><td>{{...}}</td><td>{{YYYY-MM-DD}}</td><td>{{name}}</td><td>{{...}}</td></tr>
+        <tr><td>{{...}}</td><td>{{YYYY-MM-DD}}</td><td>{{name}}</td><td>{{...}}</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:10px;color:var(--text-dim);">For a visual timeline, re-skin <code>diagrams/roadmap-timeline-overlay.svg</code> or <code>diagrams/roadmap-single-product.svg</code> to your profile and drop it in here.</p>
+
+    <h2>Dependencies and risks</h2>
+    <table class="decision">
+      <thead><tr><th>Item</th><th>Impact if it slips</th><th>Mitigation</th><th>Owner</th></tr></thead>
+      <tbody>
+        <tr><td>{{external dependency}}</td><td>{{...}}</td><td>{{...}}</td><td>{{name}}</td></tr>
+        <tr><td>{{key risk}}</td><td>{{...}}</td><td>{{...}}</td><td>{{name}}</td></tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer class="doc-footer"><div>{{COMPANY}} &middot; {{CONFIDENTIAL}}</div><div>PAGE 1 / N</div></footer>
+</body>
+</html>

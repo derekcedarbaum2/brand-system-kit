@@ -4,6 +4,7 @@
 | Token | Hex | Usage |
 |---|---|---|
 | `--bg` | `#FBFAF7` | Paper — page background. Warm off-white, not pure #FFFFFF. |
+| `--bg-doc` | `#FBFAF7` | Paper — the document-mode surface emphasis is contrast-checked against. |
 | `--bg-card` | `#F0EEE8` | Card / panel background. |
 | `--bg-dark` | `#14201F` | Dark accent panel background. |
 | `--text-primary` | `#161A19` | Ink — headlines, strong text. |

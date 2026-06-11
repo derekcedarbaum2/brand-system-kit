@@ -5,10 +5,10 @@
   Use for: RACI matrix, state/variant matrix, feature parity matrix, capability heat map, risk matrix,
   edge case matrix, tech debt heat map, coverage map, FMEA, accessibility audit grid.
   Default canvas: 1400 × 900. Adjust row/col counts by duplicating row groups.
-  Cell fill conventions:
-    - Heat map (low/med/high): green #eaf0f5 / yellow #f7f8fa / red #cfe0e2 with darker borders
+  Cell fill conventions (always token roles, never raw hex, so re-skinning keeps working):
+    - Heat map (low/med/high): fill="var(--card)" / fill="var(--card-accent)" / fill="var(--accent-light)" with stroke="var(--border)"
     - Status (✓/✗/—): bold checkmark, X, or em-dash
-    - RACI: letter R/A/C/I in red/teal/gray/light-gray
+    - RACI: letter R/A/C/I in var(--emphasis) / var(--teal) / var(--secondary) / var(--dim)
 -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
 <style>:root{

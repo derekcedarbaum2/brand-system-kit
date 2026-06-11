@@ -34,7 +34,7 @@ Specific brand mistakes with descriptions and fixes. If you're about to do one o
 
 **What's wrong:** Using words from the banned list (leverage, synergy, holistic, seamless, etc.).
 
-**Fix:** See `voice-and-tone.md` banned words list. Rewrite the sentence with concrete language.
+**Fix:** See the `voice-and-tone.md` banned words list (the enforced subset lives in the `BANNED` array in `tooling/lint.mjs`). Rewrite the sentence with concrete language.
 
 ### 6. "In this document I will argue..."
 
@@ -54,14 +54,14 @@ Specific brand mistakes with descriptions and fixes. If you're about to do one o
 
 Generated text has tells. They show up in brand copy, READMEs, and decks, and they read as machine-written. Each one comes from reaching for rhythm, contrast, or grandeur instead of saying the specific thing. Concrete fixes:
 
-| ❌ Sounds like AI | ✅ Plain |
+| Sounds like AI | Plain |
 |---|---|
-| "It's not a brand guide. It's a system." (the "not X — it's Y" antithesis) | "It's a system for keeping a brand consistent." |
-| "This isn't just a linter — it's a philosophy." | "This is a linter." |
+| "It's not a brand guide. It's a system." (the "not X, it's Y" antithesis) | "It's a system for keeping a brand consistent." |
+| "This isn't just a linter, it's a philosophy." | "This is a linter." |
 | "Does it scale? Absolutely." (rhetorical question, then answer) | "It handles up to 10,000 records." |
 | "Fast. Simple. Done." (three fragments for rhythm) | "It's fast, and there's nothing to configure." |
 | "At its core, the tool simply works." (filler: at its core / simply / fundamentally / essentially) | "The tool imports your data and validates it." |
-| "We don't just build software — we craft experiences." | "We build software." |
+| "We don't just build software, we craft experiences." | "We build software." |
 | "Unlock the full potential of your team." | "Your team stops re-keying data by hand." |
 | An em-dash for drama in every other sentence | One claim, ended with a period. |
 
@@ -75,13 +75,13 @@ Generated text has tells. They show up in brand copy, READMEs, and decks, and th
 
 **What's wrong:** Every SaaS and vendor uses the same blue-to-purple gradient. It screams generic.
 
-**Fix:** Flat `--bg` (near-black). Zero gradients. Ever.
+**Fix:** Flat `--bg`. Zero gradients. Ever.
 
 ### 9. Hero images with text overlays
 
 **What's wrong:** Stock photo of diverse professionals at a whiteboard, with headline text overlaid. Vendor-grade generic.
 
-**Fix:** No hero image. Headline on near-black background, mono label above, supporting pull quote below.
+**Fix:** No hero image. Headline on the flat `--bg`, mono label above, supporting pull quote below.
 
 ### 10. Rainbow color sequences in charts
 
@@ -111,7 +111,7 @@ Generated text has tells. They show up in brand copy, READMEs, and decks, and th
 
 **What's wrong:** CSS background-clip text gradients on headlines. Screams 2021 SaaS hero.
 
-**Fix:** Flat white (screen) or flat charcoal (print) on all headline text.
+**Fix:** Flat `--text-primary` on all headline text.
 
 ### 15. Drop shadows
 
@@ -141,7 +141,7 @@ Generated text has tells. They show up in brand copy, READMEs, and decks, and th
 
 **What's wrong:** The logo appears as a watermark or repeated brand mark on every slide. Over-signed, under-confident.
 
-**Fix:** Logo on the cover only. The footer's "{{COMPANY}}" mono text carries attribution throughout.
+**Fix:** Logo on the cover only. The footer's mono brand-name text carries attribution throughout.
 
 ---
 
@@ -189,7 +189,7 @@ Generated text has tells. They show up in brand copy, READMEs, and decks, and th
 
 ### 26. Slide transitions other than `fade`
 
-**What's wrong:** `slide`, `concave`, `cube`, `zoom` — any reveal.js default beyond fade. Dates the deck.
+**What's wrong:** `slide`, `concave`, `cube`, `zoom`, any reveal.js default beyond fade. Dates the deck.
 
 **Fix:** `transition: 'fade'`, `transitionSpeed: 'fast'`. That's it.
 
@@ -225,6 +225,6 @@ Generated text has tells. They show up in brand copy, READMEs, and decks, and th
 
 ## How to use this file
 
-When you catch yourself about to do any of these, stop. Apply the fix. If the fix feels worse than the anti-pattern, something else in the brief is wrong — ask.
+When you catch yourself about to do any of these, stop. Apply the fix. If the fix feels worse than the anti-pattern, something else in the brief is wrong. Ask.
 
 When a new anti-pattern emerges in practice, add it here. This file grows.

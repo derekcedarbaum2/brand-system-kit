@@ -7,13 +7,17 @@ Ready-to-fill HTML for the business documents teams ship most. They're the faste
 1. **Copy** the template you want.
 2. **Point it at your style.** Change the one `<link rel="stylesheet" ...>` line to your profile's `brand.css` (the templates ship pointed at the `northwind` demo so they render immediately).
 3. **Fill the placeholders.** Replace every `{{...}}` with your content.
-4. **Gate it, then render to PDF:**
+4. **Gate it (lint + contrast + PNG preview), then print the final PDF with headless Chrome:**
    ```
-   node tooling/brand-qa.mjs templates/<name>.html profiles/<your-style> --render
-   node tooling/render.mjs templates/<name>.html out.pdf   # or use Chrome --print-to-pdf
-   ```
+   node tooling/brand-qa.mjs templates/<name>.html profiles/<your-profile> --render
 
-The templates use only the component classes defined in every profile's `brand.css` (`doc-header`, `stat-row`, `callout`, `table`, `pull`, `doc-footer`, and the rest), so they re-skin with the profile, the same way the diagrams do.
+   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+     --headless --no-pdf-header-footer \
+     --print-to-pdf="out.pdf" templates/<name>.html
+   ```
+   (`tooling/render.mjs` produces PNG previews, not PDFs. Use Chrome's `--print-to-pdf` for the final document.)
+
+The templates use only the component classes defined in every profile's `brand.css` (`doc-header`, `stat-row`, `callout`, `table`, `table.decision`, `pull`, `attribution`, `doc-footer`, and the rest), so they re-skin with the profile, the same way the diagrams do.
 
 ## What's here
 

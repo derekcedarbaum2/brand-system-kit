@@ -29,7 +29,8 @@ const MAP = {
   '#161a19': 'ink',
   '#353b3a': 'body',
   '#5c6463': 'secondary',
-  '#7e8584': 'dim',
+  '#6e7574': 'dim',
+  '#7e8584': 'dim',   // legacy alias — older diagrams used this for dim
   '#1f6e7a': 'accent',
   '#3e5c8a': 'accent-2',
   '#9a2d2d': 'emphasis',
@@ -103,13 +104,22 @@ svg = svg.replace(/<!--[\s\S]*?-->/g, (m) => {
   return `${SENT}${comments.length - 1}${SENT}`;
 });
 
-// 1. rewrite hex → var()  (comments are masked out)
+// 0b. mask any previously injected :root style block, so its hex definitions
+//     are never re-tokenized or counted on a second pass (idempotent count: a
+//     re-run on an already-tokenized file reports 0 fills tokenized).
+const ROOT_SENT = `${SENT}root${SENT}`;
+const ROOT_RE = /<style>:root\{[\s\S]*?\}<\/style>/i;
+let maskedRoot = null;
+svg = svg.replace(ROOT_RE, (m) => { maskedRoot = m; return ROOT_SENT; });
+
+// 1. rewrite hex → var()  (comments and the injected :root are masked out)
 let replaced = 0;
 for (const [hex, name] of Object.entries(MAP)) {
   svg = svg.replace(new RegExp(hex, 'gi'), () => { replaced++; return `var(--${name})`; });
 }
 
-// restore the (now-clean) comments
+// restore the masked :root block and the (now-clean) comments
+if (maskedRoot !== null) svg = svg.replace(ROOT_SENT, () => maskedRoot);
 svg = svg.replace(new RegExp(`${SENT}(\\d+)${SENT}`, 'g'), (_, i) => comments[+i]);
 
 // 2. inject / replace the :root style block right after <svg ...>

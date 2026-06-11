@@ -12,7 +12,9 @@ Animation is restrained by default. Like color, motion is easy to overuse; when 
 
 ---
 
-## Reveal.js config
+## Deck runtime (reveal.js, if that's your renderer)
+
+The fragment and transition rules below assume an HTML deck. The config is for reveal.js **if that's what renders your decks**. The kit ships documents, not a deck runtime.
 
 ```js
 Reveal.initialize({
@@ -39,25 +41,25 @@ Reveal.initialize({
 Use `class="fragment"` on elements to build them in as the presenter clicks.
 
 **When to use fragments:**
-- Cards in a `.g2` or `.g3` grid — one per click
-- The insight box below a card grid — appears as the synthesis
-- Individual bullets in a list — rare; usually the whole list appears at once
-- A single revelation moment — e.g., the final stat on a before/after
+- Cards in a `.g2` or `.g3` grid, one per click
+- The insight box below a card grid, appearing as the synthesis
+- Individual bullets in a list, rarely; usually the whole list appears at once
+- A single revelation moment, e.g. the final stat on a before/after
 
 **When NOT to use fragments:**
-- The `.label` at the top of a slide — this anchors context, always visible
-- The `h2` headline — sets the frame, always visible
-- Every single element on a slide — that's just padding out the deck
+- The `.label` at the top of a slide; this anchors context, always visible
+- The `h2` headline; sets the frame, always visible
+- Every single element on a slide; that's just padding out the deck
 
 **Default posture on fragments:** one or two per slide, max. Every element being a fragment means none of them are.
 
 ## Fragment effects (reveal.js)
 
 Keep to `.fragment` (default fade). Avoid:
-- `fragment fade-up` / `fade-down` / `fade-left` / `fade-right` — directional motion is noise
-- `fragment grow` / `shrink` — size change reads as a gimmick
-- `fragment highlight-red` / `highlight-current-red` — we don't use red
-- `fragment strike` — rare but acceptable for "before / after" rhetorical setup
+- `fragment fade-up` / `fade-down` / `fade-left` / `fade-right`: directional motion is noise
+- `fragment grow` / `shrink`: size change reads as a gimmick
+- `fragment highlight-red` / `highlight-current-red`: red is reserved for `--emphasis` figures, never decorative motion
+- `fragment strike`: rare but acceptable for "before / after" rhetorical setup
 
 ## CSS transitions (for web / non-reveal surfaces)
 
@@ -69,7 +71,7 @@ transition: all 150ms cubic-bezier(0.25, 0.1, 0.25, 1);
 
 - **Duration:** 120–180ms for hover feedback. 200–280ms for content reveals.
 - **Easing:** standard ease-out curves. Never bounce, never spring, never anything that calls attention to itself.
-- **What transitions:** color / opacity only. Never layout properties (`width`, `height`, `padding`) on user interaction — that causes reflow and visual noise.
+- **What transitions:** color / opacity only. Never layout properties (`width`, `height`, `padding`) on user interaction; that causes reflow and visual noise.
 
 ## Animation durations
 

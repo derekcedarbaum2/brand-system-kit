@@ -9,6 +9,7 @@
 /* >>> AUTO-GENERATED TOKENS — do not edit by hand <<< */
 :root {
   --bg: #FBFAF7;
+  --bg-doc: #FBFAF7;
   --bg-card: #F0EEE8;
   --bg-dark: #14201F;
   --text-primary: #161A19;
@@ -61,12 +62,16 @@ hr { border: none; border-top: 1px solid var(--border); margin: 30px 0; }
 .stat-card .lbl { font-family: var(--font-mono); font-size: 9px; font-weight: 600; text-transform: uppercase; color: var(--text-secondary); }
 
 .pull { font-family: var(--font-serif); font-size: 16px; font-style: italic; font-weight: 600; color: var(--text-primary); border-left: 2px solid var(--accent); padding-left: 16px; margin: 22px 0; max-width: 88%; }
+.attribution { display: block; font-family: var(--font-mono); font-size: 9px; font-style: normal; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim); margin-top: 8px; }
 .callout { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 4px; padding: 14px 18px; margin: 22px 0; }
 .callout.alt { border-left-color: var(--accent-2); }
 
 table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 10.5px; }
 th { text-align: left; font-family: var(--font-mono); font-size: 9px; font-weight: 600; text-transform: uppercase; color: var(--text-secondary); background: var(--bg-card); padding: 9px 12px; border-bottom: 1px solid var(--border); }
 td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+
+table.decision { border: 2px solid var(--accent); }
+table.decision th { color: var(--accent); border-bottom: 2px solid var(--accent); }
 
 .panel-dark { background: var(--bg-dark); color: var(--text-on-dark); padding: 26px 0.65in; margin: 30px -0.65in; }
 .panel-dark h2 { color: var(--text-on-dark); border-left-color: var(--accent-on-dark); }

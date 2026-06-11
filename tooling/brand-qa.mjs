@@ -10,12 +10,14 @@
      node brand-qa.mjs <artifact.html|.md> <profile-dir> [--render]
 
    Exit 0 = shippable (deterministic gates pass). Exit 1 = blocked.
-   When --render is used, the agent should then VIEW the PNG and confirm
-   the register (advisor vs vendor) — the one check a script can't make.
+   When --render is used, a failed render blocks too, and the agent should
+   then VIEW the PNG and confirm the register (restraint vs warmth) — the
+   one check a script can't make. --render is skipped for .md artifacts
+   (convert to HTML first).
    ===================================================================== */
 
 import { execFileSync } from 'node:child_process';
-import { existsSync } from 'node:fs';
+import { existsSync, unlinkSync } from 'node:fs';
 import { join, dirname, basename, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -48,17 +50,23 @@ process.stdout.write(lint.out);
 steps.push(['lint', lint.code]);
 
 let pngPath = null;
-if (doRender) {
-  pngPath = resolve(artifact.replace(/\.(html?|md)$/i, '') + '.qa.png');
+if (doRender && /\.md$/i.test(artifact)) {
+  console.log('render skipped: .md artifacts can\'t be rendered; convert to HTML first');
+} else if (doRender) {
+  pngPath = resolve(artifact.replace(/\.html?$/i, '') + '.qa.png');
+  // Delete any stale PNG so a leftover file can't satisfy the check.
+  if (existsSync(pngPath)) unlinkSync(pngPath);
   const r = run('render.mjs', [artifact, pngPath]);
   process.stdout.write(r.out);
-  if (!existsSync(pngPath)) { pngPath = null; }
+  const renderOk = r.code === 0 && existsSync(pngPath);
+  if (!renderOk) { console.log('✗ render failed'); pngPath = null; }
+  steps.push(['render', renderOk ? 0 : (r.code || 1)]);
 }
 
 const blocked = steps.filter(([, c]) => c !== 0);
 console.log(`\n══════ RESULT ══════`);
 for (const [name, code] of steps) console.log(`  ${code === 0 ? '✓' : '✗'} ${name}`);
-if (pngPath) console.log(`  → render: ${pngPath}  (VIEW IT — confirm the register; scripts can't judge "advisor vs vendor")`);
+if (pngPath) console.log(`  → render: ${pngPath}  (VIEW IT — confirm the register; scripts can't judge "restraint vs warmth")`);
 if (blocked.length) {
   console.log(`\n✗ BLOCKED — ${blocked.map(b => b[0]).join(', ')} failed. Do not ship.`);
   process.exit(1);

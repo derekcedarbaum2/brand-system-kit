@@ -4,20 +4,21 @@
    so an agent can SEE the output and critique it against the brand.
    The missing half of the loop: lint.mjs reads the source, this lets
    vision read the pixels (color drift, spacing, hierarchy, "does it
-   read as advisor or vendor").
+   read as restraint or warmth").
 
    Usage:
      node render.mjs <artifact.html> [out.png] [--width N] [--height N]
 
    Defaults to letter width (816px = 8.5in @96dpi). Captures the first
    viewport-height of the page — for multi-page docs, raise --height or
-   render sections separately. For print fidelity use --print-to-pdf
-   (see the brief/one-pager skills); this is for fast visual critique.
+   render sections separately. For print fidelity use Chrome's
+   --print-to-pdf directly; this is for fast visual critique.
    ===================================================================== */
 
 import { execFileSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import { resolve, basename } from 'node:path';
+import { pathToFileURL } from 'node:url';
 
 // Find a Chrome/Chromium binary. Override with CHROME_PATH env var.
 function findChrome() {
@@ -55,7 +56,7 @@ execFileSync(CHROME, [
   '--force-device-scale-factor=2',          // crisp text for vision critique
   `--window-size=${width},${height}`,
   `--screenshot=${outPath}`,
-  `file://${inPath}`,
+  pathToFileURL(inPath).href,
 ], { stdio: 'ignore' });
 
 if (!existsSync(outPath)) { console.error('render failed — no PNG produced'); process.exit(1); }

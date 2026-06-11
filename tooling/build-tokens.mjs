@@ -9,8 +9,9 @@
    - Writes a :root{} CSS block into target.css between markers.
    - With --md, writes a Markdown color table into doc.md between markers.
    Both replace only content between their markers, preserving everything
-   else (hand-written CSS / prose). If markers are absent in the .md, the
-   table is inserted after the first line containing "AUTO-GENERATED".
+   else (hand-written CSS / prose). If markers are absent, the block is
+   inserted after the first line containing "AUTO-GENERATED" (or, with no
+   such line, prepended to the file).
 
    CSS markers:
      /* >>> AUTO-GENERATED TOKENS — do not edit by hand <<< * /  … /* >>> END AUTO-GENERATED TOKENS <<< * /
@@ -37,11 +38,16 @@ if (!tokensPath) { console.error('usage: node build-tokens.mjs <tokens.json> [ta
 const tokens = JSON.parse(readFileSync(tokensPath, 'utf8'));
 const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-function resolve(value, root) {
+function resolve(value, root, seen = new Set()) {
   if (typeof value === 'string' && value.startsWith('{') && value.endsWith('}')) {
+    if (seen.has(value)) {
+      console.error(`✗ circular token reference: ${[...seen, value].join(' → ')}`);
+      process.exit(1);
+    }
+    seen.add(value);
     const path = value.slice(1, -1).split('.');
     let node = root; for (const k of path) node = node?.[k];
-    return resolve(node?.$value ?? node, root);
+    return resolve(node?.$value ?? node, root, seen);
   }
   return value;
 }
@@ -49,10 +55,16 @@ const fmtFont = (arr) => arr.map(f => (/\s/.test(f) ? `'${f}'` : f)).join(', ');
 
 function replaceBlock(text, start, end, block, fallbackAnchor) {
   if (text.includes(start) && text.includes(end)) {
-    return text.replace(new RegExp(escapeRe(start) + '[\\s\\S]*?' + escapeRe(end)), block);
+    // Replacement via callback: a "$&"/"$1" in a token $description must be
+    // inserted literally, never interpreted as a regex replacement pattern.
+    return text.replace(new RegExp(escapeRe(start) + '[\\s\\S]*?' + escapeRe(end)), () => block);
   }
   if (fallbackAnchor && text.includes(fallbackAnchor)) {
-    return text.replace(fallbackAnchor, fallbackAnchor + '\n\n' + block);
+    // Insert after the first LINE containing the anchor (per the header doc).
+    const lines = text.split('\n');
+    const i = lines.findIndex(l => l.includes(fallbackAnchor));
+    lines.splice(i + 1, 0, '', block);
+    return lines.join('\n');
   }
   return block + '\n\n' + text;
 }
@@ -73,7 +85,7 @@ if (cssPath) {
   }
   const block = `${CSS_START}\n:root {\n${lines.join('\n')}\n}\n${CSS_END}`;
   let css = existsSync(cssPath) ? readFileSync(cssPath, 'utf8') : '';
-  css = replaceBlock(css, CSS_START, CSS_END, block);
+  css = replaceBlock(css, CSS_START, CSS_END, block, 'AUTO-GENERATED');
   writeFileSync(cssPath, css);
   console.log(`✓ ${lines.length} CSS vars → ${cssPath}`);
 }
@@ -88,7 +100,7 @@ if (mdPath) {
     `| Token | Hex | Usage |\n|---|---|---|\n${rows.join('\n')}\n\n` +
     `${MD_END}`;
   let md = existsSync(mdPath) ? readFileSync(mdPath, 'utf8') : '';
-  md = replaceBlock(md, MD_START, MD_END, table);
+  md = replaceBlock(md, MD_START, MD_END, table, 'AUTO-GENERATED');
   writeFileSync(mdPath, md);
   console.log(`✓ ${colors.length}-row palette table → ${mdPath}`);
 }

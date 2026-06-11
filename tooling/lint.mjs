@@ -11,6 +11,14 @@
    (banned words, gradients, pure black/white, typographic hygiene)
    are defined here; profile rules come from tokens.json.
 
+   Taxonomy:
+     MUST (✗, exit 1)  — banned words, gradients, forbidden colors (hex of
+                         any length, rgb()/rgba(), named white/black),
+                         foreign profile names.
+     SHOULD (⚠, warn)  — off-token hex, non-token color literals (hsl(),
+                         other named colors), box-shadow, accent budget,
+                         straight apostrophes/quotes, "AI" as adjective.
+
    Exit code: 0 = clean (warnings allowed), 1 = MUST violation.
    ===================================================================== */
 
@@ -23,15 +31,27 @@ if (!artifactPath || !profileDir) {
   process.exit(2);
 }
 
-const src = readFileSync(artifactPath, 'utf8');
+// Strip HTML comments up front — instructional comments are not the artifact.
+// All checks (banned words, hexes, apostrophes, …) run on the stripped source.
+const raw = readFileSync(artifactPath, 'utf8');
+const src = raw.replace(/<!--[\s\S]*?-->/g, '');
 const tokensPath = join(profileDir, 'tokens.json');
 const tokens = existsSync(tokensPath) ? JSON.parse(readFileSync(tokensPath, 'utf8')) : {};
 const lintCfg = Object.fromEntries(
   Object.entries(tokens.lint || {}).filter(([k]) => !k.startsWith('$')).map(([k, v]) => [k, v.$value])
 );
+// Normalize any hex to uppercase #RRGGBB: expand 3/4-digit shorthand, strip alpha.
+const normHex = (h) => {
+  let m = String(h).trim().replace(/^#/, '');
+  if (m.length === 8) m = m.slice(0, 6);        // #rrggbbaa → drop alpha
+  else if (m.length === 4) m = m.slice(0, 3);   // #rgba → drop alpha
+  if (m.length === 3) m = m.split('').map(x => x + x).join('');
+  return '#' + m.toUpperCase();
+};
+
 const palette = Object.entries(tokens.color || {})
   .filter(([k]) => !k.startsWith('$'))
-  .map(([, v]) => String(v.$value).toLowerCase());
+  .map(([, v]) => normHex(v.$value));
 
 // Default banned marketing-jargon words. Edit to taste, or extend per profile.
 // (Kept generic on purpose — e.g. "journey" is omitted since "user journey" /
@@ -67,18 +87,57 @@ must(/linear-gradient|radial-gradient|conic-gradient/i.test(src), 'gradient dete
 // shadows on content components (cards, callouts) are the real smell.
 should(/\bbox-shadow\s*:(?!\s*none)/i.test(src), 'box-shadow present — allowed only for screen-preview page elevation, never on content components');
 
-// --- hex hygiene (MUST) ---
-const hexes = [...src.matchAll(/#[0-9a-fA-F]{3,6}\b/g)].map(m => m[0].toLowerCase());
-const forbiddenBg = (lintCfg['forbidden-bg'] || []).map(s => s.toLowerCase());
-const forbiddenText = (lintCfg['forbidden-text'] || []).map(s => s.toLowerCase());
-for (const f of [...new Set([...forbiddenBg, ...forbiddenText])]) {
-  must(hexes.includes(f), `forbidden hex ${f} (off-system — use a token)`);
+// --- color hygiene ---
+// Strip numeric character references (&#8212; / &#x2014;) so entity codes
+// never read as hex values, then match 3/4/6/8-digit hex.
+const colorSrc = src.replace(/&#\d+;|&#x[0-9a-fA-F]+;/g, '');
+const HEX_RE = /#(?:[0-9a-fA-F]{8}|[0-9a-fA-F]{6}|[0-9a-fA-F]{4}|[0-9a-fA-F]{3})\b/g;
+const hexes = [...colorSrc.matchAll(HEX_RE)].map(m => normHex(m[0]));
+
+// rgb()/rgba() integer literals → hex, treated like any other hex below.
+const RGB_RE = /rgba?\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*(?:,\s*[\d.]+\s*)?\)/gi;
+const rgbHexes = [...colorSrc.matchAll(RGB_RE)].map(m =>
+  '#' + [m[1], m[2], m[3]].map(c => Math.min(255, +c).toString(16).padStart(2, '0')).join('').toUpperCase());
+
+// Named white/black used as color values (CSS contexts only, so prose is safe).
+const cssChunks = [
+  ...[...colorSrc.matchAll(/<style[\s\S]*?<\/style>/gi)].map(m => m[0]),
+  ...[...colorSrc.matchAll(/style\s*=\s*"([^"]*)"/gi)].map(m => m[1]),
+  ...[...colorSrc.matchAll(/style\s*=\s*'([^']*)'/gi)].map(m => m[1]),
+];
+const css = cssChunks.join('\n');
+const namedHexes = [];
+for (const m of css.matchAll(/[:\s(,]\b(white|black)\b\s*(?=[;,)}\s!]|$)/gim)) {
+  namedHexes.push(m[1].toLowerCase() === 'white' ? '#FFFFFF' : '#000000');
 }
-// hexes not in palette (SHOULD — may be intentional one-offs like header bg tints)
+
+// Forbidden colors (MUST) — hex of any length, rgb/rgba, named white/black,
+// all normalized before comparison.
+const allColorHexes = [...hexes, ...rgbHexes, ...namedHexes];
+const forbidden = [...new Set(
+  [...(lintCfg['forbidden-bg'] || []), ...(lintCfg['forbidden-text'] || [])].map(normHex))];
+for (const f of forbidden) {
+  must(allColorHexes.includes(f), `forbidden color ${f} (off-system — use a token)`);
+}
+
+// Off-token hex (SHOULD — may be intentional one-offs like header bg tints).
+// #fff/#ffffff and #000/#000000 are whitelisted equivalently via normalization.
 if (palette.length) {
-  const stray = [...new Set(hexes)].filter(h => !palette.includes(h) && !['#fff', '#000'].includes(h));
+  const stray = [...new Set([...hexes, ...rgbHexes])]
+    .filter(h => !palette.includes(h) && !['#FFFFFF', '#000000'].includes(h));
   should(stray.length > 0, `${stray.length} hex value(s) not in token palette: ${stray.slice(0, 6).join(', ')}${stray.length > 6 ? '…' : ''} (move to tokens.json or confirm intentional)`);
 }
+
+// Non-token color literals (SHOULD) — hsl()/hsla() and other CSS named colors.
+const hslHits = colorSrc.match(/\bhsla?\(/gi);
+should(Boolean(hslHits), `non-token color literal: hsl()/hsla() ×${hslHits ? hslHits.length : 0} (use a token)`);
+const OTHER_NAMED = ['red', 'blue', 'green', 'gray', 'grey', 'orange', 'purple', 'yellow',
+  'pink', 'brown', 'cyan', 'magenta', 'silver', 'gold', 'navy', 'teal', 'maroon',
+  'olive', 'lime', 'aqua', 'fuchsia', 'crimson', 'indigo', 'violet', 'salmon', 'coral'];
+const namedOther = [...new Set(
+  [...css.matchAll(new RegExp(`[:\\s(,]\\b(${OTHER_NAMED.join('|')})\\b\\s*(?=[;,)}\\s!]|$)`, 'gim'))]
+    .map(m => m[1].toLowerCase()))];
+should(namedOther.length > 0, `non-token color literal: named color(s) ${namedOther.join(', ')} (use a token)`);
 
 // --- accent budget (SHOULD) — distinct accent-family colors used in the artifact ---
 // "accent", "accent-2", … count; "accent-on-dark"/"accent-light" are variants, not extra accents.
@@ -87,7 +146,7 @@ if (typeof maxAccents === 'number') {
   const colorTok = tokens.color || {};
   const accentNames = Object.keys(colorTok).filter(k => /^accent(-\d+)?$/.test(k));
   const used = accentNames.filter(n =>
-    src.includes(`var(--${n})`) || hexes.includes(String(colorTok[n].$value).toLowerCase()));
+    src.includes(`var(--${n})`) || hexes.includes(normHex(colorTok[n].$value)));
   should(used.length > maxAccents,
     `uses ${used.length} accent colors (${used.join(', ')}) — budget is ${maxAccents}`);
 }
@@ -102,8 +161,9 @@ for (const o of (lintCfg['foreign-names'] || [])) {
 
 // --- typographic hygiene (SHOULD) ---
 should(/\s--\s/.test(prose), 'double-hyphen "--" in prose (use &mdash;)');
-should(/(?<![:/])\b\w+'\w+/.test(prose.replace(/&[a-z]+;/g, '')) && !/&rsquo;/.test(src),
-       'straight apostrophe in prose (use &rsquo;)');
+// Per-occurrence: a curly &rsquo; elsewhere does NOT excuse straight apostrophes.
+const aposHits = (prose.replace(/&[a-z]+;|&#\w+;/gi, '').match(/(?<![:/])\b\w+'\w+/g) || []);
+should(aposHits.length > 0, `straight apostrophe in prose ×${aposHits.length} (use &rsquo;)`);
 
 // --- "AI" as adjective (SHOULD, profile-flavored) ---
 should(/\bAI-(powered|driven|enabled|first)\b/i.test(prose), '"AI" used as an adjective (make AI the subject)');

@@ -11,7 +11,7 @@ It's for the documents that corporate product, program, sales, and operations te
 What's inside:
 
 - **One source of truth.** Every color and font lives in a single `tokens.json`. The CSS and the docs are generated from it, so they can't drift apart.
-- **A linter that blocks off-style output.** Banned words, off-palette colors, gradients, and one profile's name leaking into another's document all fail the check.
+- **A linter that blocks off-style output.** Banned words, gradients, forbidden colors, and one profile's name leaking into another's document fail the check; off-token hex and box-shadow warn.
 - **An accessibility gate.** Every palette is checked against WCAG AA contrast. Computed, not eyeballed.
 - **A render step.** It turns any document into an image so you (or an AI agent) can judge what a rule can't catch: whether it actually looks right.
 - **Document templates.** Ready-to-fill HTML for the common deliverables. Copy one, point it at your style, fill it in.
@@ -73,14 +73,15 @@ brand-system-kit/
   tooling/                 # the executable system (zero-dep Node 18+)
     build-tokens.mjs       #   tokens.json to CSS :root block + Markdown palette table
     contrast-check.mjs     #   WCAG 2.1 AA, computed from tokens.json (mode-aware)
-    lint.mjs               #   gate a document: banned words, off-token hex, gradients, name leakage
+    lint.mjs               #   gate a document: fails on banned words, gradients, forbidden colors, name leakage; warns on off-token hex
     render.mjs             #   HTML to PNG (headless Chrome) for visual review
     brand-qa.mjs           #   one command: contrast + lint + optional render
     tokenize-svg.mjs       #   hardcoded-hex SVG to var()-driven, re-skinnable per profile
   profiles/
-    northwind/             # DEMO style (invented). Your styles become siblings here.
+    northwind/             # DEMO style (warmth register). Your styles become siblings here.
       tokens.json          #   the single source of truth
       brand.css  color-system.md  sample.html   # all generated/derived
+    graphite/              # DEMO style (restraint register), same file set
   templates/               # ready-to-fill HTML for common deliverables
   diagrams/                # 37 token-driven SVG templates (re-skin to any profile)
   docs/brand-interview.md  # tool-agnostic interview an agent runs to scaffold a style
@@ -114,11 +115,13 @@ node tooling/lint.mjs examples/bad.html profiles/northwind   # exits 1
 
 `render.mjs` needs Chrome or Chromium. Set `CHROME_PATH` if it isn't auto-found.
 
+The same gates run as npm scripts: `npm run build` (regenerate every profile's CSS), `npm run contrast` (check every profile), `npm run qa` (gate + render the Northwind sample).
+
 ---
 
 ## Make a document
 
-*The fastest path to a finished deliverable.* Copy a file from [`templates/`](templates/), change its one stylesheet link to your profile's `brand.css`, replace the `{{PLACEHOLDER}}` text, and render to PDF with `render.mjs`. The templates cover the common business documents:
+*The fastest path to a finished deliverable.* Copy a file from [`templates/`](templates/), change its one stylesheet link to your profile's `brand.css`, replace the `{{PLACEHOLDER}}` text, preview it as a PNG with `render.mjs`, and print the PDF with headless Chrome's `--print-to-pdf` (see `system/print-layout.md`). The templates cover the common business documents:
 
 | Template | For |
 |---|---|

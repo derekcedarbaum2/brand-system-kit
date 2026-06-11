@@ -9,7 +9,7 @@
 | `--text-primary` | `#FFFFFF` | Headlines, strong text. |
 | `--text-body` | `#C5CCD6` | Body copy. |
 | `--text-secondary` | `#949DAD` | Secondary copy, metadata. |
-| `--text-dim` | `#6C7585` | Dim — mono labels, footer. |
+| `--text-dim` | `#76808F` | Dim — mono labels, footer. |
 | `--text-on-dark` | `#C5CCD6` | Body on the deepest surface (= dark mode default). |
 | `--border` | `#242C39` | Hairline borders, dividers. |
 | `--accent` | `#AEB9CC` | Silvery — institutional accent. No brand color. |

@@ -1,6 +1,10 @@
 # Slide Layouts Catalog
 
-Reusable layout patterns for {{COMPANY}} branded presentations. Each layout includes the HTML structure and CSS class names. All styles are pre-defined in the starter template — just use the class names.
+Reusable layout patterns for branded decks. Each layout includes the HTML structure and CSS class names. All styles come from the profile's generated `brand.css`; just use the class names.
+
+These layouts assume an HTML deck rendered at 1280×720. The `class="fragment"` build syntax is reveal.js, **if that's your renderer**. The kit ships documents, not a deck runtime.
+
+**Placeholders:** `{{BRAND}}` is your profile's `lint.company-name`; `{{URL}}` and `{{CONTACT}}` come from the same `lint` group in `tokens.json`; `{{CONTEXT}}` is slide-specific (client, project, date).
 
 **Build animations:** Add `class="fragment"` to any element to make it build in progressively. Elements without `fragment` appear immediately when the slide loads.
 
@@ -8,25 +12,25 @@ Reusable layout patterns for {{COMPANY}} branded presentations. Each layout incl
 
 ## 1. Cover Slide
 
-Opening slide. Centered logo on deep black. Minimal.
+Opening slide. Centered logo on the page background. Minimal.
 
 ```html
 <section class="cover">
   <div class="cover-inner">
     <!-- Logo: use inline base64 PNG or <img> tag -->
-    <img src="[LOGO_SRC]" alt="{{COMPANY}}" style="width:200px; margin-bottom:20px;">
+    <img src="[LOGO_SRC]" alt="{{BRAND}}" style="width:200px; margin-bottom:20px;">
   </div>
-  <div class="foot"><span>{{COMPANY}}</span><span>{{URL}}</span></div>
+  <div class="foot"><span>{{BRAND}}</span><span>{{URL}}</span></div>
 </section>
 ```
 
 **When to use:** First slide. Always.
 
 **Customization:**
-- Logo only is the default — clean and confident
-- For decks that get forwarded, add a context line below the logo: `<p style="font-size:0.5em; color:var(--text-dim); margin-top:12px;">Client Name — Topic — Month Year</p>`. This ensures someone opening the file without context knows what they're looking at.
+- Logo only is the default: clean and confident
+- For decks that get forwarded, add a context line below the logo: `<p style="font-size:0.5em; color:var(--text-dim); margin-top:12px;">Client Name &mdash; Topic &mdash; Month Year</p>`. This ensures someone opening the file without context knows what they're looking at.
 - Optionally add a tagline below the logo as a `.label`
-- The cover uses `--bg` (deepest black), not `--bg-card`
+- The cover uses `--bg` (the page background), not `--bg-card`
 
 ---
 
@@ -39,11 +43,11 @@ The workhorse layout. Section label, headline, bullet list.
   <span class="label">Section Category</span>
   <h2>Headline that frames<br>the content below.</h2>
   <ul>
-    <li><strong>Key term</strong> — explanation of the point</li>
-    <li><strong>Key term</strong> — another point</li>
+    <li><strong>Key term</strong> &mdash; explanation of the point</li>
+    <li><strong>Key term</strong> &mdash; another point</li>
     <li>Plain bullet without emphasis</li>
   </ul>
-  <div class="foot"><span>{{COMPANY}}</span><span>{{CONTEXT}}</span></div>
+  <div class="foot"><span>{{BRAND}}</span><span>{{CONTEXT}}</span></div>
 </section>
 ```
 
@@ -52,7 +56,7 @@ The workhorse layout. Section label, headline, bullet list.
 **Rules:**
 - Max 5-6 bullets per slide for readability
 - Bullets auto-styled with accent dash marker (no list-style)
-- Use `<strong>` for terms you want to pop (renders white)
+- Use `<strong>` for terms you want to pop (renders in `--text-primary`)
 - Always include the `.label` for section context
 
 ---
@@ -65,8 +69,8 @@ Headline with a larger-format body paragraph for narrative slides.
 <section>
   <span class="label">Section Category</span>
   <h2>Headline.</h2>
-  <p class="pull">Body text at larger size for <strong>narrative-heavy slides</strong> where you need the audience to read, not skim bullets. Strong tags render white for emphasis.</p>
-  <div class="foot"><span>{{COMPANY}}</span><span>{{CONTEXT}}</span></div>
+  <p class="pull">Body text at larger size for <strong>narrative-heavy slides</strong> where you need the audience to read, not skim bullets. Strong tags render in the primary text color for emphasis.</p>
+  <div class="foot"><span>{{BRAND}}</span><span>{{CONTEXT}}</span></div>
 </section>
 ```
 
@@ -92,16 +96,15 @@ Side-by-side content using the `.g2` grid with cards.
       <p>Description or explanation text.</p>
     </div>
   </div>
-  <div class="foot"><span>{{COMPANY}}</span><span>{{CONTEXT}}</span></div>
+  <div class="foot"><span>{{BRAND}}</span><span>{{CONTEXT}}</span></div>
 </section>
 ```
 
 **When to use:** Comparisons, two-sided arguments, "your workflows" vs "the technology", two proof points.
 
 **Variants:**
-- `.card-a` — accent left border (default, most common)
-- `.card-t` — accent top border (for metrics-heavy cards)
-- `.card-glow` — add glow shadow for emphasis
+- `.card-a`: accent left border (default, most common)
+- `.card-t`: accent top border (for metrics-heavy cards)
 - Cards can contain stat blocks (`.stat-big` + `.stat-label`) and source citations (`.src`)
 
 ---
@@ -115,7 +118,7 @@ Same as above, with an insight callout below for synthesis.
   <span class="label">Section Category</span>
   <h2>Headline.</h2>
   <div class="g2">
-    <div class="card card-a card-glow">
+    <div class="card card-a">
       <h3>Card Title</h3>
       <p>Card content.</p>
       <div style="margin-top:10px; padding-top:8px; border-top:1px solid var(--border);">
@@ -124,7 +127,7 @@ Same as above, with an insight callout below for synthesis.
       </div>
       <div class="src">Source attribution</div>
     </div>
-    <div class="card card-a card-glow">
+    <div class="card card-a">
       <h3>Card Title</h3>
       <p>Card content.</p>
     </div>
@@ -132,7 +135,7 @@ Same as above, with an insight callout below for synthesis.
   <div class="insight">
     <p>Synthesis statement connecting the two cards. <strong>The key takeaway bolded.</strong></p>
   </div>
-  <div class="foot"><span>{{COMPANY}}</span><span>{{CONTEXT}}</span></div>
+  <div class="foot"><span>{{BRAND}}</span><span>{{CONTEXT}}</span></div>
 </section>
 ```
 
@@ -167,7 +170,7 @@ Triple-column layout using `.g3`.
       <p>Content.</p>
     </div>
   </div>
-  <div class="foot"><span>{{COMPANY}}</span><span>{{CONTEXT}}</span></div>
+  <div class="foot"><span>{{BRAND}}</span><span>{{CONTEXT}}</span></div>
 </section>
 ```
 
@@ -177,7 +180,7 @@ Triple-column layout using `.g3`.
 
 ## 7. Stages (Process Flow)
 
-Horizontal process steps — the "how it works" layout.
+Horizontal process steps, the "how it works" layout.
 
 ```html
 <section>
@@ -185,25 +188,25 @@ Horizontal process steps — the "how it works" layout.
   <h2>Headline describing<br>the process.</h2>
   <div class="stages">
     <div class="stage">
-      <div class="stage-num">Weeks 1–4</div>
+      <div class="stage-num">Weeks 1&ndash;4</div>
       <h3>Stage Title</h3>
       <p>What happens in this stage.</p>
       <p class="out">Outcome statement.</p>
     </div>
     <div class="stage">
-      <div class="stage-num">Months 2–4</div>
+      <div class="stage-num">Months 2&ndash;4</div>
       <h3>Stage Title</h3>
       <p>What happens in this stage.</p>
       <p class="out">Outcome statement.</p>
     </div>
     <div class="stage">
-      <div class="stage-num">Months 4–12</div>
+      <div class="stage-num">Months 4&ndash;12</div>
       <h3>Stage Title</h3>
       <p>What happens in this stage.</p>
       <p class="out">Outcome statement.</p>
     </div>
   </div>
-  <div class="foot"><span>{{COMPANY}}</span><span>{{CONTEXT}}</span></div>
+  <div class="foot"><span>{{BRAND}}</span><span>{{CONTEXT}}</span></div>
 </section>
 ```
 
@@ -238,9 +241,9 @@ Two-column bios for team introductions.
     </div>
   </div>
   <div class="insight">
-    <p>Synthesis — what the team brings together. <strong>Key differentiator.</strong></p>
+    <p>Synthesis: what the team brings together. <strong>Key differentiator.</strong></p>
   </div>
-  <div class="foot"><span>{{COMPANY}}</span><span>{{CONTEXT}}</span></div>
+  <div class="foot"><span>{{BRAND}}</span><span>{{CONTEXT}}</span></div>
 </section>
 ```
 
@@ -270,7 +273,7 @@ Stacked prompt cards for Q&A or discovery slides.
       <span class="q-sub">Context.</span>
     </div>
   </div>
-  <div class="foot"><span>{{COMPANY}}</span><span>{{CONTEXT}}</span></div>
+  <div class="foot"><span>{{BRAND}}</span><span>{{CONTEXT}}</span></div>
 </section>
 ```
 
@@ -297,13 +300,13 @@ Two-column comparison with distinct visual treatment for each side.
       <p>Description of current state.</p>
       <p class="ba-result" style="color:var(--text-dim);">Result or metric</p>
     </div>
-    <div class="ba-col" style="background:rgba(127,127,127,0.04); border:1px solid rgba(127,127,127,0.15); border-radius:0 10px 10px 0;">
+    <div class="ba-col" style="background:transparent; border:1px solid var(--border); border-radius:0 10px 10px 0;">
       <div class="ba-label" style="color:var(--accent);">After</div>
       <p>Description of future state.</p>
       <p class="ba-result" style="color:var(--accent);">Result or metric</p>
     </div>
   </div>
-  <div class="foot"><span>{{COMPANY}}</span><span>{{CONTEXT}}</span></div>
+  <div class="foot"><span>{{BRAND}}</span><span>{{CONTEXT}}</span></div>
 </section>
 ```
 
@@ -319,10 +322,10 @@ Centered closing slide with a clear next step.
 <section class="cta">
   <span class="label" style="text-align:center;">Next Step</span>
   <h2>Bold statement about<br>what to do next.</h2>
-  <p style="font-size:0.68em;">Supporting paragraph — one to two sentences explaining the offer.</p>
-  <p style="font-family:'JetBrains Mono',monospace; font-size:0.45em; color:var(--text-dim); margin-top:18px;">Fine print or additional context in monospace.</p>
+  <p style="font-size:0.68em;">Supporting paragraph: one to two sentences explaining the offer.</p>
+  <p style="font-family:var(--font-mono); font-size:0.45em; color:var(--text-dim); margin-top:18px;">Fine print or additional context in monospace.</p>
   <p style="font-size:0.65em; color:var(--text-primary); font-weight:600; margin-top:20px;">{{CONTACT}}</p>
-  <div class="foot"><span>{{COMPANY}}</span><span>{{URL}}</span></div>
+  <div class="foot"><span>{{BRAND}}</span><span>{{URL}}</span></div>
 </section>
 ```
 
@@ -345,7 +348,7 @@ Structured tabular data with branded styling.
       <tr><td>Row Label</td><td>Data cell</td><td>Data cell</td></tr>
     </table>
   </div>
-  <div class="foot"><span>{{COMPANY}}</span><span>{{CONTEXT}}</span></div>
+  <div class="foot"><span>{{BRAND}}</span><span>{{CONTEXT}}</span></div>
 </section>
 ```
 
@@ -353,7 +356,7 @@ Structured tabular data with branded styling.
 
 **Rules:**
 - Wrap in `.table-wrap` for rounded container
-- Headers auto-styled (JetBrains Mono, accent, uppercase)
+- Headers auto-styled (mono, accent, uppercase)
 - First column auto-bolds
 - Max 5-6 rows
 
@@ -384,7 +387,7 @@ Horizontal milestone progression.
       <p class="tl-desc">Brief description.</p>
     </div>
   </div>
-  <div class="foot"><span>{{COMPANY}}</span><span>{{CONTEXT}}</span></div>
+  <div class="foot"><span>{{BRAND}}</span><span>{{CONTEXT}}</span></div>
 </section>
 ```
 
@@ -420,7 +423,7 @@ Grid of stat blocks for ROI/impact slides.
   <div class="insight">
     <p>Synthesis connecting the metrics to business value. <strong>The punchline.</strong></p>
   </div>
-  <div class="foot"><span>{{COMPANY}}</span><span>{{CONTEXT}}</span></div>
+  <div class="foot"><span>{{BRAND}}</span><span>{{CONTEXT}}</span></div>
 </section>
 ```
 
@@ -441,7 +444,7 @@ Client quote or third-party validation.
 <section>
   <span class="label">What They Said</span>
   <h2>Headline.</h2>
-  <div class="card card-a card-glow" style="margin-top:14px;">
+  <div class="card card-a" style="margin-top:14px;">
     <p class="pull" style="font-size:0.78em; font-style:italic;">&ldquo;Quote from client or third-party source that validates the point you're making. Should be specific and concrete, not generic praise.&rdquo;</p>
     <div style="margin-top:10px; padding-top:8px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:baseline;">
       <div>
@@ -451,7 +454,7 @@ Client quote or third-party validation.
       <div class="src">Publication or context</div>
     </div>
   </div>
-  <div class="foot"><span>{{COMPANY}}</span><span>{{CONTEXT}}</span></div>
+  <div class="foot"><span>{{BRAND}}</span><span>{{CONTEXT}}</span></div>
 </section>
 ```
 
@@ -460,7 +463,7 @@ Client quote or third-party validation.
 **Rules:**
 - One quote per slide for impact
 - Always attribute with name + title + source
-- The quote should be specific and concrete — never generic praise
+- The quote should be specific and concrete, never generic praise
 
 ---
 
@@ -468,11 +471,11 @@ Client quote or third-party validation.
 
 Layouts can be combined on a single slide. Common combinations:
 
-- **Cards + Insight** — Paired content with a synthesis takeaway (the most common pattern)
-- **Pull Quote + Cards** — Thesis statement above, evidence cards below
-- **Stages + Insight** — Process flow with a concluding statement
-- **Label + Heading + Content** — Always use `.label` above `h2` for section category context
-- **Stats inside Cards** — Embed `.stat-big` + `.stat-label` inside any card variant
+- Cards + Insight: paired content with a synthesis takeaway (the most common pattern)
+- Pull Quote + Cards: thesis statement above, evidence cards below
+- Stages + Insight: process flow with a concluding statement
+- Label + Heading + Content: always use `.label` above `h2` for section category context
+- Stats inside Cards: embed `.stat-big` + `.stat-label` inside any card variant
 
 ### What NOT to do
 
@@ -489,12 +492,12 @@ Layouts can be combined on a single slide. Common combinations:
 - **Headlines are assertions, not descriptions.** Write "Your team spends 40% of its time on manual assembly" not "Time Analysis." The headline should be the slide's argument. If your headline could be a tab label in a spreadsheet, rewrite it.
 - **Every slide answers "so what?"** If you can't articulate why this slide moves the audience closer to a decision, cut it.
 - **Use concrete numbers from the audience's world.** "You process 12,000 invoices/month" hits harder than "significant volume." Abstract percentages without context are meaningless.
-- **Describe what the product does, not what it is.** Never write "leverage [buzzword]" or "[X]-powered solution." Write "imports your spreadsheets and flags the rows that don't reconcile." Plain English, specific actions.
-- **Write for a smart person who doesn't know your jargon but knows their business cold.** They will catch empty jargon instantly. They won't be impressed by buzzwords — they'll be impressed by "cuts review time from 3 days to 4 hours."
+- **Describe what the product does, not what it is.** Never write "[buzzword] solution." Write "imports your spreadsheets and flags the rows that don't reconcile." Plain English, specific actions.
+- **Write for a smart person who doesn't know your jargon but knows their business cold.** They will catch empty jargon instantly. They won't be impressed by buzzwords; they'll be impressed by "cuts review time from 3 days to 4 hours."
 - **Headlines:** Mixed case (NOT uppercase), conversational, often use line breaks (`<br>`) for pacing
 - **Bullets:** Lead with bold key terms, use em-dashes for structure
 - **Pull quotes:** Narrative tone, bold the single key phrase
-- **Insight boxes:** Always a synthesis — connect the content above to a "so what"
+- **Insight boxes:** Always a synthesis; connect the content above to a "so what"
 - **No filler.** Every sentence earns its place.
 - **Use `&mdash;`, `&rsquo;`, `&ldquo;`/`&rdquo;`** for proper typography
 
@@ -502,40 +505,40 @@ Layouts can be combined on a single slide. Common combinations:
 
 These are the failure modes that make vendor decks look like everyone else's. If you catch yourself generating any of these, rewrite.
 
-- **"Leverage our platform to transform your business"** — or any variation. This is the phrase that makes executives stop reading. Say what the product does instead.
-- **Blue gradient hero slides** — Avoid the SaaS-landing-page look. No gradients, no hero images, no "the future of AI" imagery.
-- **Bullet slides with no hierarchy** — A slide with 8 bullets of equal weight is a document, not a presentation. Use cards, stat blocks, or pull quotes instead.
-- **Generic process diagrams** — "Discovery → Design → Build → Deploy" is every vendor's slide. Our stages have specific timelines, specific outputs, and an outcome line that says what the client gets.
-- **Slides that require narration to make sense** — If you remove the presenter, the slide should still communicate its point. The standalone test: would this make sense to someone opening the file later with no context?
-- **Jargon headers** — "Next-Generation Workflow Optimization" is a header that says nothing. "Reports that took a day now take ten minutes" is a header that actually says something.
-- **Slides without a "so what"** — If the slide presents information without an insight box, pull quote, or assertive headline that tells the audience what it means, the slide is incomplete.
+- **"Use our platform to transform your business"** or any variation. This is the phrase that makes executives stop reading. Say what the product does instead.
+- **Blue gradient hero slides.** Avoid the SaaS-landing-page look. No gradients, no hero images, no "the future of AI" imagery.
+- **Bullet slides with no hierarchy.** A slide with 8 bullets of equal weight is a document, not a presentation. Use cards, stat blocks, or pull quotes instead.
+- **Generic process diagrams.** "Discovery → Design → Build → Deploy" is every vendor's slide. Our stages have specific timelines, specific outputs, and an outcome line that says what the client gets.
+- **Slides that require narration to make sense.** If you remove the presenter, the slide should still communicate its point. The standalone test: would this make sense to someone opening the file later with no context?
+- **Jargon headers.** "Next-Generation Workflow Optimization" is a header that says nothing. "Reports that took a day now take ten minutes" is a header that actually says something.
+- **Slides without a "so what".** If the slide presents information without an insight box, pull quote, or assertive headline that tells the audience what it means, the slide is incomplete.
 
 ---
 
 ## Slide Playbook
 
-Recommended slide sequences for common presentation scenarios. These are starting points — adapt based on the audience and what you know going in.
+Recommended slide sequences for common presentation scenarios. These are starting points; adapt based on the audience and what you know going in.
 
 ### First Meeting / Discovery
 
 The goal is to establish credibility, frame the problem, and open a conversation. Lead with the problem, not a pitch.
 
 1. **Cover**
-2. **Pull Quote** (thesis — the one sentence that frames why you're here)
+2. **Pull Quote** (thesis: the one sentence that frames why you're here)
 3. **Before/After** (the problem in their world, not abstract)
-4. **Stages** (how we work — show process, not magic)
+4. **Stages** (how we work: show process, not magic)
 5. **Question Cards** (turn it into a conversation)
-6. **CTA** (specific next step — not "let's stay in touch")
+6. **CTA** (specific next step, not "let's stay in touch")
 
 ### Standalone / Forwarded
 
 The deck that gets forwarded to the person who wasn't in the room. Needs to stand on its own without you narrating.
 
 1. **Cover**
-2. **Pull Quote** (thesis — remind them what this is about)
+2. **Pull Quote** (thesis: remind them what this is about)
 3. **Cards + Insight** (proof points with the "so what" spelled out)
-4. **Stages** (process — what working together actually looks like)
-5. **Metric Dashboard** (results — what they can expect)
+4. **Stages** (process: what working together actually looks like)
+5. **Metric Dashboard** (results: what they can expect)
 6. **Bio Cards** (who they'd be working with)
 7. **CTA** (clear next step with contact info)
 
@@ -546,8 +549,8 @@ The deck that makes the business case. Every slide should make the financial cas
 1. **Cover**
 2. **Before/After** (current state pain, quantified)
 3. **Metric Dashboard** (the headline numbers)
-4. **Data Table** (detailed breakdown — where the savings come from)
-5. **Timeline** (implementation plan — when they see results)
+4. **Data Table** (detailed breakdown: where the savings come from)
+5. **Timeline** (implementation plan: when they see results)
 6. **Testimonial** (someone who did this and got results)
 7. **CTA** (the ask)
 
@@ -556,11 +559,11 @@ The deck that makes the business case. Every slide should make the financial cas
 For the technical stakeholders who need to understand architecture and implementation, not just outcomes.
 
 1. **Cover**
-2. **Bullets** (architecture overview — what the system does)
-3. **Three-Column Cards** (components — how the pieces fit together)
-4. **Data Table** (comparison — why this approach vs. alternatives)
-5. **Stages** (implementation — how it gets built and deployed)
-6. **CTA** (next step — usually a technical workshop or proof of concept)
+2. **Bullets** (architecture overview: what the system does)
+3. **Three-Column Cards** (components: how the pieces fit together)
+4. **Data Table** (comparison: why this approach vs. alternatives)
+5. **Stages** (implementation: how it gets built and deployed)
+6. **CTA** (next step: usually a technical workshop or proof of concept)
 
 ---
 
@@ -569,5 +572,5 @@ For the technical stakeholders who need to understand architecture and implement
 - Add `class="fragment"` to each major content block for progressive reveal
 - Cards in a `.g2` or `.g3` work well as individual fragments
 - Insight boxes work well as the final fragment on a slide
-- The `.label` and `h2` should NOT be fragments — they anchor the slide
+- The `.label` and `h2` should NOT be fragments; they anchor the slide
 - Fragments advance on click/arrow, same as slide transitions

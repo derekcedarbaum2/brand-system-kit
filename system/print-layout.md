@@ -1,8 +1,8 @@
-# Print Layout — HTML → PDF (headless Chrome)
+# Print Layout: HTML → PDF (headless Chrome)
 
-Layout mechanics for any HTML rendered to PDF via headless Chrome (`chrome --headless --print-to-pdf`): reports, one-pagers, briefs, proposals, decks. These rules are register-neutral — they apply whether the page is a **warmth** brand (light/cream, like the Northwind demo) or **restraint** brand (near-black, like Graphite). Values shown are illustrative; the binding ones live in each `profiles/<name>/tokens.json`.
+Layout mechanics for any HTML rendered to PDF via headless Chrome (`chrome --headless --print-to-pdf`): reports, one-pagers, briefs, proposals, decks. These rules are register-neutral. They apply whether the page is a **warmth** brand (light/cream, like the Northwind demo) or **restraint** brand (near-black, like Graphite). Values shown are illustrative; the binding ones live in each `profiles/<name>/tokens.json`.
 
-The rules exist because Chrome's print engine has non-obvious behavior that silently breaks branded output. Every failure below is **invisible in the browser** and only appears in the rendered PDF — so the last rule (§7) is the most important: render and *read the pages*.
+The rules exist because Chrome's print engine has non-obvious behavior that silently breaks branded output. Every failure below is **invisible in the browser** and only appears in the rendered PDF, so the last rule (§7) is the most important: render and *read the pages*.
 
 ---
 
@@ -10,8 +10,8 @@ The rules exist because Chrome's print engine has non-obvious behavior that sile
 
 Chrome paints the `@page { margin }` band **white**. The `html`/`body` background does **not** extend into it. So any non-white page background (a warmth brand's cream `--bg`, a restraint brand's near-black `--bg`) shows a white frame on every page if you use `@page` margins for the content inset.
 
-- ✅ `@page { size: letter; margin: 0; }`, background on `html, body`, insets via padding (see §2).
-- ❌ `@page { margin: 0.75in; }` with a colored `body` → white border framing every page.
+- Right: `@page { size: letter; margin: 0; }`, background on `html, body`, insets via padding (see §2).
+- Wrong: `@page { margin: 0.75in; }` with a colored `body` → white border framing every page.
 
 ## 2. Uniform per-page margins require "sheets"
 
@@ -34,30 +34,30 @@ html, body {
 .sheet:last-child { page-break-after: auto; }
 ```
 
-Wrap each ≤1-page chunk of content in `<div class="sheet">…</div>`. The area below short content is the **brand background**, not white. Hard constraint: **each sheet's content must fit within one printable page** (~9.3in tall for US letter at 0.8in margins) — if it overflows, the spilled part hugs the top of the next page again. When unsure, split into more sheets and re-render.
+Wrap each ≤1-page chunk of content in `<div class="sheet">…</div>`. The area below short content is the **brand background**, not white. Hard constraint: **each sheet's content must fit within one printable page** (~9.3in tall for US letter at 0.8in margins). If it overflows, the spilled part hugs the top of the next page again. When unsure, split into more sheets and re-render.
 
-Single-page artifacts (a one-pager) don't need sheets — plain `body { padding }` is fine.
+Single-page artifacts (a one-pager) don't need sheets; plain `body { padding }` is fine.
 
 ## 3. Section boxes: tinted panels, never stark white
 
-On a colored page (warmth cream *or* restraint near-black), a `background:#fff` box reads as a harsh hole punched in the page. Use panel **roles** a step off the page color:
+On a colored page (warmth cream *or* restraint near-black), a `background:#fff` box reads as a harsh hole punched in the page. Use a surface a step off the page color. The shipped role for this is `--bg-card`:
 
 | Role | Use | Warmth example | Restraint example |
 |---|---|---|---|
-| `--panel` | section cards, matrix cells, table rows | soft beige off the cream | soft charcoal off the near-black |
-| `--panel-deep` | diagram containers (so inner chips pop) | deeper beige | deeper charcoal |
-| `--chip` | inner chips (flow steps, Gantt cells, callouts) | warm near-white | a lighter slate |
+| `--bg-card` | section cards, matrix cells, table rows | soft beige off the cream | a slate a step off the near-black |
 
-White is only correct on a genuinely white page. Drive these from `tokens.json` so the same HTML re-skins per profile — never hard-code the hex.
+If a dense diagram needs more than one surface level (a container whose inner chips must pop), add optional extension roles to **your own** `tokens.json` (e.g. `panel-deep` for diagram containers, `chip` for inner flow steps) and generate them like any other token. The shipped profiles define one card surface; extensions are yours to add. Either way, never hand-code the hex; drive every surface from `tokens.json` so the same HTML re-skins per profile.
+
+White is only correct on a genuinely white page.
 
 ## 4. Cards must not split across a page boundary
 
-A bordered card that breaks across pages leaves an orphaned remnant — e.g. a lone footer/total row floating in a sliver of panel at the top of the next page.
+A bordered card that breaks across pages leaves an orphaned remnant, e.g. a lone footer/total row floating in a sliver of panel at the top of the next page.
 
-- ✅ `page-break-inside: avoid` on the card **and** size content so N cards fit per page (tighten `line-height`/padding ~8–12% if two won't fit).
-- ❌ Removing `page-break-inside: avoid` to kill a stranded-whitespace gap — that only trades the gap for an ugly split.
+- Right: `page-break-inside: avoid` on the card **and** size content so N cards fit per page (tighten `line-height`/padding ~8–12% if two won't fit).
+- Wrong: removing `page-break-inside: avoid` to kill a stranded-whitespace gap; that only trades the gap for an ugly split.
 
-The two failure modes are a pair: a **stranded gap** (a no-break card jumps to the next page, leaving the current one half-empty) and a **split panel** (a card allowed to break mid-content). The fix for both is sheets (§2) plus cards sized to pack — not toggling one symptom into the other.
+The two failure modes are a pair: a **stranded gap** (a no-break card jumps to the next page, leaving the current one half-empty) and a **split panel** (a card allowed to break mid-content). The fix for both is sheets (§2) plus cards sized to pack, not toggling one symptom into the other.
 
 ## 5. Decks are landscape 16:9, never portrait
 
@@ -68,15 +68,15 @@ A slide deck printed as portrait letter renders cramped. Size the page to the sl
 .slide { width: 13.333in; height: 7.5in; page-break-after: always; box-sizing: border-box; }
 ```
 
-One `.slide` per page. The panel-role rule (§3) still applies.
+One `.slide` per page. The tinted-panel rule (§3) still applies.
 
 ## 6. Default to the light/document mode for PDFs
 
-Unless the artifact is explicitly a dark-register piece, PDFs default to the brand's light/document mode (white or a warmth brand's light background). Don't ship a dark PDF — including deck title/close slides — without intent. (A restraint brand's near-black is a deliberate register choice, not a default to reach for in print.)
+Unless the artifact is explicitly a dark-register piece, PDFs default to the brand's light/document mode (white or a warmth brand's light background). Don't ship a dark PDF, including deck title/close slides, without intent. (A restraint brand's near-black is a deliberate register choice, not a default to reach for in print.)
 
 ## 7. Render and read the PDF every pass
 
-After each batch of edits, render to PDF and **read the actual pages** — at minimum the cover, one interior page, and the densest page. The white-frame, edge-hug, split-card, and overflow bugs do not appear in the browser preview; they only show in the rendered PDF. When someone shares a screenshot of a layout problem, read the proportions (does the content sum exceed the page height?) before guessing at CSS.
+After each batch of edits, render to PDF and **read the actual pages**: at minimum the cover, one interior page, and the densest page. The white-frame, edge-hug, split-card, and overflow bugs do not appear in the browser preview; they only show in the rendered PDF. When someone shares a screenshot of a layout problem, read the proportions (does the content sum exceed the page height?) before guessing at CSS.
 
 ---
 
@@ -84,7 +84,7 @@ After each batch of edits, render to PDF and **read the actual pages** — at mi
 
 ```html
 <style>
-:root { /* roles resolved from tokens.json: --bg --panel --panel-deep --chip --border … */ }
+:root { /* roles resolved from tokens.json: --bg --bg-card --border … */ }
 @page { size: letter; margin: 0; }
 html, body {
   background: var(--bg); margin: 0; padding: 0;
@@ -92,7 +92,7 @@ html, body {
 }
 .sheet { padding: 0.8in 0.9in; page-break-after: always; page-break-inside: avoid; box-sizing: border-box; }
 .sheet:last-child { page-break-after: auto; }
-.card { background: var(--panel); border: 1px solid var(--border); page-break-inside: avoid; }
+.card { background: var(--bg-card); border: 1px solid var(--border); page-break-inside: avoid; }
 </style>
 <body>
   <div class="sheet"><!-- cover + first section, ≤ 1 page --></div>

@@ -34,7 +34,7 @@
   <g id="header">
     <rect x="60" y="40" width="1280" height="60" fill="var(--ink)"/>
     <text x="80" y="80" font-size="24" font-weight="700" fill="var(--bg)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2">PROJECT {NAME}</text>
-    <text x="1320" y="80" font-size="12" font-weight="700" fill="#9AA0A8" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="end" letter-spacing="1.0">PROGRAM CARD</text>
+    <text x="1320" y="80" font-size="12" font-weight="700" fill="var(--dim)" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="end" letter-spacing="1.0">PROGRAM CARD</text>
   </g>
 
   <!-- LEFT CARD: high-level -->

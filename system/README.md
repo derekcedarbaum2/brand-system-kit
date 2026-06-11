@@ -14,7 +14,7 @@ Read `identity.md` first. It carries the meta-thesis (*match the visual register
 | `spacing.md` | Padding, grids, density |
 | `components.md` | Cards, callouts, tables, stat blocks, footers |
 | `motion.md` | Transition timing, easing, reduced-motion |
-| `accessibility.md` | Contrast targets and semantic-HTML rules (enforced by `contrast-check.mjs`) |
+| `accessibility.md` | Contrast targets (computed by `contrast-check.mjs`) and semantic-HTML rules (checked by hand) |
 | `data-viz.md` | Chart color sequences and labeling |
 | `imagery.md` | Photography, icon, and background approach (mostly: don't) |
 | `slide-layouts.md` | Reusable deck layout patterns |

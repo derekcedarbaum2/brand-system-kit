@@ -6,13 +6,13 @@ Component library shared across presentation and print. For CSS tokens see `toke
 
 ## Cards
 
-Base component — most content lives in one.
+Base component; most content lives in one.
 
 **Screen:**
 ```css
 .card {
-  background: var(--bg-card);          /* #20302E */
-  border: 1px solid var(--border);  /* #2A3A38 */
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 20px 24px;
 }
@@ -30,9 +30,10 @@ Base component — most content lives in one.
 
 ### Variants
 
-- `.card-a` — accent left border (3px solid `--accent`)
-- `.card-t` — accent top border (2px solid `--accent`) — use for metrics-heavy cards
-- `.card-glow` — adds `box-shadow: 0 4px 24px none` for emphasis
+- `.card-a`: accent left border (3px solid `--accent`)
+- `.card-t`: accent top border (2px solid `--accent`); use for metrics-heavy cards
+
+No shadow variants. The border is the only depth cue (see `anti-patterns.md` #15).
 
 ---
 
@@ -82,24 +83,24 @@ Same spirit as insight boxes, sized for print:
 
 Large metric display inside cards.
 
-- `.stat-big` — 2.2em, 900 weight, white, line-height 1, -2px letter-spacing
-- `.stat-label` — JetBrains Mono, 0.42em, dim, uppercase, 1px letter-spacing
+- `.stat-big`: 2.2em, 900 weight, `--text-primary`, line-height 1, -2px letter-spacing
+- `.stat-label`: mono, 0.42em, `--text-dim`, uppercase, 1px letter-spacing
 
 **Print:**
-- Stat number: Inter 22–26px, 800 weight, white / charcoal
-- Stat label: JetBrains Mono 9px uppercase
+- Stat number: sans 22–26px, 800 weight, `--text-primary`
+- Stat label: mono 9px uppercase
 - Stat card: flex 1, `--bg-card`, border + **top 2px accent**, 6px radius, `12px 14px` padding, centered text
 
 Rules:
 - Stat blocks always live inside cards. Naked `.stat-big` looks broken.
 - Pair with context line below in `--text-secondary`: "From $X to $Y per quarter"
-- Never reduce stat number size to fit — cut other content first.
+- Never reduce stat number size to fit; cut other content first.
 
 ---
 
 ## Stages (horizontal process flow)
 
-"How it works" layout — 2–4 stages per row.
+"How it works" layout, 2–4 stages per row.
 
 ```css
 .stages { display: flex; gap: 12px; }
@@ -111,7 +112,7 @@ Rules:
   border-radius: 10px;
   padding: 16px 14px;
 }
-.stage-num { font-family: 'JetBrains Mono'; font-size: 0.36em; font-weight: 600; color: var(--text-dim); letter-spacing: 2px; text-transform: uppercase; }
+.stage-num { font-family: var(--font-mono); font-size: 0.36em; font-weight: 600; color: var(--text-dim); letter-spacing: 2px; text-transform: uppercase; }
 .stage h3  { font-size: 0.65em; color: var(--text-primary); }
 .stage p   { font-size: 0.48em; color: var(--text-secondary); line-height: 1.55; }
 .stage .out { font-size: 0.44em; font-weight: 600; color: var(--text-primary); border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px; }
@@ -132,7 +133,7 @@ Structure per stage: timeline label (`.stage-num`) → title → description →
   padding: 18px 22px;
 }
 .bio h3    { font-size: 0.72em; color: var(--text-primary); }
-.bio .title { font-family: 'JetBrains Mono'; font-size: 0.34em; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim); }
+.bio .title { font-family: var(--font-mono); font-size: 0.34em; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim); }
 .bio p     { font-size: 0.5em; line-height: 1.6; }
 ```
 
@@ -167,13 +168,13 @@ Two-column comparison with distinct visual treatment.
 .ba        { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
 .ba-col    { padding: 20px 22px; }
 .ba-col.before { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px 0 0 10px; }
-.ba-col.after  { background: rgba(127,127,127,0.04); border: 1px solid rgba(127,127,127,0.15); border-radius: 0 10px 10px 0; }
+.ba-col.after  { background: transparent; border: 1px solid var(--border); border-radius: 0 10px 10px 0; }
 
-.ba-label      { font-family: 'JetBrains Mono'; font-size: 0.38em; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; }
+.ba-label      { font-family: var(--font-mono); font-size: 0.38em; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; }
 .before .ba-label { color: var(--text-dim); }
 .after  .ba-label { color: var(--accent); }
 
-.ba-result     { font-family: 'JetBrains Mono'; font-size: 0.44em; font-weight: 600; border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px; }
+.ba-result     { font-family: var(--font-mono); font-size: 0.44em; font-weight: 600; border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px; }
 .before .ba-result { color: var(--text-dim); }
 .after  .ba-result { color: var(--accent); }
 ```
@@ -182,14 +183,14 @@ Two-column comparison with distinct visual treatment.
 
 ## Tables
 
-Data tables for structured info — metrics, comparisons, feature matrices.
+Data tables for structured info: metrics, comparisons, feature matrices.
 
 ```css
 .table-wrap   { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
 .table-wrap table { width: 100%; border-collapse: collapse; }
 
 .table-wrap th {
-  font-family: 'JetBrains Mono';
+  font-family: var(--font-mono);
   font-size: 0.5em;
   font-weight: 600;
   text-transform: uppercase;
@@ -200,7 +201,6 @@ Data tables for structured info — metrics, comparisons, feature matrices.
 
 .table-wrap td              { font-size: 0.5em; color: var(--text-secondary); padding: 10px 16px; border: 1px solid var(--border); }
 .table-wrap td:first-child  { color: var(--text-primary); font-weight: 600; }   /* row label */
-.table-wrap tr:hover td     { background: rgba(127,127,127,0.03); }
 ```
 
 - Max 5–6 rows per table slide
@@ -243,7 +243,7 @@ Horizontal milestone progression.
 }
 .tl-item.active::before { background: var(--text-primary); }
 
-.tl-date  { font-family: 'JetBrains Mono'; font-size: 0.42em; text-transform: uppercase; color: var(--accent); }
+.tl-date  { font-family: var(--font-mono); font-size: 0.42em; text-transform: uppercase; color: var(--accent); }
 .tl-label { font-size: 0.65em; font-weight: 600; color: var(--text-primary); }
 .tl-desc  { font-size: 0.48em; color: var(--text-secondary); line-height: 1.5; }
 ```
@@ -259,9 +259,9 @@ Horizontal milestone progression.
 - Marker: horizontal dash (8px × 2px), `--accent`, absolute position (left 0, top 12px)
 - Item font: 0.6em, muted, line-height 1.65
 - Padding: `3px 0 3px 20px`
-- Strong in items: white, 600 weight
+- Strong in items: `--text-primary`, 600 weight
 
-**Print (light mode):** same dash marker but in `--accent-light`. Never the red `>` marker from presentations.
+**Print (light mode):** same dash marker but in `--accent-2`.
 
 ---
 
@@ -277,13 +277,13 @@ Horizontal milestone progression.
 
 ```css
 .src {
-  font-family: 'JetBrains Mono';
+  font-family: var(--font-mono);
   font-size: 0.32em;
-  color: rgba(120,120,120,0.4);
+  color: var(--text-dim);
 }
 ```
 
-Always attribute claims. Always inline or at the bottom of the card — never a separate "Sources" box.
+Always attribute claims. Always inline or at the bottom of the card, never a separate "Sources" box.
 
 ---
 
@@ -298,16 +298,16 @@ Always attribute claims. Always inline or at the bottom of the card — never a 
   justify-content: space-between;
   align-items: center;
   background: var(--bg);
-  font-family: 'JetBrains Mono';
+  font-family: var(--font-mono);
   font-size: 8px;
-  color: rgba(255,255,255,0.2);
+  color: var(--text-dim);
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 ```
 
-- Left span: "{{COMPANY}}"
-- Right span: context-specific ("Client — Project", "{{URL}}", client name + date)
+- Left span: the brand name (the profile's `lint.company-name`)
+- Right span: context-specific ("Client &middot; Project", the profile's URL, client name + date)
 
 ---
 
@@ -323,7 +323,7 @@ Always attribute claims. Always inline or at the bottom of the card — never a 
 }
 ```
 
-Light-mode footer uses white bg + `--text-secondary` text + `--border` top line.
+Light-mode footer uses the page `--bg` + `--text-secondary` text + `--border` top line.
 
 ---
 
@@ -331,10 +331,10 @@ Light-mode footer uses white bg + `--text-secondary` text + `--border` top line.
 
 - Class: `.cover`
 - Alignment: centered (flex column, center / center)
-- Background: `--bg` (deepest black)
+- Background: `--bg` (the page background)
 - Content wrapper: `.cover-inner`
-- Logo: inline base64 PNG of {{COMPANY}} signature logo
-- No text on cover — logo only, OR logo + minimal context line (`client — topic — month year`)
+- Logo: inline base64 PNG of the brand's logo
+- No text on cover: logo only, OR logo + minimal context line (`client / topic / month year`)
 
 ---
 
@@ -344,8 +344,8 @@ Light-mode footer uses white bg + `--text-secondary` text + `--border` top line.
 - Alignment: centered
 - Headline: h2, max-width 720px, centered
 - Body text: max-width 600px, centered
-- Contact line: white, 600 weight, 0.65em (`{{CONTACT}}`)
-- Fine print: JetBrains Mono, 0.45em, dim
+- Contact line: `--text-primary`, 600 weight, 0.65em (the profile's `lint.contact`)
+- Fine print: mono, 0.45em, `--text-dim`
 
 ---
 

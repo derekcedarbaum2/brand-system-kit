@@ -38,13 +38,35 @@ jobs:
           node tooling/lint.mjs profiles/northwind/sample.html profiles/northwind
           node tooling/lint.mjs profiles/graphite/sample.html profiles/graphite
 
-      - name: Lint — the deliberately bad artifact must FAIL
+      - name: Lint — every template passes against northwind
         run: |
-          if node tooling/lint.mjs examples/bad.html profiles/northwind; then
-            echo "::error::examples/bad.html passed the linter — the gate is not biting."
+          for t in templates/*.html; do
+            echo "::group::lint $t"
+            node tooling/lint.mjs "$t" profiles/northwind
+            echo "::endgroup::"
+          done
+
+      - name: Lint — the deliberately bad artifact must FAIL (exit exactly 1)
+        run: |
+          set +e
+          node tooling/lint.mjs examples/bad.html profiles/northwind
+          code=$?
+          set -e
+          if [ "$code" -ne 1 ]; then
+            echo "::error::expected lint to exit 1 on examples/bad.html, got $code — the gate is not biting (a crash or missing file must not pass)."
             exit 1
           fi
-          echo "bad.html correctly rejected."
+          echo "bad.html correctly rejected (exit 1)."
 
       - name: Diagrams are well-formed XML
         run: xmllint --noout diagrams/*.svg
+
+      - name: Diagrams — no hardcoded hex in fill/stroke attributes
+        # The shared :root <style> block (--var: #hex definitions) is the one
+        # legitimate home for hex in a diagram; fill=/stroke= must use var(--…).
+        run: |
+          if grep -nE '(fill|stroke)="#' diagrams/*.svg; then
+            echo "::error::Hardcoded hex in a fill=/stroke= attribute — tokenize with tooling/tokenize-svg.mjs."
+            exit 1
+          fi
+          echo "No hardcoded fill/stroke hex in diagrams."
